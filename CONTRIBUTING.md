@@ -26,6 +26,9 @@
 
 ## Labels
 
+Created by `scripts/create_issues.sh` together with the Phase II and III issues.
+
+
 | Label | Meaning |
 |---|---|
 | `phase-2`, `phase-3` | Which EL phase the work belongs to |

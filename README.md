@@ -77,8 +77,12 @@ It does **not** break or fix anything on the device. It is the diagnosis step of
 | III | Optional demo: migrate one board with esp-pqc, rescan, show the CBOM change | To do |
 | III | Write-up and paper | To do |
 
-Each "To do" item is a GitHub issue with acceptance criteria. The full plan, with dependencies,
-is in [docs/ROADMAP.md](docs/ROADMAP.md).
+Each "To do" item is written up with acceptance criteria in [docs/ROADMAP.md](docs/ROADMAP.md).
+To turn them into GitHub issues with labels, run once (needs the GitHub CLI, `gh auth login`):
+
+```bash
+./scripts/create_issues.sh
+```
 
 ## Quick start
 
