@@ -5,7 +5,7 @@ import uuid
 
 from . import __version__
 from .migration import PRIORITY, PLATFORM_NOTES, notes_for, ESP_PQC_SOURCE
-from .taxonomy import FAMILIES
+from .taxonomy import FAMILIES, PQC_FAMILIES
 
 SPEC_VERSION = "1.6"
 
@@ -14,6 +14,7 @@ CRYPTO_FUNCTIONS = {
     "POLY1305": ["tag"], "MD5": ["digest"], "SHA1": ["digest"], "SHA256": ["digest"], "SHA512": ["digest"],
     "RSA": ["sign", "verify", "encrypt", "decrypt"], "ECDSA": ["sign", "verify"], "ECDH": ["keyderive"],
     "ECC": ["other"], "FFDH": ["keyderive"],
+    "MLKEM": ["keygen", "encapsulate", "decapsulate"], "MLDSA": ["keygen", "sign", "verify"], "LMS": ["verify"],
 }
 
 
@@ -47,6 +48,8 @@ def _algorithm_component(f, ref):
              _prop("recommendedReplacement", info.replacement),
              _prop("executionObserved", f.execution),
              _prop("confidence", f"{f.confidence:.2f}")]
+    if f.family in PQC_FAMILIES:
+        props.append(_prop("postQuantum", "true"))
     if info.note:
         props.append(_prop("note", info.note))
     for n in notes_for(f.family, f.params):

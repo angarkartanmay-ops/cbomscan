@@ -89,6 +89,13 @@ zeta table), ML-DSA (q = 8380417, zeta table), SLH-DSA / SHAKE (Keccak round con
 **Done when:** the scanner reports ML-KEM / ML-DSA with `nistQuantumSecurityLevel` above 0 on
 esp-pqc example builds.
 
+**Status (branch `phase2`):** ML-KEM and ML-DSA done and verified against real bytes of PQClean and
+mlkem-native/mldsa-native builds made with Espressif GCC 16.1 (20 images, 10/10 each, no false
+positives); details and limits in [PQC_RULES.md](PQC_RULES.md). Not done: LMS (in progress),
+SLH-DSA (no constant table; needs tier 2), and esp-pqc example builds (esp-pqc needs ESP-IDF 6.0;
+the acceptance criterion above is therefore not yet met as written, only on PQClean/mlkem-native
+builds).
+
 ## Phase III: migration planning, other chips, demo, write-up
 
 ### P3.1 Migration feasibility model

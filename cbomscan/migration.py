@@ -39,6 +39,9 @@ PRIORITY = {
     "POLY1305": (5, "No action."),
     "SHA256": (5, "No action (SHA-384 for CNSA 2.0)."),
     "SHA512": (5, "No action."),
+    "MLKEM": (6, "Post-quantum KEM (FIPS 203) already present: no migration action; confirm the parameter set."),
+    "MLDSA": (6, "Post-quantum signature (FIPS 204) already present: no migration action; confirm the parameter set."),
+    "LMS": (6, "Post-quantum hash-based signature (SP 800-208) already present: no migration action; manage key state."),
 }
 
 

@@ -71,7 +71,7 @@ It does **not** break or fix anything on the device. It is the diagnosis step of
 | II | Held-out test set (wolfSSL, real ESP-IDF example apps) | To do |
 | II | Xtensa disassembly + function boundary recovery for stripped code | To do |
 | II | Tier 2 ML classifier for the rule gaps (ECDSA vs ECDH, run-time AES tables, Poly1305) | To do |
-| II | Detection rules for post-quantum algorithms (ML-KEM, ML-DSA, LMS) so migrated firmware shows up correctly | To do |
+| II | Detection rules for post-quantum algorithms (ML-KEM, ML-DSA, LMS) so migrated firmware shows up correctly | In progress: ML-KEM, ML-DSA done ([docs/PQC_RULES.md](docs/PQC_RULES.md)) |
 | III | Migration feasibility model (flash, RAM, boot-time budget per chip) | To do |
 | III | Other chips: ESP32-S2/S3/C3/C6/C5 accelerator addresses and chip-specific checks | To do |
 | III | Optional demo: migrate one board with esp-pqc, rescan, show the CBOM change | To do |

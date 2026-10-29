@@ -29,5 +29,5 @@ def test_curve_patterns_are_reversed_pairs():
 def test_every_signature_has_family_and_pattern():
     for sig in S.SIGNATURES:
         assert sig.family
-        assert sig.patterns or sig.words
+        assert sig.patterns or sig.words or sig.kind == "lms_pubkey"
         assert 0 < sig.confidence < 1

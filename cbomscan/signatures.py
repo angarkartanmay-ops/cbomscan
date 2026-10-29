@@ -223,6 +223,58 @@ _add("ffdh.modp", "FFDH", "bytes", _num_patterns(MODP_PREFIX)[:1] + [MODP_PREFIX
 _add("ffdh.ffdhe", "FFDH", "bytes", _num_patterns(FFDHE_PREFIX)[:1] + [FFDHE_PREFIX.encode()], confidence=0.9,
      description="RFC 7919 ffdhe group prime (prefix)")
 
+# ---- Post-quantum algorithms (P2.9) -------------------------------------------------------------
+# ML-KEM (FIPS 203): q = 3329, zeta = 17, zeta_i = 17^BitRev7(i) mod q (Appendix A).
+# ML-DSA (FIPS 204): q = 8380417, zeta = 1753, zeta_i = 1753^BitRev8(i) mod q (Appendix B).
+# Reference implementations store these tables in signed Montgomery form (x * 2^16 mod q for ML-KEM,
+# x * 2^32 mod q for ML-DSA, centred on 0), so that is the form the rules match. It is derived here and
+# verified against the bytes of real builds by tests/test_pqc.py (see docs/PQC_RULES.md). The plain FIPS
+# appendix form is deliberately NOT matched: no implementation we could build stores it, so a rule for
+# it would be unverified.
+
+
+def _bitrev(x, bits):
+    return int(format(x, f"0{bits}b")[::-1], 2)
+
+
+def _centre(v, m):
+    return v if v <= m // 2 else v - m
+
+
+MLKEM_Q, MLKEM_ZETA = 3329, 17
+MLDSA_Q, MLDSA_ZETA = 8380417, 1753
+MLKEM_ZETAS = [pow(MLKEM_ZETA, _bitrev(i, 7), MLKEM_Q) for i in range(128)]
+MLDSA_ZETAS = [pow(MLDSA_ZETA, _bitrev(i, 8), MLDSA_Q) for i in range(256)]
+MLKEM_ZETAS_MONT = [_centre(z * 2 ** 16 % MLKEM_Q, MLKEM_Q) for z in MLKEM_ZETAS]
+MLDSA_ZETAS_MONT = [_centre(z * 2 ** 32 % MLDSA_Q, MLDSA_Q) for z in MLDSA_ZETAS]
+
+PQC_TABLE_ENTRIES = 16  # 32 (ML-KEM) / 64 (ML-DSA) bytes of high-entropy values: chance match is negligible
+
+
+def _i16le(vs):
+    return b"".join(struct.pack("<h", v) for v in vs)
+
+
+def _i32le(vs):
+    return b"".join(struct.pack("<i", v) for v in vs)
+
+
+_add("mlkem.zetas_mont", "MLKEM", "bytes", [_i16le(MLKEM_ZETAS_MONT[:PQC_TABLE_ENTRIES])], confidence=0.95,
+     description="ML-KEM (FIPS 203) NTT zeta table, signed Montgomery form int16")
+_add("mldsa.zetas_mont", "MLDSA", "bytes", [_i32le(MLDSA_ZETAS_MONT[1:1 + PQC_TABLE_ENTRIES])], confidence=0.95,
+     description="ML-DSA (FIPS 204) NTT zeta table, signed Montgomery form int32 (entry 0 skipped)")
+
+# LMS / HSS (RFC 8554, NIST SP 800-208): public key = u32 lms_type | u32 lmots_type | I[16] | T1[32],
+# preceded by a u32 level count for HSS. Type codes are big-endian u32.
+LMS_TYPES = {5: "LMS_SHA256_M32_H5", 6: "LMS_SHA256_M32_H10", 7: "LMS_SHA256_M32_H15",
+             8: "LMS_SHA256_M32_H20", 9: "LMS_SHA256_M32_H25"}
+LMOTS_TYPES = {1: "LMOTS_SHA256_N32_W1", 2: "LMOTS_SHA256_N32_W2", 3: "LMOTS_SHA256_N32_W4",
+               4: "LMOTS_SHA256_N32_W8"}
+LMS_PUBKEY_LEN = 56
+LMS_MIN_DISTINCT = 36  # distinct byte values required in the 48 random bytes (I and T1); expected ~44
+_add("lms.pubkey", "LMS", "lms_pubkey", confidence=0.85,
+     description="embedded LMS/HSS public key structure (RFC 8554 type codes followed by 48 high-entropy bytes)")
+
 OID_RSA = "2A864886F70D010101"
 OID_RSA_PSS = "2A864886F70D01010A"
 OID_EC_PUBKEY = "2A8648CE3D0201"

@@ -3,7 +3,7 @@
 import html
 
 from .migration import PRIORITY, PLATFORM_NOTES
-from .taxonomy import FAMILIES
+from .taxonomy import FAMILIES, PQC_FAMILIES
 
 
 def _rows(result):
@@ -14,7 +14,7 @@ def _rows(result):
         top = f.evidence[0]
         loc = f"0x{top.address:08x} ({top.region})" if top.address is not None else top.region
         rows.append({"family": info.name, "id": f.family, "present": f.present, "confidence": f.confidence,
-                     "quantum": "VULNERABLE" if info.quantum_vulnerable else "safe",
+                     "quantum": "VULNERABLE" if info.quantum_vulnerable else ("post-quantum" if f.family in PQC_FAMILIES else "safe"),
                      "level": "-" if info.nist_quantum_level is None else str(info.nist_quantum_level),
                      "priority": pri, "why": why, "replacement": info.replacement,
                      "params": ", ".join(f.params), "execution": f.execution, "location": loc,
@@ -41,6 +41,9 @@ def to_markdown(result):
                  f"{', '.join(r['family'] for r in vuln)}.**")
     else:
         L.append("No quantum-vulnerable public-key cryptography detected by Phase I rules.")
+    pqc = [r for r in present if r["quantum"] == "post-quantum"]
+    if pqc:
+        L.append(f"Post-quantum algorithms present (not vulnerable): {', '.join(r['family'] for r in pqc)}.")
     sbk = [k for k in result.keys if k.source == "secure-boot-v2"]
     if sbk:
         L.append(f"Secure Boot V2 root of trust uses **{sbk[0].describe()}**: classical, so a quantum-capable "
@@ -99,7 +102,7 @@ def to_html(result):
     for r in rows:
         if not r["present"]:
             continue
-        cls = "v" if r["quantum"] == "VULNERABLE" else "s"
+        cls = "v" if r["quantum"] == "VULNERABLE" else "s"  # post-quantum and safe both render as safe
         out.append(f"<tr><td>{r['priority']}</td><td>{e(r['family'])}</td><td class=\"{cls}\">{r['quantum']}</td>"
                    f"<td>{r['level']}</td><td>{r['confidence']:.2f}</td><td>{e(r['params'] or '-')}</td>"
                    f"<td><code>{e(r['location'])}</code></td><td>{e(r['replacement'])}</td></tr>")

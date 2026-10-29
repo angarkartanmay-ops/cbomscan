@@ -8,6 +8,7 @@ from pathlib import Path
 from . import __version__
 from .cbom import build_cbom
 from .detect import ALL_GROUPS, DEFAULT_THRESHOLD, scan, present_families
+from .taxonomy import FAMILIES, PQC_FAMILIES
 from .image import load
 from .report import to_html, to_markdown
 
@@ -32,11 +33,14 @@ def cmd_scan(a):
     (out / f"{stem}.report.md").write_text(to_markdown(res))
     (out / f"{stem}.report.html").write_text(to_html(res))
     (out / f"{stem}.evidence.json").write_text(json.dumps([e.to_dict() for e in res.evidence], indent=1))
-    fams = sorted(present_families(res))
+    fams = sorted(present_families(res, families=list(FAMILIES)))
     vuln = [f for f in fams if res.findings.get(f) and res.findings[f].info.quantum_vulnerable]
     print(f"{fw.path}: {fw.container}, {fw.chip}, {len(fw.segments)} segments")
     print(f"  present: {', '.join(fams) or 'none'}")
     print(f"  quantum-vulnerable: {', '.join(vuln) or 'none'}")
+    pqc = [f for f in fams if f in PQC_FAMILIES]
+    if pqc:
+        print(f"  post-quantum (not vulnerable): {', '.join(pqc)}")
     for k in res.keys:
         print(f"  key: {k.describe()}")
     print(f"  wrote {out / (stem + '.cbom.json')} (+ .report.md, .report.html, .evidence.json)")

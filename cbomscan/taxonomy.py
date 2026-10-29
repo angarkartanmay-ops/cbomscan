@@ -51,10 +51,27 @@ FAMILIES = {
     "FFDH": Family("FFDH", "Finite-field Diffie-Hellman", "key-agree", True, 0, "approved until 2030 (NIST IR 8547 draft)",
                    "critical", "ML-KEM-768 (FIPS 203), hybrid during transition.",
                    "Broken by Shor's algorithm (discrete log).", "FFDH"),
+    # Post-quantum families (Phase II, P2.9). Reported in the CBOM but NOT part of SCORED_FAMILIES, so the
+    # Phase I metrics (13 families) stay reproducible. nist_quantum_level is the lowest category of the
+    # parameter sets (FIPS 203 Table 2, FIPS 204 Table 1); the parameter set is not recoverable from the
+    # NTT tables, which are shared by all sets of one algorithm.
+    "MLKEM": Family("MLKEM", "ML-KEM", "kem", False, 1, "approved (FIPS 203)",
+                    "none", "None: this is already a NIST post-quantum KEM. Verify the parameter set (ML-KEM-768 or higher recommended).",
+                    "Detected from the FIPS 203 NTT zeta table. Level 1 is the ML-KEM-512 lower bound; the table is "
+                    "identical for ML-KEM-512/768/1024 and for pre-standard Kyber, so neither can be told apart from it."),
+    "MLDSA": Family("MLDSA", "ML-DSA", "signature", False, 2, "approved (FIPS 204)",
+                    "none", "None: this is already a NIST post-quantum signature. Verify the parameter set.",
+                    "Detected from the FIPS 204 NTT zeta table. Level 2 is the ML-DSA-44 lower bound; the table is "
+                    "identical for ML-DSA-44/65/87 and for pre-standard Dilithium."),
+    "LMS": Family("LMS", "LMS / HSS (hash-based signatures)", "signature", False, None, "approved (NIST SP 800-208)",
+                  "none", "None: stateful hash-based signature (RFC 8554). Manage one-time-key state carefully.",
+                  "Detected from an embedded LMS/HSS public key structure only. NIST assigns no category number to LMS."),
 }
 
 SCORED_FAMILIES = ["AES", "DES", "CHACHA20", "POLY1305", "MD5", "SHA1", "SHA256", "SHA512",
                    "RSA", "ECDSA", "ECDH", "ECC", "FFDH"]
+
+PQC_FAMILIES = ["MLKEM", "MLDSA", "LMS"]
 
 PK_CLASSES = ["RSA", "ECC", "FFDH"]
 

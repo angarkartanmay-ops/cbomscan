@@ -126,6 +126,28 @@ def _scan_bytes(fw, sig, groups):
     return out
 
 
+_LMS_RX = re.compile(rb"\x00\x00\x00[\x05-\x09]\x00\x00\x00[\x01-\x04]", re.S)
+
+
+def _scan_lms(fw, sig):
+    """Find LMS/HSS public keys: known type codes, then 48 bytes (I, T1) that look random."""
+    out = []
+    for seg in fw.segments:
+        for m in _LMS_RX.finditer(seg.data):
+            o = m.start()
+            body = seg.data[o + 8:o + S.LMS_PUBKEY_LEN]
+            if len(body) < S.LMS_PUBKEY_LEN - 8 or len(set(body)) < S.LMS_MIN_DISTINCT:
+                continue
+            lms_t, ots_t = seg.data[o + 3], seg.data[o + 7]
+            hss = o >= 4 and seg.data[o - 4:o] == b"\x00\x00\x00\x01"
+            out.append(Evidence(sig.family, sig.id, sig.group, "structure-match", sig.confidence,
+                                seg.addr + o, seg.region,
+                                f"{sig.description}: {S.LMS_TYPES[lms_t]} + {S.LMOTS_TYPES[ots_t]}"
+                                f"{' (HSS, 1 level)' if hss else ''}", f"{S.LMS_TYPES[lms_t]}/{S.LMOTS_TYPES[ots_t]}"))
+            return out
+    return out
+
+
 def _scan_words(fw, idx, sig):
     found = {}
     for w in sig.words:
@@ -237,6 +259,8 @@ def scan(fw: Firmware, threshold=DEFAULT_THRESHOLD, groups=None) -> ScanResult:
             continue
         if sig.kind == "bytes":
             evidence += _scan_bytes(fw, sig, groups)
+        elif sig.kind == "lms_pubkey":
+            evidence += _scan_lms(fw, sig)
         else:
             evidence += _scan_words(fw, idx, sig)
     sha512_seen = any(e.family == "SHA512" for e in evidence)
@@ -289,8 +313,11 @@ def scan(fw: Firmware, threshold=DEFAULT_THRESHOLD, groups=None) -> ScanResult:
     return ScanResult(fw, evidence, findings, keys, libs, hw, threshold, groups)
 
 
-def present_families(result: ScanResult, include_implied=True):
-    fams = {f for f, x in result.findings.items() if x.present and f in SCORED_FAMILIES}
+def present_families(result: ScanResult, include_implied=True, families=None):
+    """Families reported present. Defaults to the 13 Phase I scored families; pass
+    families=ALL_FAMILIES (taxonomy) to include the post-quantum ones."""
+    allowed = SCORED_FAMILIES if families is None else families
+    fams = {f for f, x in result.findings.items() if x.present and f in allowed}
     if include_implied and fams & {"ECDSA", "ECDH"}:
         fams.add("ECC")
     return fams
