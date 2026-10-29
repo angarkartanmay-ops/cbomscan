@@ -50,7 +50,8 @@ VARIANTS = {
              "label": "mbedTLS 2.28.10, AES tables generated at runtime"},
 }
 
-OPTS = {"O0": ["-O0"], "O1": ["-O1"], "O2": ["-O2"], "Os": ["-Os"]}
+OPTS = {"O0": ["-O0"], "O1": ["-O1"], "O2": ["-O2"], "Os": ["-Os"], "O3": ["-O3"]}
+PHASE1_OPTS = "O0,O1,O2,Os"   # default: the four levels of the Phase I dataset; pass --opts for -O3
 
 PROFILES = {
     "ota_rsa_pss": {"intended": ["RSA", "SHA256"], "uses_hw": False},
@@ -89,6 +90,11 @@ class Builder:
         self.specs = args.specs
         self.out = Path(args.out).resolve()
         self.obj = self.out / "_obj"
+
+    def compiler_version(self):
+        if not hasattr(self, "_ver"):
+            self._ver = run([self.cc, "--version"]).splitlines()[0]
+        return self._ver
 
     def base_cflags(self, opt):
         f = ["-mlongcalls", "-ffunction-sections", "-fdata-sections", "-g", "-w", "-std=gnu11", "-DNDEBUG"]
@@ -154,6 +160,7 @@ class Builder:
                    f"-Wl,-Map={mapf}", "-Wl,--no-warn-rwx-segments"]
         if self.specs:
             ldflags.insert(0, f"--specs={self.specs}")
+        ldflags += self.args.ld_extra.split()
         run([self.cc, "-mlongcalls", *ldflags, *map(str, objs), "-o", str(elf),
              "-Wl,--start-group", "-lc", "-lgcc", "-Wl,--end-group"])
         stripped = sdir / "firmware.stripped.elf"
@@ -164,7 +171,7 @@ class Builder:
         truth.update({"sample": sample, "variant": variant, "variant_label": VARIANTS[variant]["label"],
                       "opt": opt, "profile": profile, "intended_families": PROFILES[profile]["intended"],
                       "uses_hw_accel": PROFILES[profile]["uses_hw"], "secure_boot": "none",
-                      "toolchain": self.prefix.rstrip("-"),
+                      "toolchain": self.prefix.rstrip("-"), "compiler": self.compiler_version(),
                       "bin_sha256": hashlib.sha256(binf.read_bytes()).hexdigest(),
                       "bin_size": binf.stat().st_size})
         (sdir / "truth.json").write_text(json.dumps(truth, indent=1))
@@ -273,9 +280,11 @@ def main():
     ap.add_argument("--toolchain-prefix", default=os.environ.get("CBOM_TOOLCHAIN", "xtensa-lx106-elf-"))
     ap.add_argument("--specs", default=os.environ.get("CBOM_SPECS", "/usr/lib/xtensa-lx106-elf/picolibc.specs"),
                     help="GCC specs for the C library; pass '' when the toolchain ships its own libc (ESP-IDF)")
+    ap.add_argument("--ld-extra", default=os.environ.get("CBOM_LD_EXTRA", ""),
+                    help="extra linker flags, e.g. '-Wl,--defsym=end=__heap_start' for newlib's sbrk (Espressif toolchain)")
     ap.add_argument("--out", default=str(DS / "out"))
     ap.add_argument("--variants", default=",".join(VARIANTS))
-    ap.add_argument("--opts", default=",".join(OPTS))
+    ap.add_argument("--opts", default=PHASE1_OPTS, help=f"comma list from {','.join(OPTS)}")
     ap.add_argument("--profiles", default=",".join(PROFILES))
     ap.add_argument("--jobs", type=int, default=os.cpu_count() or 2)
     ap.add_argument("--no-sign", dest="sign", action="store_false")

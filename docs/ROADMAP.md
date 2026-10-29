@@ -32,6 +32,10 @@ P2.9 PQC algorithm rules (independent)
 ### P2.1 Rebuild the dataset with Espressif's ESP32 toolchain
 Install ESP-IDF on one laptop, run `build_dataset.py --toolchain-prefix xtensa-esp32-elf- --specs ""`.
 Fix link issues (newlib instead of picolibc; drop `libgcc_shim.c` if libgcc is complete).
+**Status (branch `phase2`): done with the Espressif GCC 16.1 toolchain, 231 images including -O3**
+([DATASET.md](DATASET.md#espressif-rebuild-datasetout_esp32-p21)). Phase I rules on it: P 1.00 / R 0.86 /
+F1 0.93, same as on the Ubuntu toolchain, with the same three gap families
+([results/esp32/RESULTS.md](../results/esp32/RESULTS.md)). Note it is a development set, not held-out.
 **Done when:** `dataset/out_esp32` holds the same 198 samples, images show windowed-ABI `entry`
 instructions, and `eval/evaluate.py --dataset dataset/out_esp32` runs. Compare Phase I rule scores
 on both toolchains.

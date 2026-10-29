@@ -71,6 +71,29 @@ Options: `--variants m36,m228`, `--opts Os`, `--profiles ota_rsa_pss`, `--no-sig
 Secure Boot test keys are generated into `dataset/out/_keys/` on first build and are not
 committed. They are throwaway keys for the dataset only.
 
+## Espressif rebuild: `dataset/out_esp32` (P2.1)
+
+Same 11 profiles and 3 mbedTLS variants, rebuilt with Espressif's windowed-ABI compiler
+(crosstool-NG `esp-16.1.0_20260609`, GCC 16.1.0, newlib; `xtensa-esp32-elf-` wrappers) at five levels
+(-O0, -O1, -O2, -Os, -O3): 165 unsigned images + 66 signed (-Os) = 231. `truth.json` records the compiler
+version. Images contain `entry`/`retw` (one image: 326 `entry`, 503 `retw`). Build on Windows without
+ESP-IDF, 3 min 10 s on 12 cores:
+
+```bash
+export PATH="<unzipped>/xtensa-esp-elf/bin:$PATH"
+./scripts/fetch_third_party.sh
+python dataset/build_dataset.py --toolchain-prefix xtensa-esp32-elf- --specs ""     --ld-extra=-Wl,--defsym=end=__heap_start --out dataset/out_esp32 --opts O0,O1,O2,Os,O3
+python eval/evaluate.py --dataset dataset/out_esp32 --out results/esp32
+```
+
+Changes needed in `build_dataset.py` (additive; the Phase I defaults are unchanged): `--ld-extra` (newlib's
+`sbrk` needs an `end` symbol, aliased to the linker script's heap start), an `O3` level (not in the default
+`--opts`), and the compiler version in `truth.json`. `libgcc_shim.c` linked without conflicts.
+
+**This is a development set, not a held-out set.** It uses the same sources and profiles as Phase I; only
+the compiler, ABI, libc and (for -O3) the optimisation level differ. Rules and models may be developed on it.
+The held-out set (P2.2) is separate and not built yet.
+
 ## Toolchain note
 
 Phase I used Ubuntu's `xtensa-lx106-elf` GCC 13.2 (ESP8266 core, call0 ABI) with picolibc,
