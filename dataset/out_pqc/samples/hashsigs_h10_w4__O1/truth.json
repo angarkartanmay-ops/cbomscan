@@ -1,0 +1,213 @@
+{
+ "present_families": [
+  "LMS"
+ ],
+ "family_ranges": {
+  "LMS": [
+   {
+    "start": 1061159200,
+    "end": 1061159220,
+    "section": ".rodata.lm_look_up_parameter_set",
+    "object": "lm_common",
+    "kind": "data"
+   },
+   {
+    "start": 1074593824,
+    "end": 1074593828,
+    "section": ".literal.hss_validate_signature",
+    "object": "hss_verify",
+    "kind": "code"
+   },
+   {
+    "start": 1074593828,
+    "end": 1074593832,
+    "section": ".literal.lm_look_up_parameter_set",
+    "object": "lm_common",
+    "kind": "code"
+   },
+   {
+    "start": 1074593924,
+    "end": 1074593972,
+    "section": ".text.validate_internal_sig",
+    "object": "hss_verify",
+    "kind": "code"
+   },
+   {
+    "start": 1074593972,
+    "end": 1074594326,
+    "section": ".text.hss_validate_signature",
+    "object": "hss_verify",
+    "kind": "code"
+   },
+   {
+    "start": 1074594328,
+    "end": 1074594390,
+    "section": ".text.lm_look_up_parameter_set",
+    "object": "lm_common",
+    "kind": "code"
+   },
+   {
+    "start": 1074594392,
+    "end": 1074594420,
+    "section": ".text.lm_get_public_key_len",
+    "object": "lm_common",
+    "kind": "code"
+   },
+   {
+    "start": 1074594420,
+    "end": 1074594466,
+    "section": ".text.lm_get_signature_len",
+    "object": "lm_common",
+    "kind": "code"
+   },
+   {
+    "start": 1074594468,
+    "end": 1074594498,
+    "section": ".text.lm_ots_get_public_key_len",
+    "object": "lm_ots_common",
+    "kind": "code"
+   },
+   {
+    "start": 1074594500,
+    "end": 1074594538,
+    "section": ".text.lm_ots_get_signature_len",
+    "object": "lm_ots_common",
+    "kind": "code"
+   },
+   {
+    "start": 1074594540,
+    "end": 1074594605,
+    "section": ".text.lm_ots_compute_checksum",
+    "object": "lm_ots_common",
+    "kind": "code"
+   },
+   {
+    "start": 1074594608,
+    "end": 1074595184,
+    "section": ".text.lm_ots_validate_signature_compute",
+    "object": "lm_ots_verify",
+    "kind": "code"
+   },
+   {
+    "start": 1074595184,
+    "end": 1074595726,
+    "section": ".text.lm_validate_signature",
+    "object": "lm_verify",
+    "kind": "code"
+   },
+   {
+    "start": 1074595728,
+    "end": 1074595784,
+    "section": ".text.hss_hash_ctx",
+    "object": "hash",
+    "kind": "code"
+   },
+   {
+    "start": 1074595784,
+    "end": 1074595810,
+    "section": ".text.hss_init_hash_context",
+    "object": "hash",
+    "kind": "code"
+   },
+   {
+    "start": 1074595812,
+    "end": 1074595832,
+    "section": ".text.hss_update_hash_context",
+    "object": "hash",
+    "kind": "code"
+   },
+   {
+    "start": 1074595832,
+    "end": 1074595858,
+    "section": ".text.hss_finalize_hash_context",
+    "object": "hash",
+    "kind": "code"
+   },
+   {
+    "start": 1074598976,
+    "end": 1074598983,
+    "section": ".text.hss_thread_init",
+    "object": "hss_thread_single",
+    "kind": "code"
+   },
+   {
+    "start": 1074598984,
+    "end": 1074598996,
+    "section": ".text.hss_thread_issue_work",
+    "object": "hss_thread_single",
+    "kind": "code"
+   },
+   {
+    "start": 1074598996,
+    "end": 1074599001,
+    "section": ".text.hss_thread_done",
+    "object": "hss_thread_single",
+    "kind": "code"
+   },
+   {
+    "start": 1074599004,
+    "end": 1074599009,
+    "section": ".text.hss_thread_before_write",
+    "object": "hss_thread_single",
+    "kind": "code"
+   },
+   {
+    "start": 1074599012,
+    "end": 1074599017,
+    "section": ".text.hss_thread_after_write",
+    "object": "hss_thread_single",
+    "kind": "code"
+   },
+   {
+    "start": 1074599020,
+    "end": 1074599104,
+    "section": ".text.lm_ots_look_up_parameter_set",
+    "object": "lm_ots_common",
+    "kind": "code"
+   },
+   {
+    "start": 1074599104,
+    "end": 1074599155,
+    "section": ".text.lm_ots_coef",
+    "object": "lm_ots_common",
+    "kind": "code"
+   },
+   {
+    "start": 1074599156,
+    "end": 1074599198,
+    "section": ".text.put_bigendian",
+    "object": "endian",
+    "kind": "code"
+   },
+   {
+    "start": 1074599200,
+    "end": 1074599244,
+    "section": ".text.get_bigendian",
+    "object": "endian",
+    "kind": "code"
+   }
+  ]
+ },
+ "family_code_bytes": {
+  "LMS": 2180
+ },
+ "sample": "hashsigs_h10_w4__O1",
+ "impl": "hashsigs_h10_w4",
+ "impl_label": "hash-sigs LMS verify, embedded key H10/W4",
+ "opt": "O1",
+ "secure_boot": "none",
+ "toolchain": "xtensa-esp-elf-gcc.exe (crosstool-NG esp-16.1.0_20260609) 16.1.0",
+ "abi": "windowed",
+ "also_linked_unscored_here": [
+  "SHA256"
+ ],
+ "reference_tables": [
+  {
+   "symbol": "lms_pub_h10_w4",
+   "address": 1061159480,
+   "size": 60
+  }
+ ],
+ "bin_sha256": "a75daaaa707cc08876d8488167bb713384f9f0094c058ff7175b084ff33fb212",
+ "bin_size": 71552
+}

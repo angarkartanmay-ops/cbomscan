@@ -18,8 +18,13 @@ PQC = ROOT / "dataset" / "out_pqc" / "samples"
 PHASE1 = ROOT / "dataset" / "out" / "samples"
 
 
-def _samples():
+def _all_samples():
     return sorted(PQC.iterdir()) if PQC.exists() else []
+
+
+def _samples():
+    """ML-KEM / ML-DSA images (zeta-table rules); LMS images have their own tests below."""
+    return [d for d in _all_samples() if not d.name.startswith("hashsigs")]
 
 
 def test_zeta_derivation_matches_published_values():
@@ -76,3 +81,87 @@ def test_no_pqc_evidence_on_any_phase1_image():
     for d in sorted(PHASE1.iterdir()):
         res = scan(load(d / "firmware.bin"))
         assert [e.rule for e in res.evidence if e.family in PQC_FAMILIES] == [], d.name
+
+
+# ---- LMS / HSS (RFC 8554) -----------------------------------------------------------------------
+
+import functools
+
+
+@functools.lru_cache(maxsize=None)
+def _expected_lms_key(name):
+    gen = _gen_lms_module()
+    lt, ot = next((lt, ot) for n, lt, ot in gen.SETS if n == name)
+    I = gen.H(b"cbomscan-lms-I-" + name.encode())[:16]
+    seed = gen.H(b"cbomscan-lms-seed-" + name.encode())
+    return lt, ot, gen.u32(1) + gen.lms_public_key(lt, ot, I, seed)
+
+
+@functools.lru_cache(maxsize=None)
+def _gen_lms_module():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("gen_lms_keys", ROOT / "dataset" / "gen_lms_keys.py")
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    return m
+
+
+def _lms_samples(embedded=True):
+    return [d for d in _all_samples() if d.name.startswith("hashsigs") and ("nokey" not in d.name) == embedded]
+
+
+def test_lms_type_codes_match_hash_sigs_source():
+    hdr = ROOT / "third_party" / "hash-sigs" / "common_defs.h"
+    if not hdr.exists():
+        pytest.skip("third_party/hash-sigs not fetched")
+    import re
+    defs = {m.group(1): int(m.group(2), 16)
+            for m in re.finditer(r"#define\s+((?:LMS|LMOTS)_SHA256_N32_\w+)\s+(0x[0-9a-fA-F]+)", hdr.read_text())}
+    assert {v for k, v in defs.items() if k.startswith("LMS_")} == set(S.LMS_TYPES)
+    assert {v for k, v in defs.items() if k.startswith("LMOTS_")} == set(S.LMOTS_TYPES)
+    for k, v in defs.items():     # names: hash-sigs "LMS_SHA256_N32_H10" == RFC 8554 "LMS_SHA256_M32_H10"
+        table = S.LMS_TYPES if k.startswith("LMS_") else S.LMOTS_TYPES
+        assert table[v].split("_")[-1] == k.split("_")[-1]
+
+
+@pytest.mark.skipif(not _lms_samples(), reason="LMS images not built")
+@pytest.mark.parametrize("d", _lms_samples(), ids=lambda d: d.name)
+def test_lms_embedded_key_found_and_structure_matches_rfc8554(d):
+    t = json.loads((d / "truth.json").read_text())
+    fw = load(d / "firmware.bin")
+    ref = t["reference_tables"][0]
+    seg = fw.segment_at(ref["address"])
+    raw = seg.data[ref["address"] - seg.addr:][:ref["size"]]
+    name = d.name.split("__")[0].replace("hashsigs_", "")
+    lt, ot, expected = _expected_lms_key(name)
+    assert raw == expected   # image bytes == the RFC 8554 key our generator produced
+    res = scan(fw)
+    assert "LMS" in present_families(res, families=PQC_FAMILIES)
+    ev = res.findings["LMS"].evidence[0]
+    assert S.LMS_TYPES[lt] in ev.detail and S.LMOTS_TYPES[ot] in ev.detail and ev.address == ref["address"]
+    bom = build_cbom(res)
+    assert validate(bom) == []
+    comp = next(c for c in bom["components"] if c["name"] == FAMILIES["LMS"].name)
+    props = {p["name"]: p["value"] for p in comp["properties"]}
+    assert props["cbomscan:quantumVulnerable"] == "false" and props["cbomscan:postQuantum"] == "true"
+
+
+@pytest.mark.skipif(not _lms_samples(embedded=False), reason="LMS images not built")
+@pytest.mark.parametrize("d", _lms_samples(embedded=False), ids=lambda d: d.name)
+def test_lms_verifier_without_embedded_key_is_a_known_miss(d):
+    """Pins the documented blind spot: verifier code is linked but no key structure is in the image."""
+    t = json.loads((d / "truth.json").read_text())
+    assert t["present_families"] == ["LMS"]
+    assert "LMS" not in present_families(scan(load(d / "firmware.bin")), families=PQC_FAMILIES)
+
+
+def test_lms_structure_rule_rejects_low_entropy_and_unknown_codes():
+    from types import SimpleNamespace
+    from cbomscan.detect import _scan_lms
+    sig = next(s for s in S.SIGNATURES if s.id == "lms.pubkey")
+    good = bytes.fromhex("00000006" "00000003") + bytes(range(7, 55))
+    mk = lambda data: SimpleNamespace(segments=[SimpleNamespace(data=data, addr=0x3F400000, region="DROM")])
+    assert _scan_lms(mk(b"\xAA" * 8 + good + b"\xAA" * 8), sig)
+    assert not _scan_lms(mk(bytes.fromhex("00000006" "00000003") + b"\x00" * 48), sig)           # zeros
+    assert not _scan_lms(mk(bytes.fromhex("0000000A" "00000003") + bytes(range(7, 55))), sig)    # type 10 unassigned
+    assert not _scan_lms(mk(bytes.fromhex("00000006" "00000005") + bytes(range(7, 55))), sig)    # OTS type 5 unassigned

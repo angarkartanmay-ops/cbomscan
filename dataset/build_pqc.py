@@ -35,6 +35,23 @@ SUP = DS / "support"
 OPTS = {"O0": "-O0", "O1": "-O1", "O2": "-O2", "Os": "-Os", "O3": "-O3"}
 
 PQC_COMMON = TP / "PQClean/common"
+HS = TP / "hash-sigs"
+HS_VERIFY = ["hss_verify", "hss_verify_inc", "hss_common", "hss_thread_single", "hss_zeroize", "lm_common",
+             "lm_ots_common", "lm_ots_verify", "lm_verify", "endian", "hash", "sha256"]
+
+
+MBED = TP / "mbedtls-3.6.7"
+
+
+def _hashsigs(label, defs):
+    # SHA-256 comes from mbedTLS through hash-sigs' EXT_SHA256_H hook (its default needs OpenSSL).
+    return {"family": "LMS", "label": label, "src": [HS / f"{n}.c" for n in HS_VERIFY],
+            "common": [MBED / "library/sha256.c", MBED / "library/platform_util.c"],
+            "inc": [HS, SUP / "pqc", MBED / "include", MBED / "library"],
+            "defs": defs + ['-DEXT_SHA256_H="ext_sha256.h"',
+                            f'-DMBEDTLS_CONFIG_FILE="{(DS / "configs/mbedtls_36_config.h").as_posix()}"'],
+            "main": SUP / "pqc/main_hashsigs.c", "stubs": [], "also_linked": ["SHA256"]}
+
 
 IMPLS = {
     "pqclean_mlkem768": {
@@ -61,9 +78,16 @@ IMPLS = {
         "defs": ["-DMLD_CONFIG_PARAMETER_SET=65", "-DMLD_CONFIG_NO_RANDOMIZED_API"],
         "main": SUP / "pqc/main_mldsa_native65.c", "stubs": [],
     },
+    # Cisco hash-sigs LMS/HSS verifier (RFC 8554), verify-only; key embedded in the image (one per parameter set)
+    "hashsigs_h5_w8": _hashsigs("hash-sigs LMS verify, embedded key H5/W8", ["-DLMS_KEY=lms_pub_h5_w8"]),
+    "hashsigs_h5_w1": _hashsigs("hash-sigs LMS verify, embedded key H5/W1", ["-DLMS_KEY=lms_pub_h5_w1"]),
+    "hashsigs_h5_w2": _hashsigs("hash-sigs LMS verify, embedded key H5/W2", ["-DLMS_KEY=lms_pub_h5_w2"]),
+    "hashsigs_h10_w4": _hashsigs("hash-sigs LMS verify, embedded key H10/W4", ["-DLMS_KEY=lms_pub_h10_w4"]),
+    # same verifier, key read from flash at run time: NO key structure in the image (known blind spot of the rules)
+    "hashsigs_nokey": _hashsigs("hash-sigs LMS verify, key read at run time (nothing embedded)", ["-DLMS_NOKEY"]),
 }
 
-TABLE_SIZES = {"MLKEM": 128 * 2, "MLDSA": 256 * 4}  # bytes of the NTT zeta table (int16 x128 / int32 x256)
+TABLE_SIZES = {"MLKEM": 128 * 2, "MLDSA": 256 * 4, "LMS": 60}  # bytes: zeta table int16x128 / int32x256; HSS public key
 
 
 def run(cmd, cwd=None):
@@ -122,7 +146,8 @@ def zeta_tables(elf_path, family):
         elf = ELFFile(f)
         symtab = elf.get_section_by_name(".symtab")
         for sym in symtab.iter_symbols():
-            if "zeta" in sym.name.lower() and sym["st_info"]["type"] == "STT_OBJECT" and sym["st_size"] == want:
+            is_ref = sym.name.startswith("lms_pub_") if family == "LMS" else "zeta" in sym.name.lower()
+            if is_ref and sym["st_info"]["type"] == "STT_OBJECT" and sym["st_size"] == want:
                 out.append({"symbol": sym.name, "address": sym["st_value"], "size": sym["st_size"]})
     return out
 
@@ -174,6 +199,7 @@ class Builder:
         ver = run([self.cc, "--version"]).splitlines()[0]
         truth.update({"sample": sample, "impl": name, "impl_label": impl["label"], "opt": opt,
                       "secure_boot": "none", "toolchain": ver, "abi": "windowed",
+                      "also_linked_unscored_here": impl.get("also_linked", []),
                       "reference_tables": zeta_tables(elf, impl["family"]),
                       "bin_sha256": hashlib.sha256(binf.read_bytes()).hexdigest(), "bin_size": binf.stat().st_size})
         (sdir / "truth.json").write_text(json.dumps(truth, indent=1))
@@ -189,13 +215,15 @@ def main():
     ap.add_argument("--rebuild", action="store_true")
     a = ap.parse_args()
     b = Builder(a)
-    index = []
     for name in a.impls.split(","):
         for opt in a.opts.split(","):
             t = b.build(name, opt)
-            index.append({k: t[k] for k in ("sample", "impl", "opt", "secure_boot", "present_families", "bin_size")})
             tabs = ", ".join(f"{x['symbol']}@0x{x['address']:x}" for x in t["reference_tables"]) or "NO TABLE SYMBOL"
             print(f"built {t['sample']:28s} {t['bin_size']:>8d} B  {','.join(t['present_families']) or '-'}  [{tabs}]")
+    index = []
+    for tj in sorted((b.out / "samples").glob("*/truth.json")):   # index covers every sample on disk, not just this run
+        t = json.loads(tj.read_text())
+        index.append({k: t[k] for k in ("sample", "impl", "opt", "secure_boot", "present_families", "bin_size")})
     (b.out / "index.json").write_text(json.dumps(index, indent=1))
     print(f"{len(index)} samples -> {b.out / 'index.json'}")
 

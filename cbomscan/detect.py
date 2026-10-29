@@ -141,7 +141,7 @@ def _scan_lms(fw, sig):
             lms_t, ots_t = seg.data[o + 3], seg.data[o + 7]
             hss = o >= 4 and seg.data[o - 4:o] == b"\x00\x00\x00\x01"
             out.append(Evidence(sig.family, sig.id, sig.group, "structure-match", sig.confidence,
-                                seg.addr + o, seg.region,
+                                seg.addr + o - (4 if hss else 0), seg.region,
                                 f"{sig.description}: {S.LMS_TYPES[lms_t]} + {S.LMOTS_TYPES[ots_t]}"
                                 f"{' (HSS, 1 level)' if hss else ''}", f"{S.LMS_TYPES[lms_t]}/{S.LMOTS_TYPES[ots_t]}"))
             return out
