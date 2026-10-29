@@ -1,0 +1,1342 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:168e8434-0bca-404c-9a03-1d0b56f52932",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-29T17:03:03+00:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "cbomscan",
+          "version": "0.1.0"
+        }
+      ]
+    },
+    "component": {
+      "type": "firmware",
+      "bom-ref": "firmware",
+      "name": "full_stack",
+      "version": "1.0.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ca85cc7c33505f5836c1950eaae3546462454bd5a60d5e99c39b5e540fd4a0b5"
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "cbomscan:container",
+        "value": "app-image"
+      },
+      {
+        "name": "cbomscan:chip",
+        "value": "ESP32"
+      },
+      {
+        "name": "cbomscan:segments",
+        "value": "DROM@0x3f400020+26788, DRAM@0x3ffb0000+8, IRAM@0x40080000+60, IROM@0x400d0020+94216"
+      },
+      {
+        "name": "cbomscan:ruleGroups",
+        "value": "constants,oid,keys,strings,names,hw,secure-boot"
+      },
+      {
+        "name": "cbomscan:threshold",
+        "value": "0.5"
+      },
+      {
+        "name": "cbomscan:pqcCostSource",
+        "value": "https://developer.espressif.com/blog/2026/10/esp32-post-quantum-cryptography/"
+      },
+      {
+        "name": "cbomscan:appVersion",
+        "value": "1.0.0"
+      },
+      {
+        "name": "cbomscan:idfVersion",
+        "value": "v6.0-sim"
+      },
+      {
+        "name": "cbomscan:platformNote",
+        "value": "Espressif esp-pqc needs ESP-IDF v6.0 or later."
+      },
+      {
+        "name": "cbomscan:platformNote",
+        "value": "Post-quantum bootloader verification in esp-pqc supports ESP32-C3, ESP32-C5 and ESP32-C6 only; the ROM verifier on every current chip is classical (RSA-PSS / ECDSA) and cannot be patched."
+      },
+      {
+        "name": "cbomscan:platformNote",
+        "value": "Hybrid Secure Boot keeps the ROM's classical check of the 2nd-stage bootloader; the post-quantum check runs in the updatable bootloader."
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-algorithm-ffdh",
+      "name": "Finite-field Diffie-Hellman",
+      "description": "Finite-field Diffie-Hellman detected by binary analysis (confidence 0.92)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "executionEnvironment": "software-plain-ram",
+          "implementationPlatform": "other",
+          "cryptoFunctions": [
+            "keyderive"
+          ],
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "identity": [
+          {
+            "field": "name",
+            "confidence": 0.92,
+            "concludedValue": "Finite-field Diffie-Hellman",
+            "methods": [
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.92,
+                "value": "constant-match:ffdh.modp"
+              }
+            ]
+          }
+        ],
+        "occurrences": [
+          {
+            "location": "DROM:0x3f40674a",
+            "additionalContext": "[ffdh.modp] RFC 2409/3526 MODP group prime (prefix); 1/3 pattern(s) matched; referenced from code at 0x400d0624"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cbomscan:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "cbomscan:risk",
+          "value": "critical"
+        },
+        {
+          "name": "cbomscan:migrationPriority",
+          "value": "1"
+        },
+        {
+          "name": "cbomscan:priorityReason",
+          "value": "Key agreement: traffic recorded today can be decrypted later (harvest now, decrypt later)."
+        },
+        {
+          "name": "cbomscan:classicalStatus",
+          "value": "approved until 2030 (NIST IR 8547 draft)"
+        },
+        {
+          "name": "cbomscan:recommendedReplacement",
+          "value": "ML-KEM-768 (FIPS 203), hybrid during transition."
+        },
+        {
+          "name": "cbomscan:executionObserved",
+          "value": "software"
+        },
+        {
+          "name": "cbomscan:confidence",
+          "value": "0.92"
+        },
+        {
+          "name": "cbomscan:note",
+          "value": "Broken by Shor's algorithm (discrete log)."
+        },
+        {
+          "name": "cbomscan:pqcCostNote",
+          "value": "X25519MLKEM768 key share 1216 B (vs 32 B for X25519); ~300 ms hybrid TLS 1.3 handshake on ESP32-C5 (local network). Larger mbedTLS I/O buffers needed for ~1.9 KB keys and ~7.5 KB certificate chains."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-algorithm-ecc",
+      "name": "Elliptic-curve arithmetic",
+      "description": "Elliptic-curve arithmetic detected by binary analysis (confidence 0.99)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other",
+          "executionEnvironment": "software-plain-ram",
+          "implementationPlatform": "other",
+          "cryptoFunctions": [
+            "other"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "curve": "Curve25519",
+          "parameterSetIdentifier": "Curve25519,P-256,P-384"
+        }
+      },
+      "evidence": {
+        "identity": [
+          {
+            "field": "name",
+            "confidence": 0.99,
+            "concludedValue": "Elliptic-curve arithmetic",
+            "methods": [
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.99,
+                "value": "constant-match:ecc.p256"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.99,
+                "value": "constant-match:ecc.p384"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.92,
+                "value": "constant-match:ecc.x25519_order"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.85,
+                "value": "embedded-key-material:key.ec"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.85,
+                "value": "embedded-key-material:key.ec"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.77,
+                "value": "constant-match:ecc.x25519_p"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.5,
+                "value": "literal-pool-words:ecc.x25519_a24"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.42,
+                "value": "oid:oid.ec_pubkey"
+              }
+            ]
+          }
+        ],
+        "occurrences": [
+          {
+            "location": "DROM:0x3f405660",
+            "additionalContext": "[ecc.p256] NIST P-256 (secp256r1) domain parameters; 4/8 pattern(s) matched; referenced from code at 0x400d03f0, 0x400d03f4, 0x400d0404"
+          },
+          {
+            "location": "DROM:0x3f405020",
+            "additionalContext": "[ecc.p384] NIST P-384 (secp384r1) domain parameters; 2/4 pattern(s) matched; referenced from code at 0x400d0408, 0x400d0410, 0x400d0414"
+          },
+          {
+            "location": "DROM:0x3f404050",
+            "additionalContext": "[ecc.x25519_order] Curve25519 group order (low part); 1/2 pattern(s) matched; referenced from code at 0x400d0424, 0x400d042c, 0x400d0430"
+          },
+          {
+            "location": "DROM:0x3f4066ee",
+            "additionalContext": "[key.ec] embedded EC P-256 public key (256-bit, DER SPKI)"
+          },
+          {
+            "location": "DROM:0x3f40684a",
+            "additionalContext": "[key.ec] embedded EC P-384 public key (384-bit, DER SPKI)"
+          },
+          {
+            "location": "DROM:0x3f404070",
+            "additionalContext": "[ecc.x25519_p] Curve25519 field prime 2^255-19; 1/2 pattern(s) matched; referenced from code at 0x400d0424, 0x400d042c"
+          },
+          {
+            "location": "IROM:0x400d0438",
+            "additionalContext": "[ecc.x25519_a24] Curve25519 Montgomery ladder constant a24; 1/2 distinct constants found"
+          },
+          {
+            "location": "DROM:0x3f402f6f",
+            "additionalContext": "[oid.ec_pubkey] id-ecPublicKey OID (1.2.840.10045.2.1); 1/1 pattern(s) matched; referenced from code at 0x400d0618"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cbomscan:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "cbomscan:risk",
+          "value": "critical"
+        },
+        {
+          "name": "cbomscan:migrationPriority",
+          "value": "2"
+        },
+        {
+          "name": "cbomscan:priorityReason",
+          "value": "Curve arithmetic present; operation not identified, treat as key agreement until shown otherwise."
+        },
+        {
+          "name": "cbomscan:classicalStatus",
+          "value": "approved until 2030 (NIST IR 8547 draft)"
+        },
+        {
+          "name": "cbomscan:recommendedReplacement",
+          "value": "Identify the operation (ECDSA or ECDH) and migrate per that row."
+        },
+        {
+          "name": "cbomscan:executionObserved",
+          "value": "software"
+        },
+        {
+          "name": "cbomscan:confidence",
+          "value": "0.99"
+        },
+        {
+          "name": "cbomscan:note",
+          "value": "Curve arithmetic present; the operation using it is not separated by Phase I rules."
+        },
+        {
+          "name": "cbomscan:pqcCostNote",
+          "value": "ML-DSA-65 sizes: public key 1952 B, signature 3309 B (vs ~64 B for ECDSA-P256). Verify ~22 ms (FreeRTOS task) / ~44 ms (2nd-stage bootloader), ESP32-C5 @ 80 MHz."
+        },
+        {
+          "name": "cbomscan:pqcCostNote",
+          "value": "X25519MLKEM768 key share 1216 B (vs 32 B for X25519); ~300 ms hybrid TLS 1.3 handshake on ESP32-C5 (local network). Larger mbedTLS I/O buffers needed for ~1.9 KB keys and ~7.5 KB certificate chains."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-algorithm-rsa",
+      "name": "RSA",
+      "description": "RSA detected by binary analysis (confidence 0.99)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "executionEnvironment": "software-plain-ram",
+          "implementationPlatform": "other",
+          "cryptoFunctions": [
+            "sign",
+            "verify",
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "parameterSetIdentifier": "PSS"
+        }
+      },
+      "evidence": {
+        "identity": [
+          {
+            "field": "name",
+            "confidence": 0.99,
+            "concludedValue": "RSA",
+            "methods": [
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.99,
+                "value": "secure-boot-signature-block:sbv2.rsa"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.85,
+                "value": "embedded-key-material:key.rsa"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.47,
+                "value": "oid:oid.rsa"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.45,
+                "value": "oid:oid.rsa_pss"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.4,
+                "value": "algorithm-name-string:name.rsa"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.35,
+                "value": "string-match:str.begin_rsa_public_key"
+              }
+            ]
+          }
+        ],
+        "occurrences": [
+          {
+            "location": "image-trailer:trailer",
+            "additionalContext": "[sbv2.rsa] Secure Boot V2 signature block: RSA PSS public key (3072-bit, Secure Boot V2 signature block, block 0, CRC ok)"
+          },
+          {
+            "location": "DROM:0x3f406548",
+            "additionalContext": "[key.rsa] embedded RSA public key (3072-bit, DER SPKI)"
+          },
+          {
+            "location": "DROM:0x3f402f53",
+            "additionalContext": "[oid.rsa] rsaEncryption OID (1.2.840.113549.1.1.1); 1/1 pattern(s) matched; referenced from code at 0x400d0318, 0x400d0618"
+          },
+          {
+            "location": "DROM:0x3f4031bc",
+            "additionalContext": "[oid.rsa_pss] RSASSA-PSS OID (1.2.840.113549.1.1.10); 1/1 pattern(s) matched"
+          },
+          {
+            "location": "DROM:0x3f402f6b",
+            "additionalContext": "[name.rsa] algorithm name string 'RSA' (library metadata table)"
+          },
+          {
+            "location": "DROM:0x3f4037cb",
+            "additionalContext": "[str.begin_rsa_public_key] string '-----BEGIN RSA PUBLIC KEY-----'"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cbomscan:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "cbomscan:risk",
+          "value": "critical"
+        },
+        {
+          "name": "cbomscan:migrationPriority",
+          "value": "2"
+        },
+        {
+          "name": "cbomscan:priorityReason",
+          "value": "Signatures / key transport: forgery of firmware or identity once a quantum computer exists; RSA key transport is also exposed to harvest now, decrypt later."
+        },
+        {
+          "name": "cbomscan:classicalStatus",
+          "value": "approved until 2030 (NIST IR 8547 draft)"
+        },
+        {
+          "name": "cbomscan:recommendedReplacement",
+          "value": "Signatures: ML-DSA-65 (FIPS 204), or LMS/XMSS (SP 800-208) for firmware signing, hybrid with RSA during transition. Key transport: ML-KEM-768 (FIPS 203)."
+        },
+        {
+          "name": "cbomscan:executionObserved",
+          "value": "software"
+        },
+        {
+          "name": "cbomscan:confidence",
+          "value": "0.99"
+        },
+        {
+          "name": "cbomscan:note",
+          "value": "Broken by Shor's algorithm (integer factoring)."
+        },
+        {
+          "name": "cbomscan:pqcCostNote",
+          "value": "ML-DSA-65 sizes: public key 1952 B, signature 3309 B (vs ~64 B for ECDSA-P256). Verify ~22 ms (FreeRTOS task) / ~44 ms (2nd-stage bootloader), ESP32-C5 @ 80 MHz."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-algorithm-ecdsa",
+      "name": "ECDSA",
+      "description": "ECDSA detected by binary analysis (confidence 0.67)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "executionEnvironment": "software-plain-ram",
+          "implementationPlatform": "other",
+          "cryptoFunctions": [
+            "sign",
+            "verify"
+          ],
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "identity": [
+          {
+            "field": "name",
+            "confidence": 0.67,
+            "concludedValue": "ECDSA",
+            "methods": [
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.45,
+                "value": "oid:oid.ecdsa"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.4,
+                "value": "algorithm-name-string:name.ecdsa"
+              }
+            ]
+          }
+        ],
+        "occurrences": [
+          {
+            "location": "DROM:0x3f403135",
+            "additionalContext": "[oid.ecdsa] ecdsa-with-SHA256/384 OID; 2/2 pattern(s) matched"
+          },
+          {
+            "location": "DROM:0x3f40379f",
+            "additionalContext": "[name.ecdsa] algorithm name string 'ECDSA' (library metadata table)"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cbomscan:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "cbomscan:risk",
+          "value": "critical"
+        },
+        {
+          "name": "cbomscan:migrationPriority",
+          "value": "2"
+        },
+        {
+          "name": "cbomscan:priorityReason",
+          "value": "Signatures: forgery of firmware or identity once a quantum computer exists."
+        },
+        {
+          "name": "cbomscan:classicalStatus",
+          "value": "approved until 2030 (NIST IR 8547 draft)"
+        },
+        {
+          "name": "cbomscan:recommendedReplacement",
+          "value": "ML-DSA-44/65 (FIPS 204), hybrid ECDSA+ML-DSA during transition; LMS/XMSS for firmware signing."
+        },
+        {
+          "name": "cbomscan:executionObserved",
+          "value": "software"
+        },
+        {
+          "name": "cbomscan:confidence",
+          "value": "0.67"
+        },
+        {
+          "name": "cbomscan:note",
+          "value": "Broken by Shor's algorithm (elliptic-curve discrete log)."
+        },
+        {
+          "name": "cbomscan:pqcCostNote",
+          "value": "ML-DSA-65 sizes: public key 1952 B, signature 3309 B (vs ~64 B for ECDSA-P256). Verify ~22 ms (FreeRTOS task) / ~44 ms (2nd-stage bootloader), ESP32-C5 @ 80 MHz."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-algorithm-md5",
+      "name": "MD5",
+      "description": "MD5 detected by binary analysis (confidence 0.99)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "executionEnvironment": "software-plain-ram",
+          "implementationPlatform": "other",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "identity": [
+          {
+            "field": "name",
+            "confidence": 0.99,
+            "concludedValue": "MD5",
+            "methods": [
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.99,
+                "value": "literal-pool-words:md5.t"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.97,
+                "value": "constant-match:md5.t_table"
+              }
+            ]
+          }
+        ],
+        "occurrences": [
+          {
+            "location": "IROM:0x400d017c",
+            "additionalContext": "[md5.t] MD5 sine-derived round constants (as literal-pool or table words); 64/64 distinct constants found"
+          },
+          {
+            "location": "IROM:0x400d017c",
+            "additionalContext": "[md5.t_table] MD5 constant table; 1/1 pattern(s) matched"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cbomscan:quantumVulnerable",
+          "value": "false"
+        },
+        {
+          "name": "cbomscan:risk",
+          "value": "high"
+        },
+        {
+          "name": "cbomscan:migrationPriority",
+          "value": "3"
+        },
+        {
+          "name": "cbomscan:priorityReason",
+          "value": "Classically broken; fix regardless of quantum."
+        },
+        {
+          "name": "cbomscan:classicalStatus",
+          "value": "broken (collisions)"
+        },
+        {
+          "name": "cbomscan:recommendedReplacement",
+          "value": "Replace with SHA-256 or SHA-3 (classically broken)."
+        },
+        {
+          "name": "cbomscan:executionObserved",
+          "value": "software"
+        },
+        {
+          "name": "cbomscan:confidence",
+          "value": "0.99"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-algorithm-des",
+      "name": "DES / 3DES",
+      "description": "DES / 3DES detected by binary analysis (confidence 0.98)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "executionEnvironment": "software-plain-ram",
+          "implementationPlatform": "other",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "identity": [
+          {
+            "field": "name",
+            "confidence": 0.98,
+            "concludedValue": "DES / 3DES",
+            "methods": [
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.97,
+                "value": "constant-match:des.sp_boxes"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.4,
+                "value": "algorithm-name-string:name.des"
+              }
+            ]
+          }
+        ],
+        "occurrences": [
+          {
+            "location": "DROM:0x3f402ac8",
+            "additionalContext": "[des.sp_boxes] DES combined S/P tables (d3des layout); 8/8 pattern(s) matched; referenced from code at 0x400d0088"
+          },
+          {
+            "location": "DROM:0x3f402cc7",
+            "additionalContext": "[name.des] algorithm name string 'DES-EDE3-CBC' (library metadata table)"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cbomscan:quantumVulnerable",
+          "value": "false"
+        },
+        {
+          "name": "cbomscan:risk",
+          "value": "high"
+        },
+        {
+          "name": "cbomscan:migrationPriority",
+          "value": "3"
+        },
+        {
+          "name": "cbomscan:priorityReason",
+          "value": "Classically weak; fix regardless of quantum."
+        },
+        {
+          "name": "cbomscan:classicalStatus",
+          "value": "deprecated (classically weak)"
+        },
+        {
+          "name": "cbomscan:recommendedReplacement",
+          "value": "Replace with AES-256 (classical weakness, independent of quantum)."
+        },
+        {
+          "name": "cbomscan:executionObserved",
+          "value": "software"
+        },
+        {
+          "name": "cbomscan:confidence",
+          "value": "0.98"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-algorithm-sha1",
+      "name": "SHA-1",
+      "description": "SHA-1 detected by binary analysis (confidence 0.85)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "executionEnvironment": "software-plain-ram",
+          "implementationPlatform": "other",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "evidence": {
+        "identity": [
+          {
+            "field": "name",
+            "confidence": 0.85,
+            "concludedValue": "SHA-1",
+            "methods": [
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.85,
+                "value": "literal-pool-words:sha1.k"
+              }
+            ]
+          }
+        ],
+        "occurrences": [
+          {
+            "location": "IROM:0x400d027c",
+            "additionalContext": "[sha1.k] SHA-1 round constants and fifth IV word; 5/5 distinct constants found"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cbomscan:quantumVulnerable",
+          "value": "false"
+        },
+        {
+          "name": "cbomscan:risk",
+          "value": "high"
+        },
+        {
+          "name": "cbomscan:migrationPriority",
+          "value": "3"
+        },
+        {
+          "name": "cbomscan:priorityReason",
+          "value": "Classically broken for signatures; fix regardless of quantum."
+        },
+        {
+          "name": "cbomscan:classicalStatus",
+          "value": "deprecated (collisions)"
+        },
+        {
+          "name": "cbomscan:recommendedReplacement",
+          "value": "Replace with SHA-256 or SHA-3 (classically broken for signatures)."
+        },
+        {
+          "name": "cbomscan:executionObserved",
+          "value": "software"
+        },
+        {
+          "name": "cbomscan:confidence",
+          "value": "0.85"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-algorithm-aes",
+      "name": "AES",
+      "description": "AES detected by binary analysis (confidence 0.99)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "executionEnvironment": "software-plain-ram",
+          "implementationPlatform": "other",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "identity": [
+          {
+            "field": "name",
+            "confidence": 0.99,
+            "concludedValue": "AES",
+            "methods": [
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.97,
+                "value": "constant-match:aes.sbox"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.97,
+                "value": "constant-match:aes.inv_sbox"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.97,
+                "value": "constant-match:aes.te_table"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.97,
+                "value": "constant-match:aes.td_table"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.85,
+                "value": "peripheral-register-reference:hw.aes"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.72,
+                "value": "constant-match:aes.rcon"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.4,
+                "value": "algorithm-name-string:name.aes"
+              }
+            ]
+          }
+        ],
+        "occurrences": [
+          {
+            "location": "DROM:0x3f402248",
+            "additionalContext": "[aes.sbox] AES forward S-box; 1/1 pattern(s) matched; referenced from code at 0x400d002c"
+          },
+          {
+            "location": "DROM:0x3f401148",
+            "additionalContext": "[aes.inv_sbox] AES inverse S-box; 1/1 pattern(s) matched; referenced from code at 0x400d0050"
+          },
+          {
+            "location": "DROM:0x3f401e48",
+            "additionalContext": "[aes.te_table] AES encryption T-table (Te/FT); 2/4 pattern(s) matched; referenced from code at 0x400d0040"
+          },
+          {
+            "location": "DROM:0x3f400d48",
+            "additionalContext": "[aes.td_table] AES decryption T-table (Td/RT); 2/4 pattern(s) matched; referenced from code at 0x400d0030"
+          },
+          {
+            "location": "IROM:0x400d05dc",
+            "additionalContext": "[hw.aes] ESP32 AES accelerator registers: 7 code references to 7 register(s) (0x3ff01000, 0x3ff01004, 0x3ff01008, 0x3ff01010...)"
+          },
+          {
+            "location": "DROM:0x3f400120",
+            "additionalContext": "[aes.rcon] AES key-schedule round constants; 1/2 pattern(s) matched; referenced from code at 0x400d0028, 0x400d0034"
+          },
+          {
+            "location": "DROM:0x3f402d09",
+            "additionalContext": "[name.aes] algorithm name string 'AES-256-GCM' (library metadata table)"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cbomscan:quantumVulnerable",
+          "value": "false"
+        },
+        {
+          "name": "cbomscan:risk",
+          "value": "low"
+        },
+        {
+          "name": "cbomscan:migrationPriority",
+          "value": "4"
+        },
+        {
+          "name": "cbomscan:priorityReason",
+          "value": "Symmetric: Grover only halves key strength; prefer 256-bit keys."
+        },
+        {
+          "name": "cbomscan:classicalStatus",
+          "value": "approved"
+        },
+        {
+          "name": "cbomscan:recommendedReplacement",
+          "value": "Keep AES; prefer AES-256 for data that must stay secret past ~2035 (Grover margin)."
+        },
+        {
+          "name": "cbomscan:executionObserved",
+          "value": "software+hardware"
+        },
+        {
+          "name": "cbomscan:confidence",
+          "value": "0.99"
+        },
+        {
+          "name": "cbomscan:note",
+          "value": "Level shown is the AES-128 lower bound; key size is not recovered from the binary in Phase I."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-algorithm-sha256",
+      "name": "SHA-256",
+      "description": "SHA-256 detected by binary analysis (confidence 0.99)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "executionEnvironment": "software-plain-ram",
+          "implementationPlatform": "other",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 2
+        }
+      },
+      "evidence": {
+        "identity": [
+          {
+            "field": "name",
+            "confidence": 0.99,
+            "concludedValue": "SHA-256",
+            "methods": [
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.99,
+                "value": "constant-match:sha256.k"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.85,
+                "value": "peripheral-register-reference:hw.sha256"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.25,
+                "value": "literal-pool-words:sha256.iv"
+              }
+            ]
+          }
+        ],
+        "occurrences": [
+          {
+            "location": "DROM:0x3f403bc8",
+            "additionalContext": "[sha256.k] SHA-256 round-constant table K[0..31]; 1/2 pattern(s) matched; referenced from code at 0x400d02d0"
+          },
+          {
+            "location": "IROM:0x400d05c0",
+            "additionalContext": "[hw.sha256] ESP32 SHA accelerator registers: 7 code references to 7 register(s) (0x3ff03000, 0x3ff03020, 0x3ff03040, 0x3ff03090...)"
+          },
+          {
+            "location": "IROM:0x400d0290",
+            "additionalContext": "[sha256.iv] SHA-256/224 initial hash values; 16/16 distinct constants found; discounted: every SHA-256/224 IV word is also half of a SHA-512/384 IV, and SHA-512 is present"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cbomscan:quantumVulnerable",
+          "value": "false"
+        },
+        {
+          "name": "cbomscan:risk",
+          "value": "low"
+        },
+        {
+          "name": "cbomscan:migrationPriority",
+          "value": "5"
+        },
+        {
+          "name": "cbomscan:priorityReason",
+          "value": "No action (SHA-384 for CNSA 2.0)."
+        },
+        {
+          "name": "cbomscan:classicalStatus",
+          "value": "approved"
+        },
+        {
+          "name": "cbomscan:recommendedReplacement",
+          "value": "Keep; SHA-384 if CNSA 2.0 compliance is required."
+        },
+        {
+          "name": "cbomscan:executionObserved",
+          "value": "software+hardware"
+        },
+        {
+          "name": "cbomscan:confidence",
+          "value": "0.99"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-algorithm-sha512",
+      "name": "SHA-384/512",
+      "description": "SHA-384/512 detected by binary analysis (confidence 0.99)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "executionEnvironment": "software-plain-ram",
+          "implementationPlatform": "other",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 4
+        }
+      },
+      "evidence": {
+        "identity": [
+          {
+            "field": "name",
+            "confidence": 0.99,
+            "concludedValue": "SHA-384/512",
+            "methods": [
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.99,
+                "value": "constant-match:sha512.k"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.84,
+                "value": "literal-pool-words:sha512.iv"
+              }
+            ]
+          }
+        ],
+        "occurrences": [
+          {
+            "location": "DROM:0x3f403cc8",
+            "additionalContext": "[sha512.k] SHA-512 round-constant table K[0..11]; 1/2 pattern(s) matched; referenced from code at 0x400d0314"
+          },
+          {
+            "location": "IROM:0x400d02d4",
+            "additionalContext": "[sha512.iv] SHA-512/384 initial hash values (32-bit halves not shared with SHA-256/224 IVs); 16/16 distinct constants found"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cbomscan:quantumVulnerable",
+          "value": "false"
+        },
+        {
+          "name": "cbomscan:risk",
+          "value": "low"
+        },
+        {
+          "name": "cbomscan:migrationPriority",
+          "value": "5"
+        },
+        {
+          "name": "cbomscan:priorityReason",
+          "value": "No action."
+        },
+        {
+          "name": "cbomscan:classicalStatus",
+          "value": "approved"
+        },
+        {
+          "name": "cbomscan:recommendedReplacement",
+          "value": "Keep."
+        },
+        {
+          "name": "cbomscan:executionObserved",
+          "value": "software"
+        },
+        {
+          "name": "cbomscan:confidence",
+          "value": "0.99"
+        },
+        {
+          "name": "cbomscan:note",
+          "value": "Level 4 is the SHA-384 lower bound; the same code serves SHA-512."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-algorithm-chacha20",
+      "name": "ChaCha20",
+      "description": "ChaCha20 detected by binary analysis (confidence 0.99)",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "stream-cipher",
+          "executionEnvironment": "software-plain-ram",
+          "implementationPlatform": "other",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 5
+        }
+      },
+      "evidence": {
+        "identity": [
+          {
+            "field": "name",
+            "confidence": 0.99,
+            "concludedValue": "ChaCha20",
+            "methods": [
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.9,
+                "value": "literal-pool-words:chacha20.sigma"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.9,
+                "value": "constant-match:chacha20.sigma_str"
+              },
+              {
+                "technique": "binary-analysis",
+                "confidence": 0.4,
+                "value": "algorithm-name-string:name.chacha20"
+              }
+            ]
+          }
+        ],
+        "occurrences": [
+          {
+            "location": "IROM:0x400d0098",
+            "additionalContext": "[chacha20.sigma] ChaCha20 'expand 32-byte k' constants; 4/4 distinct constants found"
+          },
+          {
+            "location": "IROM:0x400d0098",
+            "additionalContext": "[chacha20.sigma_str] ChaCha20/Salsa20 sigma string; 1/1 pattern(s) matched"
+          },
+          {
+            "location": "DROM:0x3f402cac",
+            "additionalContext": "[name.chacha20] algorithm name string 'CHACHA20-POLY1305' (library metadata table)"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cbomscan:quantumVulnerable",
+          "value": "false"
+        },
+        {
+          "name": "cbomscan:risk",
+          "value": "low"
+        },
+        {
+          "name": "cbomscan:migrationPriority",
+          "value": "5"
+        },
+        {
+          "name": "cbomscan:priorityReason",
+          "value": "No action."
+        },
+        {
+          "name": "cbomscan:classicalStatus",
+          "value": "approved"
+        },
+        {
+          "name": "cbomscan:recommendedReplacement",
+          "value": "Keep (256-bit key)."
+        },
+        {
+          "name": "cbomscan:executionObserved",
+          "value": "software"
+        },
+        {
+          "name": "cbomscan:confidence",
+          "value": "0.99"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-key-0",
+      "name": "RSA public key",
+      "description": "RSA public key (3072-bit, DER SPKI)",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "id": "4a17170a7fee6f31",
+          "size": 3072,
+          "format": "DER SPKI",
+          "algorithmRef": "crypto-algorithm-rsa"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "DROM:0x3f406548",
+            "additionalContext": "source=embedded-der"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cbomscan:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "cbomscan:source",
+          "value": "embedded-der"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-key-1",
+      "name": "EC public key (P-256)",
+      "description": "EC P-256 public key (256-bit, DER SPKI)",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "id": "4bbea5dc2c32eb58",
+          "size": 256,
+          "format": "DER SPKI",
+          "algorithmRef": "crypto-algorithm-ecc"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "DROM:0x3f4066ee",
+            "additionalContext": "source=embedded-der"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cbomscan:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "cbomscan:source",
+          "value": "embedded-der"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-key-2",
+      "name": "EC public key (P-384)",
+      "description": "EC P-384 public key (384-bit, DER SPKI)",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "id": "c5b33e5ac921a7d7",
+          "size": 384,
+          "format": "DER SPKI",
+          "algorithmRef": "crypto-algorithm-ecc"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "DROM:0x3f40684a",
+            "additionalContext": "source=embedded-der"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cbomscan:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "cbomscan:source",
+          "value": "embedded-der"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-key-3",
+      "name": "RSA public key (PSS)",
+      "description": "RSA PSS public key (3072-bit, Secure Boot V2 signature block, block 0, CRC ok)",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "id": "e811bf5b0b42bfa4",
+          "size": 3072,
+          "format": "Secure Boot V2 signature block",
+          "algorithmRef": "crypto-algorithm-rsa"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "image-trailer:trailer",
+            "additionalContext": "source=secure-boot-v2 block 0, CRC ok"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cbomscan:quantumVulnerable",
+          "value": "true"
+        },
+        {
+          "name": "cbomscan:source",
+          "value": "secure-boot-v2"
+        },
+        {
+          "name": "cbomscan:context",
+          "value": "Secure Boot V2 root of trust: the ROM/bootloader verifies every image against this key; it cannot be replaced in the field once its digest is burned into eFuse."
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "firmware",
+      "dependsOn": [
+        "crypto-algorithm-ffdh",
+        "crypto-algorithm-ecc",
+        "crypto-algorithm-rsa",
+        "crypto-algorithm-ecdsa",
+        "crypto-algorithm-md5",
+        "crypto-algorithm-des",
+        "crypto-algorithm-sha1",
+        "crypto-algorithm-aes",
+        "crypto-algorithm-sha256",
+        "crypto-algorithm-sha512",
+        "crypto-algorithm-chacha20",
+        "crypto-key-0",
+        "crypto-key-1",
+        "crypto-key-2",
+        "crypto-key-3"
+      ]
+    }
+  ]
+}

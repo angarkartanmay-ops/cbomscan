@@ -1,0 +1,2208 @@
+{
+ "present_families": [
+  "CHACHA20",
+  "POLY1305",
+  "SHA512",
+  "ECDH",
+  "ECC"
+ ],
+ "family_code_bytes": {
+  "SHA512": 11618,
+  "ECC": 21828,
+  "CHACHA20": 2470,
+  "POLY1305": 4150,
+  "ECDH": 361
+ },
+ "family_ranges": {
+  "SHA512": [
+   {
+    "start": 1061159200,
+    "end": 1061159840,
+    "section": ".rodata.K",
+    "object": "sha512",
+    "kind": "data"
+   },
+   {
+    "start": 1074593848,
+    "end": 1074593976,
+    "section": ".literal.mbedtls_sha512_starts",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074593976,
+    "end": 1074593980,
+    "section": ".literal.mbedtls_internal_sha512_process",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074601048,
+    "end": 1074601085,
+    "section": ".text.mbedtls_sha512_init",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074601088,
+    "end": 1074601133,
+    "section": ".text.mbedtls_sha512_free",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074601136,
+    "end": 1074601410,
+    "section": ".text.mbedtls_sha512_starts",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074601412,
+    "end": 1074609483,
+    "section": ".text.mbedtls_internal_sha512_process",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074609484,
+    "end": 1074609570,
+    "section": ".text.mbedtls_internal_sha512_process_many",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074609572,
+    "end": 1074609887,
+    "section": ".text.mbedtls_sha512_update",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074609888,
+    "end": 1074612394,
+    "section": ".text.mbedtls_sha512_finish",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074612396,
+    "end": 1074612548,
+    "section": ".text.mbedtls_sha512",
+    "object": "sha512",
+    "kind": "code"
+   }
+  ],
+  "ECC": [
+   {
+    "start": 1061159840,
+    "end": 1061159872,
+    "section": ".rodata.x25519_bad_point_1",
+    "object": "ecp",
+    "kind": "data"
+   },
+   {
+    "start": 1061159872,
+    "end": 1061159904,
+    "section": ".rodata.x25519_bad_point_2",
+    "object": "ecp",
+    "kind": "data"
+   },
+   {
+    "start": 1061159904,
+    "end": 1061159912,
+    "section": ".rodata.ecp_x25519_bad_point_1",
+    "object": "ecp",
+    "kind": "data"
+   },
+   {
+    "start": 1061159912,
+    "end": 1061159920,
+    "section": ".rodata.ecp_x25519_bad_point_2",
+    "object": "ecp",
+    "kind": "data"
+   },
+   {
+    "start": 1061159920,
+    "end": 1061159924,
+    "section": ".rodata.mpi_one",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061159924,
+    "end": 1061159956,
+    "section": ".rodata.secp256r1_p",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061159956,
+    "end": 1061159988,
+    "section": ".rodata.secp256r1_b",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061159988,
+    "end": 1061160020,
+    "section": ".rodata.secp256r1_gx",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160020,
+    "end": 1061160052,
+    "section": ".rodata.secp256r1_gy",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160052,
+    "end": 1061160084,
+    "section": ".rodata.secp256r1_n",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160084,
+    "end": 1061160116,
+    "section": ".rodata.secp256r1_T_0_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160116,
+    "end": 1061160148,
+    "section": ".rodata.secp256r1_T_0_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160148,
+    "end": 1061160180,
+    "section": ".rodata.secp256r1_T_1_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160180,
+    "end": 1061160212,
+    "section": ".rodata.secp256r1_T_1_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160212,
+    "end": 1061160244,
+    "section": ".rodata.secp256r1_T_2_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160244,
+    "end": 1061160276,
+    "section": ".rodata.secp256r1_T_2_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160276,
+    "end": 1061160308,
+    "section": ".rodata.secp256r1_T_3_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160308,
+    "end": 1061160340,
+    "section": ".rodata.secp256r1_T_3_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160340,
+    "end": 1061160372,
+    "section": ".rodata.secp256r1_T_4_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160372,
+    "end": 1061160404,
+    "section": ".rodata.secp256r1_T_4_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160404,
+    "end": 1061160436,
+    "section": ".rodata.secp256r1_T_5_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160436,
+    "end": 1061160468,
+    "section": ".rodata.secp256r1_T_5_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160468,
+    "end": 1061160500,
+    "section": ".rodata.secp256r1_T_6_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160500,
+    "end": 1061160532,
+    "section": ".rodata.secp256r1_T_6_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160532,
+    "end": 1061160564,
+    "section": ".rodata.secp256r1_T_7_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160564,
+    "end": 1061160596,
+    "section": ".rodata.secp256r1_T_7_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160596,
+    "end": 1061160628,
+    "section": ".rodata.secp256r1_T_8_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160628,
+    "end": 1061160660,
+    "section": ".rodata.secp256r1_T_8_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160660,
+    "end": 1061160692,
+    "section": ".rodata.secp256r1_T_9_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160692,
+    "end": 1061160724,
+    "section": ".rodata.secp256r1_T_9_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160724,
+    "end": 1061160756,
+    "section": ".rodata.secp256r1_T_10_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160756,
+    "end": 1061160788,
+    "section": ".rodata.secp256r1_T_10_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160788,
+    "end": 1061160820,
+    "section": ".rodata.secp256r1_T_11_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160820,
+    "end": 1061160852,
+    "section": ".rodata.secp256r1_T_11_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160852,
+    "end": 1061160884,
+    "section": ".rodata.secp256r1_T_12_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160884,
+    "end": 1061160916,
+    "section": ".rodata.secp256r1_T_12_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160916,
+    "end": 1061160948,
+    "section": ".rodata.secp256r1_T_13_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160948,
+    "end": 1061160980,
+    "section": ".rodata.secp256r1_T_13_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061160980,
+    "end": 1061161012,
+    "section": ".rodata.secp256r1_T_14_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061161012,
+    "end": 1061161044,
+    "section": ".rodata.secp256r1_T_14_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061161044,
+    "end": 1061161076,
+    "section": ".rodata.secp256r1_T_15_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061161076,
+    "end": 1061161108,
+    "section": ".rodata.secp256r1_T_15_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061161108,
+    "end": 1061161492,
+    "section": ".rodata.secp256r1_T",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061161492,
+    "end": 1061161540,
+    "section": ".rodata.secp384r1_p",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061161540,
+    "end": 1061161588,
+    "section": ".rodata.secp384r1_b",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061161588,
+    "end": 1061161636,
+    "section": ".rodata.secp384r1_gx",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061161636,
+    "end": 1061161684,
+    "section": ".rodata.secp384r1_gy",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061161684,
+    "end": 1061161732,
+    "section": ".rodata.secp384r1_n",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061161732,
+    "end": 1061161780,
+    "section": ".rodata.secp384r1_T_0_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061161780,
+    "end": 1061161828,
+    "section": ".rodata.secp384r1_T_0_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061161828,
+    "end": 1061161876,
+    "section": ".rodata.secp384r1_T_1_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061161876,
+    "end": 1061161924,
+    "section": ".rodata.secp384r1_T_1_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061161924,
+    "end": 1061161972,
+    "section": ".rodata.secp384r1_T_2_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061161972,
+    "end": 1061162020,
+    "section": ".rodata.secp384r1_T_2_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162020,
+    "end": 1061162068,
+    "section": ".rodata.secp384r1_T_3_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162068,
+    "end": 1061162116,
+    "section": ".rodata.secp384r1_T_3_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162116,
+    "end": 1061162164,
+    "section": ".rodata.secp384r1_T_4_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162164,
+    "end": 1061162212,
+    "section": ".rodata.secp384r1_T_4_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162212,
+    "end": 1061162260,
+    "section": ".rodata.secp384r1_T_5_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162260,
+    "end": 1061162308,
+    "section": ".rodata.secp384r1_T_5_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162308,
+    "end": 1061162356,
+    "section": ".rodata.secp384r1_T_6_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162356,
+    "end": 1061162404,
+    "section": ".rodata.secp384r1_T_6_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162404,
+    "end": 1061162452,
+    "section": ".rodata.secp384r1_T_7_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162452,
+    "end": 1061162500,
+    "section": ".rodata.secp384r1_T_7_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162500,
+    "end": 1061162548,
+    "section": ".rodata.secp384r1_T_8_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162548,
+    "end": 1061162596,
+    "section": ".rodata.secp384r1_T_8_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162596,
+    "end": 1061162644,
+    "section": ".rodata.secp384r1_T_9_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162644,
+    "end": 1061162692,
+    "section": ".rodata.secp384r1_T_9_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162692,
+    "end": 1061162740,
+    "section": ".rodata.secp384r1_T_10_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162740,
+    "end": 1061162788,
+    "section": ".rodata.secp384r1_T_10_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162788,
+    "end": 1061162836,
+    "section": ".rodata.secp384r1_T_11_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162836,
+    "end": 1061162884,
+    "section": ".rodata.secp384r1_T_11_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162884,
+    "end": 1061162932,
+    "section": ".rodata.secp384r1_T_12_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162932,
+    "end": 1061162980,
+    "section": ".rodata.secp384r1_T_12_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061162980,
+    "end": 1061163028,
+    "section": ".rodata.secp384r1_T_13_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163028,
+    "end": 1061163076,
+    "section": ".rodata.secp384r1_T_13_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163076,
+    "end": 1061163124,
+    "section": ".rodata.secp384r1_T_14_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163124,
+    "end": 1061163172,
+    "section": ".rodata.secp384r1_T_14_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163172,
+    "end": 1061163220,
+    "section": ".rodata.secp384r1_T_15_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163220,
+    "end": 1061163268,
+    "section": ".rodata.secp384r1_T_15_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163268,
+    "end": 1061163316,
+    "section": ".rodata.secp384r1_T_16_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163316,
+    "end": 1061163364,
+    "section": ".rodata.secp384r1_T_16_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163364,
+    "end": 1061163412,
+    "section": ".rodata.secp384r1_T_17_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163412,
+    "end": 1061163460,
+    "section": ".rodata.secp384r1_T_17_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163460,
+    "end": 1061163508,
+    "section": ".rodata.secp384r1_T_18_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163508,
+    "end": 1061163556,
+    "section": ".rodata.secp384r1_T_18_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163556,
+    "end": 1061163604,
+    "section": ".rodata.secp384r1_T_19_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163604,
+    "end": 1061163652,
+    "section": ".rodata.secp384r1_T_19_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163652,
+    "end": 1061163700,
+    "section": ".rodata.secp384r1_T_20_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163700,
+    "end": 1061163748,
+    "section": ".rodata.secp384r1_T_20_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163748,
+    "end": 1061163796,
+    "section": ".rodata.secp384r1_T_21_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163796,
+    "end": 1061163844,
+    "section": ".rodata.secp384r1_T_21_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163844,
+    "end": 1061163892,
+    "section": ".rodata.secp384r1_T_22_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163892,
+    "end": 1061163940,
+    "section": ".rodata.secp384r1_T_22_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163940,
+    "end": 1061163988,
+    "section": ".rodata.secp384r1_T_23_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061163988,
+    "end": 1061164036,
+    "section": ".rodata.secp384r1_T_23_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164036,
+    "end": 1061164084,
+    "section": ".rodata.secp384r1_T_24_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164084,
+    "end": 1061164132,
+    "section": ".rodata.secp384r1_T_24_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164132,
+    "end": 1061164180,
+    "section": ".rodata.secp384r1_T_25_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164180,
+    "end": 1061164228,
+    "section": ".rodata.secp384r1_T_25_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164228,
+    "end": 1061164276,
+    "section": ".rodata.secp384r1_T_26_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164276,
+    "end": 1061164324,
+    "section": ".rodata.secp384r1_T_26_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164324,
+    "end": 1061164372,
+    "section": ".rodata.secp384r1_T_27_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164372,
+    "end": 1061164420,
+    "section": ".rodata.secp384r1_T_27_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164420,
+    "end": 1061164468,
+    "section": ".rodata.secp384r1_T_28_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164468,
+    "end": 1061164516,
+    "section": ".rodata.secp384r1_T_28_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164516,
+    "end": 1061164564,
+    "section": ".rodata.secp384r1_T_29_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164564,
+    "end": 1061164612,
+    "section": ".rodata.secp384r1_T_29_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164612,
+    "end": 1061164660,
+    "section": ".rodata.secp384r1_T_30_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164660,
+    "end": 1061164708,
+    "section": ".rodata.secp384r1_T_30_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164708,
+    "end": 1061164756,
+    "section": ".rodata.secp384r1_T_31_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164756,
+    "end": 1061164804,
+    "section": ".rodata.secp384r1_T_31_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061164804,
+    "end": 1061165572,
+    "section": ".rodata.secp384r1_T",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061165572,
+    "end": 1061165604,
+    "section": ".rodata.curve25519_p",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061165604,
+    "end": 1061165636,
+    "section": ".rodata.curve25519_n",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1074593996,
+    "end": 1074594000,
+    "section": ".literal.ecp_modp",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074594000,
+    "end": 1074594008,
+    "section": ".literal.ecp_normalize_jac_many",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074594008,
+    "end": 1074594012,
+    "section": ".literal.ecp_randomize_jac",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074594012,
+    "end": 1074594016,
+    "section": ".literal.ecp_check_pubkey_sw",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074594016,
+    "end": 1074594024,
+    "section": ".literal.ecp_check_bad_points_mx",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074594024,
+    "end": 1074594028,
+    "section": ".literal.ecp_mpi_set1",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074594028,
+    "end": 1074594040,
+    "section": ".literal.ecp_use_curve25519",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074594040,
+    "end": 1074594104,
+    "section": ".literal.mbedtls_ecp_group_load",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074619800,
+    "end": 1074619854,
+    "section": ".text.mpi_init_many",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074619856,
+    "end": 1074619910,
+    "section": ".text.mpi_free_many",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074619912,
+    "end": 1074619971,
+    "section": ".text.mbedtls_ecp_point_init",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074619972,
+    "end": 1074620128,
+    "section": ".text.mbedtls_ecp_group_init",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074620128,
+    "end": 1074620197,
+    "section": ".text.mbedtls_ecp_point_free",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074620200,
+    "end": 1074620409,
+    "section": ".text.mbedtls_ecp_group_free",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074620412,
+    "end": 1074620513,
+    "section": ".text.mbedtls_ecp_copy",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074620516,
+    "end": 1074620604,
+    "section": ".text.mbedtls_ecp_set_zero",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074620604,
+    "end": 1074620655,
+    "section": ".text.mbedtls_ecp_is_zero",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074620656,
+    "end": 1074620847,
+    "section": ".text.ecp_modp",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074620848,
+    "end": 1074620917,
+    "section": ".text.mbedtls_mpi_mul_mod",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074620920,
+    "end": 1074621035,
+    "section": ".text.mbedtls_mpi_sub_mod",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074621036,
+    "end": 1074621139,
+    "section": ".text.mbedtls_mpi_add_mod",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074621140,
+    "end": 1074621243,
+    "section": ".text.mbedtls_mpi_mul_int_mod",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074621244,
+    "end": 1074621359,
+    "section": ".text.mbedtls_mpi_sub_int_mod",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074621360,
+    "end": 1074621459,
+    "section": ".text.mbedtls_mpi_shift_l_mod",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074621460,
+    "end": 1074621615,
+    "section": ".text.ecp_sw_rhs",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074621616,
+    "end": 1074621863,
+    "section": ".text.ecp_normalize_jac",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074621864,
+    "end": 1074622581,
+    "section": ".text.ecp_normalize_jac_many",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074622584,
+    "end": 1074622737,
+    "section": ".text.ecp_safe_invert_jac",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074622740,
+    "end": 1074623665,
+    "section": ".text.ecp_double_jac",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074623668,
+    "end": 1074624437,
+    "section": ".text.ecp_add_mixed",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074624440,
+    "end": 1074624685,
+    "section": ".text.ecp_randomize_jac",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074624688,
+    "end": 1074625100,
+    "section": ".text.ecp_comb_recode_core",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074625100,
+    "end": 1074625745,
+    "section": ".text.ecp_precompute_comb",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074625748,
+    "end": 1074626004,
+    "section": ".text.ecp_select_comb",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074626004,
+    "end": 1074626298,
+    "section": ".text.ecp_mul_comb_core",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074626300,
+    "end": 1074626539,
+    "section": ".text.ecp_comb_recode_scalar",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074626540,
+    "end": 1074626725,
+    "section": ".text.ecp_mul_comb_after_precomp",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074626728,
+    "end": 1074626840,
+    "section": ".text.ecp_pick_window_size",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074626840,
+    "end": 1074627337,
+    "section": ".text.ecp_mul_comb",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074627340,
+    "end": 1074627456,
+    "section": ".text.ecp_normalize_mxz",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074627456,
+    "end": 1074627609,
+    "section": ".text.ecp_randomize_mxz",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074627612,
+    "end": 1074628240,
+    "section": ".text.ecp_double_add_mxz",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074628240,
+    "end": 1074628779,
+    "section": ".text.ecp_mul_mxz",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074628780,
+    "end": 1074628951,
+    "section": ".text.ecp_mul_restartable_internal",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074628952,
+    "end": 1074629023,
+    "section": ".text.mbedtls_ecp_mul_restartable",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074629024,
+    "end": 1074629263,
+    "section": ".text.ecp_check_pubkey_sw",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074629264,
+    "end": 1074629515,
+    "section": ".text.ecp_check_bad_points_mx",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074629516,
+    "end": 1074629621,
+    "section": ".text.ecp_check_pubkey_mx",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074629624,
+    "end": 1074629736,
+    "section": ".text.mbedtls_ecp_check_pubkey",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074629736,
+    "end": 1074629932,
+    "section": ".text.mbedtls_ecp_check_privkey",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074629932,
+    "end": 1074630107,
+    "section": ".text.mbedtls_ecp_gen_privkey_mx",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074630108,
+    "end": 1074630171,
+    "section": ".text.mbedtls_ecp_gen_privkey_sw",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074630172,
+    "end": 1074630280,
+    "section": ".text.mbedtls_ecp_gen_privkey",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074630280,
+    "end": 1074630319,
+    "section": ".text.ecp_mpi_set1",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074630320,
+    "end": 1074630536,
+    "section": ".text.ecp_group_load",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074630536,
+    "end": 1074630731,
+    "section": ".text.ecp_use_curve25519",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074630732,
+    "end": 1074630988,
+    "section": ".text.mbedtls_ecp_group_load",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074630988,
+    "end": 1074631055,
+    "section": ".text.ecp_mod_p256",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074631056,
+    "end": 1074635406,
+    "section": ".text.mbedtls_ecp_mod_p256_raw",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074635408,
+    "end": 1074635475,
+    "section": ".text.ecp_mod_p384",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074635476,
+    "end": 1074641120,
+    "section": ".text.mbedtls_ecp_mod_p384_raw",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074641120,
+    "end": 1074641187,
+    "section": ".text.ecp_mod_p255",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074641188,
+    "end": 1074641385,
+    "section": ".text.mbedtls_ecp_mod_p255_raw",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074673980,
+    "end": 1074674014,
+    "section": ".text.mbedtls_ecp_group_a_is_minus_3",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074674016,
+    "end": 1074674061,
+    "section": ".text.mbedtls_ecp_get_type",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074674064,
+    "end": 1074674105,
+    "section": ".text.ecp_group_is_static_comb_table",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074674108,
+    "end": 1074674158,
+    "section": ".text.ecp_mpi_load",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074674160,
+    "end": 1074674198,
+    "section": ".text.extract_carry",
+    "object": "ecp_curves",
+    "kind": "code"
+   }
+  ],
+  "CHACHA20": [
+   {
+    "start": 1074593824,
+    "end": 1074593840,
+    "section": ".literal.mbedtls_chacha20_setkey",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074594512,
+    "end": 1074594665,
+    "section": ".text.chacha20_inner_block",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074594668,
+    "end": 1074595127,
+    "section": ".text.chacha20_block",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074595128,
+    "end": 1074595188,
+    "section": ".text.mbedtls_chacha20_init",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074595188,
+    "end": 1074595682,
+    "section": ".text.mbedtls_chacha20_setkey",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074595684,
+    "end": 1074595894,
+    "section": ".text.mbedtls_chacha20_starts",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074595896,
+    "end": 1074596333,
+    "section": ".text.mbedtls_chacha20_update",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074672000,
+    "end": 1074672424,
+    "section": ".text.chacha20_quarter_round",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074672424,
+    "end": 1074672641,
+    "section": ".text.mbedtls_chacha20_check_counter_wrap",
+    "object": "chacha20",
+    "kind": "code"
+   }
+  ],
+  "POLY1305": [
+   {
+    "start": 1074593840,
+    "end": 1074593848,
+    "section": ".literal.mbedtls_poly1305_starts",
+    "object": "poly1305",
+    "kind": "code"
+   },
+   {
+    "start": 1074596336,
+    "end": 1074596406,
+    "section": ".text.mul64",
+    "object": "poly1305",
+    "kind": "code"
+   },
+   {
+    "start": 1074596408,
+    "end": 1074598367,
+    "section": ".text.poly1305_process",
+    "object": "poly1305",
+    "kind": "code"
+   },
+   {
+    "start": 1074598368,
+    "end": 1074598402,
+    "section": ".text.mbedtls_poly1305_init",
+    "object": "poly1305",
+    "kind": "code"
+   },
+   {
+    "start": 1074598404,
+    "end": 1074598956,
+    "section": ".text.mbedtls_poly1305_starts",
+    "object": "poly1305",
+    "kind": "code"
+   },
+   {
+    "start": 1074598956,
+    "end": 1074599227,
+    "section": ".text.mbedtls_poly1305_update",
+    "object": "poly1305",
+    "kind": "code"
+   },
+   {
+    "start": 1074599228,
+    "end": 1074599359,
+    "section": ".text.mbedtls_poly1305_finish",
+    "object": "poly1305",
+    "kind": "code"
+   },
+   {
+    "start": 1074672644,
+    "end": 1074673769,
+    "section": ".text.poly1305_compute_mac",
+    "object": "poly1305",
+    "kind": "code"
+   }
+  ],
+  "ECDH": [
+   {
+    "start": 1074641388,
+    "end": 1074641493,
+    "section": ".text.ecdh_gen_public_restartable",
+    "object": "ecdh",
+    "kind": "code"
+   },
+   {
+    "start": 1074641496,
+    "end": 1074641548,
+    "section": ".text.mbedtls_ecdh_gen_public",
+    "object": "ecdh",
+    "kind": "code"
+   },
+   {
+    "start": 1074641548,
+    "end": 1074641693,
+    "section": ".text.ecdh_compute_shared_restartable",
+    "object": "ecdh",
+    "kind": "code"
+   },
+   {
+    "start": 1074641696,
+    "end": 1074641755,
+    "section": ".text.mbedtls_ecdh_compute_shared",
+    "object": "ecdh",
+    "kind": "code"
+   }
+  ]
+ },
+ "support_ranges": {
+  "SUPPORT": [
+   {
+    "start": 1073414152,
+    "end": 1073414156,
+    "section": ".bss.mbedtls_ct_zero",
+    "object": "constant_time",
+    "kind": "data"
+   },
+   {
+    "start": 1061165636,
+    "end": 1061165640,
+    "section": ".rodata.memset_func",
+    "object": "platform_util",
+    "kind": "data"
+   },
+   {
+    "start": 1074594104,
+    "end": 1074594108,
+    "section": ".literal.mbedtls_platform_zeroize",
+    "object": "platform_util",
+    "kind": "code"
+   },
+   {
+    "start": 1074641756,
+    "end": 1074641843,
+    "section": ".text.mbedtls_platform_zeroize",
+    "object": "platform_util",
+    "kind": "code"
+   },
+   {
+    "start": 1074641844,
+    "end": 1074641893,
+    "section": ".text.mbedtls_zeroize_and_free",
+    "object": "platform_util",
+    "kind": "code"
+   }
+  ],
+  "BIGNUM": [
+   {
+    "start": 1074593980,
+    "end": 1074593984,
+    "section": ".literal.mbedtls_ct_compiler_opaque",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074593984,
+    "end": 1074593988,
+    "section": ".literal.mbedtls_mpi_grow",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074593988,
+    "end": 1074593992,
+    "section": ".literal.mbedtls_mpi_cmp_abs",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074593992,
+    "end": 1074593996,
+    "section": ".literal.mbedtls_mpi_div_mpi",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074612548,
+    "end": 1074612581,
+    "section": ".text.mbedtls_ct_compiler_opaque",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074612584,
+    "end": 1074612649,
+    "section": ".text.mbedtls_ct_bool",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074612652,
+    "end": 1074612715,
+    "section": ".text.mbedtls_ct_if",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074612716,
+    "end": 1074612759,
+    "section": ".text.mbedtls_ct_uint_if",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074612760,
+    "end": 1074612849,
+    "section": ".text.mbedtls_ct_mpi_sign_if",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074612852,
+    "end": 1074613077,
+    "section": ".text.mbedtls_mpi_safe_cond_assign",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074613080,
+    "end": 1074613317,
+    "section": ".text.mbedtls_mpi_safe_cond_swap",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074613320,
+    "end": 1074613401,
+    "section": ".text.mbedtls_mpi_free",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074613404,
+    "end": 1074613549,
+    "section": ".text.mbedtls_mpi_grow",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074613552,
+    "end": 1074613771,
+    "section": ".text.mbedtls_mpi_shrink",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074613772,
+    "end": 1074613879,
+    "section": ".text.mbedtls_mpi_resize_clear",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074613880,
+    "end": 1074614136,
+    "section": ".text.mbedtls_mpi_copy",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074614136,
+    "end": 1074614267,
+    "section": ".text.mbedtls_mpi_lset",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074614268,
+    "end": 1074614464,
+    "section": ".text.mbedtls_mpi_set_bit",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074614464,
+    "end": 1074614509,
+    "section": ".text.mbedtls_mpi_bitlen",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074614512,
+    "end": 1074614552,
+    "section": ".text.mbedtls_mpi_size",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074614552,
+    "end": 1074614605,
+    "section": ".text.mbedtls_mpi_write_binary",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074614608,
+    "end": 1074614735,
+    "section": ".text.mbedtls_mpi_shift_l",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074614736,
+    "end": 1074614792,
+    "section": ".text.mbedtls_mpi_shift_r",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074614792,
+    "end": 1074615032,
+    "section": ".text.mbedtls_mpi_cmp_abs",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074615032,
+    "end": 1074615398,
+    "section": ".text.mbedtls_mpi_cmp_mpi",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074615400,
+    "end": 1074615495,
+    "section": ".text.mbedtls_mpi_cmp_int",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074615496,
+    "end": 1074615788,
+    "section": ".text.mbedtls_mpi_add_abs",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074615788,
+    "end": 1074616133,
+    "section": ".text.mbedtls_mpi_sub_abs",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074616136,
+    "end": 1074616355,
+    "section": ".text.add_sub_mpi",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074616356,
+    "end": 1074616400,
+    "section": ".text.mbedtls_mpi_add_mpi",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074616400,
+    "end": 1074616444,
+    "section": ".text.mbedtls_mpi_sub_mpi",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074616444,
+    "end": 1074616543,
+    "section": ".text.mbedtls_mpi_add_int",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074616544,
+    "end": 1074616643,
+    "section": ".text.mbedtls_mpi_sub_int",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074616644,
+    "end": 1074617031,
+    "section": ".text.mbedtls_mpi_mul_mpi",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074617032,
+    "end": 1074617204,
+    "section": ".text.mbedtls_mpi_mul_int",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074617204,
+    "end": 1074617365,
+    "section": ".text.mbedtls_int_div_int",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074617368,
+    "end": 1074618813,
+    "section": ".text.mbedtls_mpi_div_mpi",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074618816,
+    "end": 1074618967,
+    "section": ".text.mbedtls_mpi_mod_mpi",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074618968,
+    "end": 1074619557,
+    "section": ".text.mbedtls_mpi_gcd_modinv_odd",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074619560,
+    "end": 1074619675,
+    "section": ".text.mbedtls_mpi_fill_random",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074619676,
+    "end": 1074619799,
+    "section": ".text.mbedtls_mpi_random",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074641896,
+    "end": 1074641929,
+    "section": ".text.mbedtls_ct_compiler_opaque",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074641932,
+    "end": 1074641997,
+    "section": ".text.mbedtls_ct_bool",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074642000,
+    "end": 1074642063,
+    "section": ".text.mbedtls_ct_if",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074642064,
+    "end": 1074642169,
+    "section": ".text.mbedtls_ct_uint_lt",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074642172,
+    "end": 1074642215,
+    "section": ".text.mbedtls_ct_mpi_uint_if",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074642216,
+    "end": 1074642260,
+    "section": ".text.mbedtls_ct_uint_ge",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074642260,
+    "end": 1074642362,
+    "section": ".text.mbedtls_mpi_core_bitlen",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074642364,
+    "end": 1074642399,
+    "section": ".text.mpi_bigendian_to_host",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074642400,
+    "end": 1074642517,
+    "section": ".text.mbedtls_mpi_core_bigendian_to_host",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074642520,
+    "end": 1074642640,
+    "section": ".text.mbedtls_mpi_core_uint_le_mpi",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074642640,
+    "end": 1074642866,
+    "section": ".text.mbedtls_mpi_core_lt_ct",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074642868,
+    "end": 1074642979,
+    "section": ".text.mbedtls_mpi_core_cond_assign",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074642980,
+    "end": 1074643140,
+    "section": ".text.mbedtls_mpi_core_cond_swap",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074643140,
+    "end": 1074643359,
+    "section": ".text.mbedtls_mpi_core_write_be",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074643360,
+    "end": 1074643668,
+    "section": ".text.mbedtls_mpi_core_shift_r",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074643668,
+    "end": 1074643917,
+    "section": ".text.mbedtls_mpi_core_shift_l",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074643920,
+    "end": 1074644094,
+    "section": ".text.mbedtls_mpi_core_add_if",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074644096,
+    "end": 1074645837,
+    "section": ".text.mbedtls_mpi_core_mla",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074645840,
+    "end": 1074645956,
+    "section": ".text.mbedtls_mpi_core_mul",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074645956,
+    "end": 1074646120,
+    "section": ".text.mbedtls_mpi_core_fill_random",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074646120,
+    "end": 1074646345,
+    "section": ".text.mbedtls_mpi_core_random",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074646348,
+    "end": 1074646410,
+    "section": ".text.mpi_core_sub_mod",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074646412,
+    "end": 1074646517,
+    "section": ".text.mbedtls_mpi_core_div2_mod_odd",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074646520,
+    "end": 1074647251,
+    "section": ".text.mbedtls_mpi_core_gcd_modinv_odd",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074673772,
+    "end": 1074673801,
+    "section": ".text.mbedtls_ct_mpi_uint_if_else_0",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074673804,
+    "end": 1074673831,
+    "section": ".text.mbedtls_ct_bool_not",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074673832,
+    "end": 1074673872,
+    "section": ".text.mbedtls_mpi_init",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074673872,
+    "end": 1074673908,
+    "section": ".text.mpi_sint_abs",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074673908,
+    "end": 1074673978,
+    "section": ".text.mbedtls_mpi_get_bit",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074674200,
+    "end": 1074674229,
+    "section": ".text.mbedtls_ct_mpi_uint_if_else_0",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074674232,
+    "end": 1074674261,
+    "section": ".text.mbedtls_ct_bool_and",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074674264,
+    "end": 1074674293,
+    "section": ".text.mbedtls_ct_bool_or",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074674296,
+    "end": 1074674323,
+    "section": ".text.mbedtls_ct_bool_not",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074674324,
+    "end": 1074674349,
+    "section": ".text.mbedtls_mpi_core_clz",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074674352,
+    "end": 1074674508,
+    "section": ".text.mbedtls_mpi_core_add",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074674508,
+    "end": 1074674662,
+    "section": ".text.mbedtls_mpi_core_sub",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074674664,
+    "end": 1074674764,
+    "section": ".text.mbedtls_mpi_core_sub_int",
+    "object": "bignum_core",
+    "kind": "code"
+   }
+  ],
+  "AEAD": [
+   {
+    "start": 1074599360,
+    "end": 1074599453,
+    "section": ".text.chachapoly_pad_aad",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074599456,
+    "end": 1074599549,
+    "section": ".text.chachapoly_pad_ciphertext",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074599552,
+    "end": 1074599639,
+    "section": ".text.mbedtls_chachapoly_init",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074599640,
+    "end": 1074599687,
+    "section": ".text.mbedtls_chachapoly_setkey",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074599688,
+    "end": 1074599893,
+    "section": ".text.mbedtls_chachapoly_starts",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074599896,
+    "end": 1074599996,
+    "section": ".text.mbedtls_chachapoly_update_aad",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074599996,
+    "end": 1074600287,
+    "section": ".text.mbedtls_chachapoly_update",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074600288,
+    "end": 1074600847,
+    "section": ".text.mbedtls_chachapoly_finish",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074600848,
+    "end": 1074600977,
+    "section": ".text.chachapoly_crypt_and_tag",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074600980,
+    "end": 1074601048,
+    "section": ".text.mbedtls_chachapoly_encrypt_and_tag",
+    "object": "chachapoly",
+    "kind": "code"
+   }
+  ]
+ },
+ "sample": "m36__O0__x25519_chachapoly",
+ "variant": "m36",
+ "variant_label": "mbedTLS 3.6.7, AES tables generated at runtime",
+ "opt": "O0",
+ "profile": "x25519_chachapoly",
+ "intended_families": [
+  "ECDH",
+  "CHACHA20",
+  "POLY1305",
+  "SHA512"
+ ],
+ "uses_hw_accel": false,
+ "secure_boot": "none",
+ "toolchain": "xtensa-lx106-elf",
+ "bin_sha256": "86cebc12f2aedfb4ddf10b463c69b716e2423a270b106c1ebabb57cbc9635a51",
+ "bin_size": 148736
+}

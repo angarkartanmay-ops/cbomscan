@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cbomscan: full_stack</title>
+<style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:24px auto;padding:0 16px;color:#1b1b1f;background:#fff}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid #d6d6dc;padding:6px 8px;text-align:left;vertical-align:top}th{background:#f3f3f6}.v{color:#a3201b;font-weight:600}.s{color:#1d6b35}code{font-size:13px}@media (prefers-color-scheme:dark){body{background:#151518;color:#e8e8ec}th{background:#24242a}th,td{border-color:#3a3a42}.v{color:#ff8a80}.s{color:#7bd88f}}</style>
+</head>
+<body>
+<h1>cbomscan report: full_stack</h1>
+<p>app-image, 167936 bytes, chip ESP32, SHA-256 <code>ca85cc7c33505f58...</code></p>
+<p class="v">Secure Boot V2 root of trust: RSA PSS public key (3072-bit, Secure Boot V2 signature block, block 0, CRC ok)</p>
+<table>
+<tr><th>Priority</th><th>Algorithm</th><th>Quantum</th><th>NIST QL</th><th>Confidence</th><th>Params</th><th>First evidence</th><th>Replace with</th></tr>
+<tr><td>1</td><td>Finite-field Diffie-Hellman</td><td class="v">VULNERABLE</td><td>0</td><td>0.92</td><td>-</td><td><code>0x3f40674a (DROM)</code></td><td>ML-KEM-768 (FIPS 203), hybrid during transition.</td></tr>
+<tr><td>2</td><td>Elliptic-curve arithmetic</td><td class="v">VULNERABLE</td><td>0</td><td>0.99</td><td>Curve25519, P-256, P-384</td><td><code>0x3f405660 (DROM)</code></td><td>Identify the operation (ECDSA or ECDH) and migrate per that row.</td></tr>
+<tr><td>2</td><td>RSA</td><td class="v">VULNERABLE</td><td>0</td><td>0.99</td><td>PSS</td><td><code>image-trailer</code></td><td>Signatures: ML-DSA-65 (FIPS 204), or LMS/XMSS (SP 800-208) for firmware signing, hybrid with RSA during transition. Key transport: ML-KEM-768 (FIPS 203).</td></tr>
+<tr><td>2</td><td>ECDSA</td><td class="v">VULNERABLE</td><td>0</td><td>0.67</td><td>-</td><td><code>0x3f403135 (DROM)</code></td><td>ML-DSA-44/65 (FIPS 204), hybrid ECDSA+ML-DSA during transition; LMS/XMSS for firmware signing.</td></tr>
+<tr><td>3</td><td>MD5</td><td class="s">safe</td><td>0</td><td>0.99</td><td>-</td><td><code>0x400d017c (IROM)</code></td><td>Replace with SHA-256 or SHA-3 (classically broken).</td></tr>
+<tr><td>3</td><td>DES / 3DES</td><td class="s">safe</td><td>0</td><td>0.98</td><td>-</td><td><code>0x3f402ac8 (DROM)</code></td><td>Replace with AES-256 (classical weakness, independent of quantum).</td></tr>
+<tr><td>3</td><td>SHA-1</td><td class="s">safe</td><td>0</td><td>0.85</td><td>-</td><td><code>0x400d027c (IROM)</code></td><td>Replace with SHA-256 or SHA-3 (classically broken for signatures).</td></tr>
+<tr><td>4</td><td>AES</td><td class="s">safe</td><td>1</td><td>0.99</td><td>-</td><td><code>0x3f402248 (DROM)</code></td><td>Keep AES; prefer AES-256 for data that must stay secret past ~2035 (Grover margin).</td></tr>
+<tr><td>5</td><td>SHA-256</td><td class="s">safe</td><td>2</td><td>0.99</td><td>-</td><td><code>0x3f403bc8 (DROM)</code></td><td>Keep; SHA-384 if CNSA 2.0 compliance is required.</td></tr>
+<tr><td>5</td><td>SHA-384/512</td><td class="s">safe</td><td>4</td><td>0.99</td><td>-</td><td><code>0x3f403cc8 (DROM)</code></td><td>Keep.</td></tr>
+<tr><td>5</td><td>ChaCha20</td><td class="s">safe</td><td>5</td><td>0.99</td><td>-</td><td><code>0x400d0098 (IROM)</code></td><td>Keep (256-bit key).</td></tr>
+</table>
+<h2>Key material</h2><ul>
+<li>RSA public key (3072-bit, DER SPKI)</li>
+<li>EC P-256 public key (256-bit, DER SPKI)</li>
+<li>EC P-384 public key (384-bit, DER SPKI)</li>
+<li>RSA PSS public key (3072-bit, Secure Boot V2 signature block, block 0, CRC ok)</li>
+</ul>
+<h2>Evidence</h2>
+<h3>Finite-field Diffie-Hellman</h3><ul>
+<li>ffdh.modp (0.92): RFC 2409/3526 MODP group prime (prefix); 1/3 pattern(s) matched; referenced from code at 0x400d0624</li>
+</ul>
+<h3>Elliptic-curve arithmetic</h3><ul>
+<li>ecc.p256 (0.99): NIST P-256 (secp256r1) domain parameters; 4/8 pattern(s) matched; referenced from code at 0x400d03f0, 0x400d03f4, 0x400d0404</li>
+<li>ecc.p384 (0.99): NIST P-384 (secp384r1) domain parameters; 2/4 pattern(s) matched; referenced from code at 0x400d0408, 0x400d0410, 0x400d0414</li>
+<li>ecc.x25519_order (0.92): Curve25519 group order (low part); 1/2 pattern(s) matched; referenced from code at 0x400d0424, 0x400d042c, 0x400d0430</li>
+<li>key.ec (0.85): embedded EC P-256 public key (256-bit, DER SPKI)</li>
+<li>key.ec (0.85): embedded EC P-384 public key (384-bit, DER SPKI)</li>
+<li>ecc.x25519_p (0.77): Curve25519 field prime 2^255-19; 1/2 pattern(s) matched; referenced from code at 0x400d0424, 0x400d042c</li>
+<li>ecc.x25519_a24 (0.50): Curve25519 Montgomery ladder constant a24; 1/2 distinct constants found</li>
+<li>oid.ec_pubkey (0.42): id-ecPublicKey OID (1.2.840.10045.2.1); 1/1 pattern(s) matched; referenced from code at 0x400d0618</li>
+</ul>
+<h3>RSA</h3><ul>
+<li>sbv2.rsa (0.99): Secure Boot V2 signature block: RSA PSS public key (3072-bit, Secure Boot V2 signature block, block 0, CRC ok)</li>
+<li>key.rsa (0.85): embedded RSA public key (3072-bit, DER SPKI)</li>
+<li>oid.rsa (0.47): rsaEncryption OID (1.2.840.113549.1.1.1); 1/1 pattern(s) matched; referenced from code at 0x400d0318, 0x400d0618</li>
+<li>oid.rsa_pss (0.45): RSASSA-PSS OID (1.2.840.113549.1.1.10); 1/1 pattern(s) matched</li>
+<li>name.rsa (0.40): algorithm name string &#x27;RSA&#x27; (library metadata table)</li>
+<li>str.begin_rsa_public_key (0.35): string &#x27;-----BEGIN RSA PUBLIC KEY-----&#x27;</li>
+</ul>
+<h3>ECDSA</h3><ul>
+<li>oid.ecdsa (0.45): ecdsa-with-SHA256/384 OID; 2/2 pattern(s) matched</li>
+<li>name.ecdsa (0.40): algorithm name string &#x27;ECDSA&#x27; (library metadata table)</li>
+</ul>
+<h3>MD5</h3><ul>
+<li>md5.t (0.99): MD5 sine-derived round constants (as literal-pool or table words); 64/64 distinct constants found</li>
+<li>md5.t_table (0.97): MD5 constant table; 1/1 pattern(s) matched</li>
+</ul>
+<h3>DES / 3DES</h3><ul>
+<li>des.sp_boxes (0.97): DES combined S/P tables (d3des layout); 8/8 pattern(s) matched; referenced from code at 0x400d0088</li>
+<li>name.des (0.40): algorithm name string &#x27;DES-EDE3-CBC&#x27; (library metadata table)</li>
+</ul>
+<h3>SHA-1</h3><ul>
+<li>sha1.k (0.85): SHA-1 round constants and fifth IV word; 5/5 distinct constants found</li>
+</ul>
+<h3>AES</h3><ul>
+<li>aes.sbox (0.97): AES forward S-box; 1/1 pattern(s) matched; referenced from code at 0x400d002c</li>
+<li>aes.inv_sbox (0.97): AES inverse S-box; 1/1 pattern(s) matched; referenced from code at 0x400d0050</li>
+<li>aes.te_table (0.97): AES encryption T-table (Te/FT); 2/4 pattern(s) matched; referenced from code at 0x400d0040</li>
+<li>aes.td_table (0.97): AES decryption T-table (Td/RT); 2/4 pattern(s) matched; referenced from code at 0x400d0030</li>
+<li>hw.aes (0.85): ESP32 AES accelerator registers: 7 code references to 7 register(s) (0x3ff01000, 0x3ff01004, 0x3ff01008, 0x3ff01010...)</li>
+<li>aes.rcon (0.72): AES key-schedule round constants; 1/2 pattern(s) matched; referenced from code at 0x400d0028, 0x400d0034</li>
+<li>name.aes (0.40): algorithm name string &#x27;AES-256-GCM&#x27; (library metadata table)</li>
+</ul>
+<h3>SHA-256</h3><ul>
+<li>sha256.k (0.99): SHA-256 round-constant table K[0..31]; 1/2 pattern(s) matched; referenced from code at 0x400d02d0</li>
+<li>hw.sha256 (0.85): ESP32 SHA accelerator registers: 7 code references to 7 register(s) (0x3ff03000, 0x3ff03020, 0x3ff03040, 0x3ff03090...)</li>
+<li>sha256.iv (0.25): SHA-256/224 initial hash values; 16/16 distinct constants found; discounted: every SHA-256/224 IV word is also half of a SHA-512/384 IV, and SHA-512 is present</li>
+</ul>
+<h3>SHA-384/512</h3><ul>
+<li>sha512.k (0.99): SHA-512 round-constant table K[0..11]; 1/2 pattern(s) matched; referenced from code at 0x400d0314</li>
+<li>sha512.iv (0.84): SHA-512/384 initial hash values (32-bit halves not shared with SHA-256/224 IVs); 16/16 distinct constants found</li>
+</ul>
+<h3>ChaCha20</h3><ul>
+<li>chacha20.sigma (0.90): ChaCha20 &#x27;expand 32-byte k&#x27; constants; 4/4 distinct constants found</li>
+<li>chacha20.sigma_str (0.90): ChaCha20/Salsa20 sigma string; 1/1 pattern(s) matched</li>
+<li>name.chacha20 (0.40): algorithm name string &#x27;CHACHA20-POLY1305&#x27; (library metadata table)</li>
+</ul>
+</body>
+</html>

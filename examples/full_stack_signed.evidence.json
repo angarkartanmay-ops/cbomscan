@@ -1,0 +1,511 @@
+[
+ {
+  "family": "AES",
+  "rule": "aes.sbox",
+  "group": "constants",
+  "method": "constant-match",
+  "confidence": 0.97,
+  "address": "0x3f402248",
+  "region": "DROM",
+  "detail": "AES forward S-box; 1/1 pattern(s) matched; referenced from code at 0x400d002c",
+  "param": null,
+  "xrefs": [
+   "0x400d002c"
+  ]
+ },
+ {
+  "family": "AES",
+  "rule": "aes.inv_sbox",
+  "group": "constants",
+  "method": "constant-match",
+  "confidence": 0.97,
+  "address": "0x3f401148",
+  "region": "DROM",
+  "detail": "AES inverse S-box; 1/1 pattern(s) matched; referenced from code at 0x400d0050",
+  "param": null,
+  "xrefs": [
+   "0x400d0050"
+  ]
+ },
+ {
+  "family": "AES",
+  "rule": "aes.te_table",
+  "group": "constants",
+  "method": "constant-match",
+  "confidence": 0.97,
+  "address": "0x3f401e48",
+  "region": "DROM",
+  "detail": "AES encryption T-table (Te/FT); 2/4 pattern(s) matched; referenced from code at 0x400d0040",
+  "param": null,
+  "xrefs": [
+   "0x400d0040"
+  ]
+ },
+ {
+  "family": "AES",
+  "rule": "aes.td_table",
+  "group": "constants",
+  "method": "constant-match",
+  "confidence": 0.97,
+  "address": "0x3f400d48",
+  "region": "DROM",
+  "detail": "AES decryption T-table (Td/RT); 2/4 pattern(s) matched; referenced from code at 0x400d0030",
+  "param": null,
+  "xrefs": [
+   "0x400d0030"
+  ]
+ },
+ {
+  "family": "AES",
+  "rule": "aes.rcon",
+  "group": "constants",
+  "method": "constant-match",
+  "confidence": 0.72,
+  "address": "0x3f400120",
+  "region": "DROM",
+  "detail": "AES key-schedule round constants; 1/2 pattern(s) matched; referenced from code at 0x400d0028, 0x400d0034",
+  "param": null,
+  "xrefs": [
+   "0x400d0028",
+   "0x400d0034"
+  ]
+ },
+ {
+  "family": "DES",
+  "rule": "des.sp_boxes",
+  "group": "constants",
+  "method": "constant-match",
+  "confidence": 0.97,
+  "address": "0x3f402ac8",
+  "region": "DROM",
+  "detail": "DES combined S/P tables (d3des layout); 8/8 pattern(s) matched; referenced from code at 0x400d0088",
+  "param": null,
+  "xrefs": [
+   "0x400d0088"
+  ]
+ },
+ {
+  "family": "MD5",
+  "rule": "md5.t",
+  "group": "constants",
+  "method": "literal-pool-words",
+  "confidence": 0.99,
+  "address": "0x400d017c",
+  "region": "IROM",
+  "detail": "MD5 sine-derived round constants (as literal-pool or table words); 64/64 distinct constants found",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "MD5",
+  "rule": "md5.t_table",
+  "group": "constants",
+  "method": "constant-match",
+  "confidence": 0.97,
+  "address": "0x400d017c",
+  "region": "IROM",
+  "detail": "MD5 constant table; 1/1 pattern(s) matched",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "SHA1",
+  "rule": "sha1.k",
+  "group": "constants",
+  "method": "literal-pool-words",
+  "confidence": 0.85,
+  "address": "0x400d027c",
+  "region": "IROM",
+  "detail": "SHA-1 round constants and fifth IV word; 5/5 distinct constants found",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "SHA256",
+  "rule": "sha256.k",
+  "group": "constants",
+  "method": "constant-match",
+  "confidence": 0.99,
+  "address": "0x3f403bc8",
+  "region": "DROM",
+  "detail": "SHA-256 round-constant table K[0..31]; 1/2 pattern(s) matched; referenced from code at 0x400d02d0",
+  "param": null,
+  "xrefs": [
+   "0x400d02d0"
+  ]
+ },
+ {
+  "family": "SHA256",
+  "rule": "sha256.iv",
+  "group": "constants",
+  "method": "literal-pool-words",
+  "confidence": 0.25,
+  "address": "0x400d0290",
+  "region": "IROM",
+  "detail": "SHA-256/224 initial hash values; 16/16 distinct constants found; discounted: every SHA-256/224 IV word is also half of a SHA-512/384 IV, and SHA-512 is present",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "SHA512",
+  "rule": "sha512.k",
+  "group": "constants",
+  "method": "constant-match",
+  "confidence": 0.99,
+  "address": "0x3f403cc8",
+  "region": "DROM",
+  "detail": "SHA-512 round-constant table K[0..11]; 1/2 pattern(s) matched; referenced from code at 0x400d0314",
+  "param": null,
+  "xrefs": [
+   "0x400d0314"
+  ]
+ },
+ {
+  "family": "SHA512",
+  "rule": "sha512.iv",
+  "group": "constants",
+  "method": "literal-pool-words",
+  "confidence": 0.8400000000000001,
+  "address": "0x400d02d4",
+  "region": "IROM",
+  "detail": "SHA-512/384 initial hash values (32-bit halves not shared with SHA-256/224 IVs); 16/16 distinct constants found",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "CHACHA20",
+  "rule": "chacha20.sigma",
+  "group": "constants",
+  "method": "literal-pool-words",
+  "confidence": 0.9,
+  "address": "0x400d0098",
+  "region": "IROM",
+  "detail": "ChaCha20 'expand 32-byte k' constants; 4/4 distinct constants found",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "CHACHA20",
+  "rule": "chacha20.sigma_str",
+  "group": "constants",
+  "method": "constant-match",
+  "confidence": 0.9,
+  "address": "0x400d0098",
+  "region": "IROM",
+  "detail": "ChaCha20/Salsa20 sigma string; 1/1 pattern(s) matched",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "ECC",
+  "rule": "ecc.p256",
+  "group": "constants",
+  "method": "constant-match",
+  "confidence": 0.99,
+  "address": "0x3f405660",
+  "region": "DROM",
+  "detail": "NIST P-256 (secp256r1) domain parameters; 4/8 pattern(s) matched; referenced from code at 0x400d03f0, 0x400d03f4, 0x400d0404",
+  "param": "P-256",
+  "xrefs": [
+   "0x400d03f0",
+   "0x400d03f4",
+   "0x400d0404",
+   "0x400d045c",
+   "0x400d0460"
+  ]
+ },
+ {
+  "family": "ECC",
+  "rule": "ecc.p384",
+  "group": "constants",
+  "method": "constant-match",
+  "confidence": 0.99,
+  "address": "0x3f405020",
+  "region": "DROM",
+  "detail": "NIST P-384 (secp384r1) domain parameters; 2/4 pattern(s) matched; referenced from code at 0x400d0408, 0x400d0410, 0x400d0414",
+  "param": "P-384",
+  "xrefs": [
+   "0x400d0408",
+   "0x400d0410",
+   "0x400d0414"
+  ]
+ },
+ {
+  "family": "ECC",
+  "rule": "ecc.x25519_order",
+  "group": "constants",
+  "method": "constant-match",
+  "confidence": 0.92,
+  "address": "0x3f404050",
+  "region": "DROM",
+  "detail": "Curve25519 group order (low part); 1/2 pattern(s) matched; referenced from code at 0x400d0424, 0x400d042c, 0x400d0430",
+  "param": "Curve25519",
+  "xrefs": [
+   "0x400d0424",
+   "0x400d042c",
+   "0x400d0430"
+  ]
+ },
+ {
+  "family": "ECC",
+  "rule": "ecc.x25519_p",
+  "group": "constants",
+  "method": "constant-match",
+  "confidence": 0.77,
+  "address": "0x3f404070",
+  "region": "DROM",
+  "detail": "Curve25519 field prime 2^255-19; 1/2 pattern(s) matched; referenced from code at 0x400d0424, 0x400d042c",
+  "param": "Curve25519",
+  "xrefs": [
+   "0x400d0424",
+   "0x400d042c"
+  ]
+ },
+ {
+  "family": "ECC",
+  "rule": "ecc.x25519_a24",
+  "group": "constants",
+  "method": "literal-pool-words",
+  "confidence": 0.5,
+  "address": "0x400d0438",
+  "region": "IROM",
+  "detail": "Curve25519 Montgomery ladder constant a24; 1/2 distinct constants found",
+  "param": "Curve25519",
+  "xrefs": []
+ },
+ {
+  "family": "FFDH",
+  "rule": "ffdh.modp",
+  "group": "constants",
+  "method": "constant-match",
+  "confidence": 0.92,
+  "address": "0x3f40674a",
+  "region": "DROM",
+  "detail": "RFC 2409/3526 MODP group prime (prefix); 1/3 pattern(s) matched; referenced from code at 0x400d0624",
+  "param": null,
+  "xrefs": [
+   "0x400d0624"
+  ]
+ },
+ {
+  "family": "RSA",
+  "rule": "oid.rsa",
+  "group": "oid",
+  "method": "oid",
+  "confidence": 0.47000000000000003,
+  "address": "0x3f402f53",
+  "region": "DROM",
+  "detail": "rsaEncryption OID (1.2.840.113549.1.1.1); 1/1 pattern(s) matched; referenced from code at 0x400d0318, 0x400d0618",
+  "param": null,
+  "xrefs": [
+   "0x400d0318",
+   "0x400d0618"
+  ]
+ },
+ {
+  "family": "RSA",
+  "rule": "oid.rsa_pss",
+  "group": "oid",
+  "method": "oid",
+  "confidence": 0.45,
+  "address": "0x3f4031bc",
+  "region": "DROM",
+  "detail": "RSASSA-PSS OID (1.2.840.113549.1.1.10); 1/1 pattern(s) matched",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "ECDSA",
+  "rule": "oid.ecdsa",
+  "group": "oid",
+  "method": "oid",
+  "confidence": 0.45,
+  "address": "0x3f403135",
+  "region": "DROM",
+  "detail": "ecdsa-with-SHA256/384 OID; 2/2 pattern(s) matched",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "ECC",
+  "rule": "oid.ec_pubkey",
+  "group": "oid",
+  "method": "oid",
+  "confidence": 0.42000000000000004,
+  "address": "0x3f402f6f",
+  "region": "DROM",
+  "detail": "id-ecPublicKey OID (1.2.840.10045.2.1); 1/1 pattern(s) matched; referenced from code at 0x400d0618",
+  "param": null,
+  "xrefs": [
+   "0x400d0618"
+  ]
+ },
+ {
+  "family": "RSA",
+  "rule": "str.begin_rsa_public_key",
+  "group": "strings",
+  "method": "string-match",
+  "confidence": 0.35,
+  "address": "0x3f4037cb",
+  "region": "DROM",
+  "detail": "string '-----BEGIN RSA PUBLIC KEY-----'",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "CHACHA20",
+  "rule": "name.chacha20",
+  "group": "names",
+  "method": "algorithm-name-string",
+  "confidence": 0.4,
+  "address": "0x3f402cac",
+  "region": "DROM",
+  "detail": "algorithm name string 'CHACHA20-POLY1305' (library metadata table)",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "POLY1305",
+  "rule": "name.poly1305",
+  "group": "names",
+  "method": "algorithm-name-string",
+  "confidence": 0.4,
+  "address": "0x3f402cac",
+  "region": "DROM",
+  "detail": "algorithm name string 'CHACHA20-POLY1305' (library metadata table)",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "DES",
+  "rule": "name.des",
+  "group": "names",
+  "method": "algorithm-name-string",
+  "confidence": 0.4,
+  "address": "0x3f402cc7",
+  "region": "DROM",
+  "detail": "algorithm name string 'DES-EDE3-CBC' (library metadata table)",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "AES",
+  "rule": "name.aes",
+  "group": "names",
+  "method": "algorithm-name-string",
+  "confidence": 0.4,
+  "address": "0x3f402d09",
+  "region": "DROM",
+  "detail": "algorithm name string 'AES-256-GCM' (library metadata table)",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "ECDH",
+  "rule": "name.ecdh",
+  "group": "names",
+  "method": "algorithm-name-string",
+  "confidence": 0.4,
+  "address": "0x3f402f2f",
+  "region": "DROM",
+  "detail": "algorithm name string 'X25519' (library metadata table)",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "RSA",
+  "rule": "name.rsa",
+  "group": "names",
+  "method": "algorithm-name-string",
+  "confidence": 0.4,
+  "address": "0x3f402f6b",
+  "region": "DROM",
+  "detail": "algorithm name string 'RSA' (library metadata table)",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "ECDSA",
+  "rule": "name.ecdsa",
+  "group": "names",
+  "method": "algorithm-name-string",
+  "confidence": 0.4,
+  "address": "0x3f40379f",
+  "region": "DROM",
+  "detail": "algorithm name string 'ECDSA' (library metadata table)",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "RSA",
+  "rule": "key.rsa",
+  "group": "keys",
+  "method": "embedded-key-material",
+  "confidence": 0.85,
+  "address": "0x3f406548",
+  "region": "DROM",
+  "detail": "embedded RSA public key (3072-bit, DER SPKI)",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "ECC",
+  "rule": "key.ec",
+  "group": "keys",
+  "method": "embedded-key-material",
+  "confidence": 0.85,
+  "address": "0x3f4066ee",
+  "region": "DROM",
+  "detail": "embedded EC P-256 public key (256-bit, DER SPKI)",
+  "param": "P-256",
+  "xrefs": []
+ },
+ {
+  "family": "ECC",
+  "rule": "key.ec",
+  "group": "keys",
+  "method": "embedded-key-material",
+  "confidence": 0.85,
+  "address": "0x3f40684a",
+  "region": "DROM",
+  "detail": "embedded EC P-384 public key (384-bit, DER SPKI)",
+  "param": "P-384",
+  "xrefs": []
+ },
+ {
+  "family": "RSA",
+  "rule": "sbv2.rsa",
+  "group": "secure-boot",
+  "method": "secure-boot-signature-block",
+  "confidence": 0.99,
+  "address": null,
+  "region": "image-trailer",
+  "detail": "Secure Boot V2 signature block: RSA PSS public key (3072-bit, Secure Boot V2 signature block, block 0, CRC ok)",
+  "param": "PSS",
+  "xrefs": []
+ },
+ {
+  "family": "AES",
+  "rule": "hw.aes",
+  "group": "hw",
+  "method": "peripheral-register-reference",
+  "confidence": 0.85,
+  "address": "0x400d05dc",
+  "region": "IROM",
+  "detail": "ESP32 AES accelerator registers: 7 code references to 7 register(s) (0x3ff01000, 0x3ff01004, 0x3ff01008, 0x3ff01010...)",
+  "param": null,
+  "xrefs": []
+ },
+ {
+  "family": "SHA256",
+  "rule": "hw.sha256",
+  "group": "hw",
+  "method": "peripheral-register-reference",
+  "confidence": 0.85,
+  "address": "0x400d05c0",
+  "region": "IROM",
+  "detail": "ESP32 SHA accelerator registers: 7 code references to 7 register(s) (0x3ff03000, 0x3ff03020, 0x3ff03040, 0x3ff03090...)",
+  "param": null,
+  "xrefs": []
+ }
+]

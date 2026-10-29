@@ -1,0 +1,5740 @@
+{
+ "present_families": [
+  "AES",
+  "DES",
+  "CHACHA20",
+  "POLY1305",
+  "MD5",
+  "SHA1",
+  "SHA256",
+  "SHA512",
+  "RSA",
+  "ECDSA",
+  "ECDH",
+  "ECC",
+  "FFDH"
+ ],
+ "family_code_bytes": {
+  "AES": 7770,
+  "DES": 6848,
+  "SHA256": 7529,
+  "SHA512": 11554,
+  "RSA": 14233,
+  "FFDH": 983,
+  "ECC": 23603,
+  "ECDSA": 2288,
+  "CHACHA20": 2509,
+  "POLY1305": 4187,
+  "MD5": 6181,
+  "SHA1": 9992,
+  "ECDH": 361
+ },
+ "family_ranges": {
+  "AES": [
+   {
+    "start": 1061159200,
+    "end": 1061159456,
+    "section": ".rodata.FSb",
+    "object": "aes",
+    "kind": "data"
+   },
+   {
+    "start": 1061159456,
+    "end": 1061160480,
+    "section": ".rodata.FT0",
+    "object": "aes",
+    "kind": "data"
+   },
+   {
+    "start": 1061160480,
+    "end": 1061161504,
+    "section": ".rodata.FT1",
+    "object": "aes",
+    "kind": "data"
+   },
+   {
+    "start": 1061161504,
+    "end": 1061162528,
+    "section": ".rodata.FT2",
+    "object": "aes",
+    "kind": "data"
+   },
+   {
+    "start": 1061162528,
+    "end": 1061163552,
+    "section": ".rodata.FT3",
+    "object": "aes",
+    "kind": "data"
+   },
+   {
+    "start": 1061163552,
+    "end": 1061163808,
+    "section": ".rodata.RSb",
+    "object": "aes",
+    "kind": "data"
+   },
+   {
+    "start": 1061163808,
+    "end": 1061164832,
+    "section": ".rodata.RT0",
+    "object": "aes",
+    "kind": "data"
+   },
+   {
+    "start": 1061164832,
+    "end": 1061165856,
+    "section": ".rodata.RT1",
+    "object": "aes",
+    "kind": "data"
+   },
+   {
+    "start": 1061165856,
+    "end": 1061166880,
+    "section": ".rodata.RT2",
+    "object": "aes",
+    "kind": "data"
+   },
+   {
+    "start": 1061166880,
+    "end": 1061167904,
+    "section": ".rodata.RT3",
+    "object": "aes",
+    "kind": "data"
+   },
+   {
+    "start": 1061167904,
+    "end": 1061167944,
+    "section": ".rodata.round_constants",
+    "object": "aes",
+    "kind": "data"
+   },
+   {
+    "start": 1074593824,
+    "end": 1074593832,
+    "section": ".literal.mbedtls_aes_setkey_enc",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074593832,
+    "end": 1074593848,
+    "section": ".literal.mbedtls_aes_setkey_dec",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074593848,
+    "end": 1074593864,
+    "section": ".literal.mbedtls_internal_aes_encrypt",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074593864,
+    "end": 1074593868,
+    "section": ".literal.mbedtls_internal_aes_decrypt",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074595292,
+    "end": 1074595312,
+    "section": ".literal.esp_aes_hw_encrypt_block",
+    "object": "hw_crypto_esp32",
+    "kind": "code"
+   },
+   {
+    "start": 1074595440,
+    "end": 1074595672,
+    "section": ".text.mbedtls_ctr_increment_counter",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074595672,
+    "end": 1074595709,
+    "section": ".text.mbedtls_aes_init",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074595712,
+    "end": 1074595757,
+    "section": ".text.mbedtls_aes_free",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074595760,
+    "end": 1074596919,
+    "section": ".text.mbedtls_aes_setkey_enc",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074596920,
+    "end": 1074597398,
+    "section": ".text.mbedtls_aes_setkey_dec",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074597400,
+    "end": 1074599740,
+    "section": ".text.mbedtls_internal_aes_encrypt",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074599740,
+    "end": 1074602080,
+    "section": ".text.mbedtls_internal_aes_decrypt",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074602080,
+    "end": 1074602160,
+    "section": ".text.mbedtls_aes_crypt_ecb",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074602160,
+    "end": 1074602612,
+    "section": ".text.mbedtls_aes_crypt_cbc",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074602612,
+    "end": 1074602891,
+    "section": ".text.mbedtls_aes_crypt_ctr",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074759868,
+    "end": 1074760110,
+    "section": ".text.esp_aes_hw_encrypt_block",
+    "object": "hw_crypto_esp32",
+    "kind": "code"
+   },
+   {
+    "start": 1074764052,
+    "end": 1074764074,
+    "section": ".text.mbedtls_aes_rk_offset",
+    "object": "aes",
+    "kind": "code"
+   }
+  ],
+  "DES": [
+   {
+    "start": 1061167944,
+    "end": 1061168200,
+    "section": ".rodata.SB1",
+    "object": "des",
+    "kind": "data"
+   },
+   {
+    "start": 1061168200,
+    "end": 1061168456,
+    "section": ".rodata.SB2",
+    "object": "des",
+    "kind": "data"
+   },
+   {
+    "start": 1061168456,
+    "end": 1061168712,
+    "section": ".rodata.SB3",
+    "object": "des",
+    "kind": "data"
+   },
+   {
+    "start": 1061168712,
+    "end": 1061168968,
+    "section": ".rodata.SB4",
+    "object": "des",
+    "kind": "data"
+   },
+   {
+    "start": 1061168968,
+    "end": 1061169224,
+    "section": ".rodata.SB5",
+    "object": "des",
+    "kind": "data"
+   },
+   {
+    "start": 1061169224,
+    "end": 1061169480,
+    "section": ".rodata.SB6",
+    "object": "des",
+    "kind": "data"
+   },
+   {
+    "start": 1061169480,
+    "end": 1061169736,
+    "section": ".rodata.SB7",
+    "object": "des",
+    "kind": "data"
+   },
+   {
+    "start": 1061169736,
+    "end": 1061169992,
+    "section": ".rodata.SB8",
+    "object": "des",
+    "kind": "data"
+   },
+   {
+    "start": 1061169992,
+    "end": 1061170056,
+    "section": ".rodata.LHs",
+    "object": "des",
+    "kind": "data"
+   },
+   {
+    "start": 1061170056,
+    "end": 1061170120,
+    "section": ".rodata.RHs",
+    "object": "des",
+    "kind": "data"
+   },
+   {
+    "start": 1074593868,
+    "end": 1074593960,
+    "section": ".literal.mbedtls_des_setkey",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074593960,
+    "end": 1074594004,
+    "section": ".literal.mbedtls_des_crypt_ecb",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074602892,
+    "end": 1074602929,
+    "section": ".text.mbedtls_des_init",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074602932,
+    "end": 1074602977,
+    "section": ".text.mbedtls_des_free",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074602980,
+    "end": 1074603017,
+    "section": ".text.mbedtls_des3_init",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074603020,
+    "end": 1074603065,
+    "section": ".text.mbedtls_des3_free",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074603068,
+    "end": 1074604404,
+    "section": ".text.mbedtls_des_setkey",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074604404,
+    "end": 1074604444,
+    "section": ".text.mbedtls_des_setkey_enc",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074604444,
+    "end": 1074604633,
+    "section": ".text.mbedtls_des_setkey_dec",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074604636,
+    "end": 1074604938,
+    "section": ".text.des3_set2key",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074604940,
+    "end": 1074605006,
+    "section": ".text.mbedtls_des3_set2key_enc",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074605008,
+    "end": 1074605074,
+    "section": ".text.mbedtls_des3_set2key_dec",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074605076,
+    "end": 1074605354,
+    "section": ".text.des3_set3key",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074605356,
+    "end": 1074605422,
+    "section": ".text.mbedtls_des3_set3key_enc",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074605424,
+    "end": 1074605490,
+    "section": ".text.mbedtls_des3_set3key_dec",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074605492,
+    "end": 1074606719,
+    "section": ".text.mbedtls_des_crypt_ecb",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074606720,
+    "end": 1074607129,
+    "section": ".text.mbedtls_des_crypt_cbc",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074607132,
+    "end": 1074609226,
+    "section": ".text.mbedtls_des3_crypt_ecb",
+    "object": "des",
+    "kind": "code"
+   },
+   {
+    "start": 1074609228,
+    "end": 1074609637,
+    "section": ".text.mbedtls_des3_crypt_cbc",
+    "object": "des",
+    "kind": "code"
+   }
+  ],
+  "SHA256": [
+   {
+    "start": 1061171308,
+    "end": 1061171564,
+    "section": ".rodata.K",
+    "object": "sha256",
+    "kind": "data"
+   },
+   {
+    "start": 1074594432,
+    "end": 1074594496,
+    "section": ".literal.mbedtls_sha256_starts",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074594496,
+    "end": 1074594500,
+    "section": ".literal.mbedtls_internal_sha256_process",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074595272,
+    "end": 1074595276,
+    "section": ".literal.esp_sha_hw_wait",
+    "object": "hw_crypto_esp32",
+    "kind": "code"
+   },
+   {
+    "start": 1074595276,
+    "end": 1074595288,
+    "section": ".literal.esp_sha_hw_block",
+    "object": "hw_crypto_esp32",
+    "kind": "code"
+   },
+   {
+    "start": 1074595288,
+    "end": 1074595292,
+    "section": ".literal.esp_sha_hw_sha256",
+    "object": "hw_crypto_esp32",
+    "kind": "code"
+   },
+   {
+    "start": 1074645124,
+    "end": 1074645161,
+    "section": ".text.mbedtls_sha256_init",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074645164,
+    "end": 1074645209,
+    "section": ".text.mbedtls_sha256_free",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074645212,
+    "end": 1074645408,
+    "section": ".text.mbedtls_sha256_starts",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074645408,
+    "end": 1074649951,
+    "section": ".text.mbedtls_internal_sha256_process",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074649952,
+    "end": 1074650034,
+    "section": ".text.mbedtls_internal_sha256_process_many",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074650036,
+    "end": 1074650291,
+    "section": ".text.mbedtls_sha256_update",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074650292,
+    "end": 1074651764,
+    "section": ".text.mbedtls_sha256_finish",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074651764,
+    "end": 1074651918,
+    "section": ".text.mbedtls_sha256",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074759204,
+    "end": 1074759237,
+    "section": ".text.esp_sha_hw_wait",
+    "object": "hw_crypto_esp32",
+    "kind": "code"
+   },
+   {
+    "start": 1074759240,
+    "end": 1074759401,
+    "section": ".text.esp_sha_hw_block",
+    "object": "hw_crypto_esp32",
+    "kind": "code"
+   },
+   {
+    "start": 1074759404,
+    "end": 1074759867,
+    "section": ".text.esp_sha_hw_sha256",
+    "object": "hw_crypto_esp32",
+    "kind": "code"
+   }
+  ],
+  "SHA512": [
+   {
+    "start": 1061171568,
+    "end": 1061172208,
+    "section": ".rodata.K",
+    "object": "sha512",
+    "kind": "data"
+   },
+   {
+    "start": 1074594500,
+    "end": 1074594564,
+    "section": ".literal.mbedtls_sha512_starts",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074594564,
+    "end": 1074594568,
+    "section": ".literal.mbedtls_internal_sha512_process",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074651920,
+    "end": 1074651957,
+    "section": ".text.mbedtls_sha512_init",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074651960,
+    "end": 1074652005,
+    "section": ".text.mbedtls_sha512_free",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074652008,
+    "end": 1074652282,
+    "section": ".text.mbedtls_sha512_starts",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074652284,
+    "end": 1074660355,
+    "section": ".text.mbedtls_internal_sha512_process",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074660356,
+    "end": 1074660442,
+    "section": ".text.mbedtls_internal_sha512_process_many",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074660444,
+    "end": 1074660759,
+    "section": ".text.mbedtls_sha512_update",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074660760,
+    "end": 1074663266,
+    "section": ".text.mbedtls_sha512_finish",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074663268,
+    "end": 1074663420,
+    "section": ".text.mbedtls_sha512",
+    "object": "sha512",
+    "kind": "code"
+   }
+  ],
+  "RSA": [
+   {
+    "start": 1061172396,
+    "end": 1061172458,
+    "section": ".rodata",
+    "object": "rsa",
+    "kind": "data"
+   },
+   {
+    "start": 1061182712,
+    "end": 1061182766,
+    "section": ".rodata",
+    "object": "rsa_alt_helpers",
+    "kind": "data"
+   },
+   {
+    "start": 1074594604,
+    "end": 1074594608,
+    "section": ".literal.mbedtls_rsa_parse_pubkey",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074594608,
+    "end": 1074594616,
+    "section": ".literal.mbedtls_ct_rsaes_pkcs1_v15_unpadding",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074594616,
+    "end": 1074594620,
+    "section": ".literal.mbedtls_rsa_import_raw",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074594620,
+    "end": 1074594624,
+    "section": ".literal.mbedtls_rsa_gen_key",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074594624,
+    "end": 1074594628,
+    "section": ".literal.mbedtls_rsa_check_pubkey",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074594628,
+    "end": 1074594632,
+    "section": ".literal.mbedtls_rsa_public",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074594632,
+    "end": 1074594636,
+    "section": ".literal.rsa_gen_rand_with_inverse",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074594636,
+    "end": 1074594644,
+    "section": ".literal.mbedtls_rsa_private",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074594644,
+    "end": 1074594648,
+    "section": ".literal.rsa_rsassa_pss_sign_no_mode_check",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074594964,
+    "end": 1074594968,
+    "section": ".literal.mbedtls_rsa_deduce_primes",
+    "object": "rsa_alt_helpers",
+    "kind": "code"
+   },
+   {
+    "start": 1074677892,
+    "end": 1074677937,
+    "section": ".text.mbedtls_md_get_size_from_type",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074677940,
+    "end": 1074677973,
+    "section": ".text.mbedtls_ct_compiler_opaque",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074677976,
+    "end": 1074678041,
+    "section": ".text.mbedtls_ct_bool",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074678044,
+    "end": 1074678107,
+    "section": ".text.mbedtls_ct_if",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074678108,
+    "end": 1074678213,
+    "section": ".text.mbedtls_ct_uint_lt",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074678216,
+    "end": 1074678285,
+    "section": ".text.mbedtls_ct_uint_ne",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074678288,
+    "end": 1074678331,
+    "section": ".text.mbedtls_ct_uint_if",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074678332,
+    "end": 1074678390,
+    "section": ".text.mbedtls_ct_error_if",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074678392,
+    "end": 1074678436,
+    "section": ".text.mbedtls_ct_uint_eq",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074678436,
+    "end": 1074678475,
+    "section": ".text.mbedtls_ct_uint_gt",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074678476,
+    "end": 1074678805,
+    "section": ".text.mbedtls_rsa_parse_pubkey",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074678808,
+    "end": 1074679244,
+    "section": ".text.mbedtls_ct_rsaes_pkcs1_v15_unpadding",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074679244,
+    "end": 1074679477,
+    "section": ".text.mbedtls_rsa_import_raw",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074679480,
+    "end": 1074679797,
+    "section": ".text.rsa_check_context",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074679800,
+    "end": 1074680587,
+    "section": ".text.mbedtls_rsa_complete",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074680588,
+    "end": 1074680639,
+    "section": ".text.mbedtls_rsa_init",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074680640,
+    "end": 1074680735,
+    "section": ".text.mbedtls_rsa_set_padding",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074680736,
+    "end": 1074680775,
+    "section": ".text.mbedtls_rsa_get_bitlen",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074680776,
+    "end": 1074681335,
+    "section": ".text.mbedtls_rsa_gen_key",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074681336,
+    "end": 1074681475,
+    "section": ".text.mbedtls_rsa_check_pubkey",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074681476,
+    "end": 1074681639,
+    "section": ".text.mbedtls_rsa_check_privkey",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074681640,
+    "end": 1074681753,
+    "section": ".text.mbedtls_rsa_check_pub_priv",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074681756,
+    "end": 1074681980,
+    "section": ".text.mbedtls_rsa_public",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074681980,
+    "end": 1074682119,
+    "section": ".text.rsa_apply_crt",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074682120,
+    "end": 1074682501,
+    "section": ".text.rsa_gen_rand_with_inverse",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074682504,
+    "end": 1074682751,
+    "section": ".text.rsa_prepare_blinding",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074682752,
+    "end": 1074683021,
+    "section": ".text.rsa_unblind",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074683024,
+    "end": 1074684016,
+    "section": ".text.mbedtls_rsa_private",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074684016,
+    "end": 1074684422,
+    "section": ".text.mgf_mask",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074684424,
+    "end": 1074684677,
+    "section": ".text.hash_mprime",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074684680,
+    "end": 1074684747,
+    "section": ".text.compute_hash",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074684748,
+    "end": 1074685165,
+    "section": ".text.mbedtls_rsa_rsaes_oaep_encrypt",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074685168,
+    "end": 1074685425,
+    "section": ".text.mbedtls_rsa_rsaes_pkcs1_v15_encrypt",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074685428,
+    "end": 1074685533,
+    "section": ".text.mbedtls_rsa_pkcs1_encrypt",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074685536,
+    "end": 1074686287,
+    "section": ".text.mbedtls_rsa_rsaes_oaep_decrypt",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074686288,
+    "end": 1074686483,
+    "section": ".text.mbedtls_rsa_rsaes_pkcs1_v15_decrypt",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074686484,
+    "end": 1074686601,
+    "section": ".text.mbedtls_rsa_pkcs1_decrypt",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074686604,
+    "end": 1074687191,
+    "section": ".text.rsa_rsassa_pss_sign_no_mode_check",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074687192,
+    "end": 1074687288,
+    "section": ".text.rsa_rsassa_pss_sign",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074687288,
+    "end": 1074687351,
+    "section": ".text.mbedtls_rsa_rsassa_pss_sign",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074687352,
+    "end": 1074687889,
+    "section": ".text.rsa_rsassa_pkcs1_v15_encode",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074687892,
+    "end": 1074688207,
+    "section": ".text.mbedtls_rsa_rsassa_pkcs1_v15_sign",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074688208,
+    "end": 1074688333,
+    "section": ".text.mbedtls_rsa_pkcs1_sign",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074688336,
+    "end": 1074688972,
+    "section": ".text.mbedtls_rsa_rsassa_pss_verify_ext",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074688972,
+    "end": 1074689071,
+    "section": ".text.mbedtls_rsa_rsassa_pss_verify",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074689072,
+    "end": 1074689293,
+    "section": ".text.mbedtls_rsa_rsassa_pkcs1_v15_verify",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074689296,
+    "end": 1074689406,
+    "section": ".text.mbedtls_rsa_pkcs1_verify",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074689408,
+    "end": 1074689613,
+    "section": ".text.mbedtls_rsa_free",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074733256,
+    "end": 1074734030,
+    "section": ".text.mbedtls_rsa_deduce_primes",
+    "object": "rsa_alt_helpers",
+    "kind": "code"
+   },
+   {
+    "start": 1074734032,
+    "end": 1074734321,
+    "section": ".text.mbedtls_rsa_deduce_private_exponent",
+    "object": "rsa_alt_helpers",
+    "kind": "code"
+   },
+   {
+    "start": 1074734324,
+    "end": 1074734495,
+    "section": ".text.mbedtls_rsa_deduce_crt",
+    "object": "rsa_alt_helpers",
+    "kind": "code"
+   },
+   {
+    "start": 1074734496,
+    "end": 1074735130,
+    "section": ".text.mbedtls_rsa_validate_params",
+    "object": "rsa_alt_helpers",
+    "kind": "code"
+   },
+   {
+    "start": 1074735132,
+    "end": 1074735577,
+    "section": ".text.mbedtls_rsa_validate_crt",
+    "object": "rsa_alt_helpers",
+    "kind": "code"
+   },
+   {
+    "start": 1074766392,
+    "end": 1074766421,
+    "section": ".text.mbedtls_ct_uint_if_else_0",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074766424,
+    "end": 1074766461,
+    "section": ".text.mbedtls_ct_error_if_else_0",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074766464,
+    "end": 1074766493,
+    "section": ".text.mbedtls_ct_bool_and",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074766496,
+    "end": 1074766525,
+    "section": ".text.mbedtls_ct_bool_or",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074766528,
+    "end": 1074766555,
+    "section": ".text.mbedtls_ct_bool_not",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074766556,
+    "end": 1074766582,
+    "section": ".text.mbedtls_mpi_core_montmul_working_limbs",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074766584,
+    "end": 1074766616,
+    "section": ".text.mbedtls_error_add",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074766616,
+    "end": 1074766640,
+    "section": ".text.mbedtls_rsa_get_len",
+    "object": "rsa",
+    "kind": "code"
+   }
+  ],
+  "FFDH": [
+   {
+    "start": 1061172460,
+    "end": 1061172582,
+    "section": ".rodata",
+    "object": "dhm",
+    "kind": "data"
+   },
+   {
+    "start": 1074594648,
+    "end": 1074594652,
+    "section": ".literal.dhm_check_range",
+    "object": "dhm",
+    "kind": "code"
+   },
+   {
+    "start": 1074594652,
+    "end": 1074594656,
+    "section": ".literal.dhm_make_common",
+    "object": "dhm",
+    "kind": "code"
+   },
+   {
+    "start": 1074594656,
+    "end": 1074594664,
+    "section": ".literal.mbedtls_dhm_set_group",
+    "object": "dhm",
+    "kind": "code"
+   },
+   {
+    "start": 1074594664,
+    "end": 1074594668,
+    "section": ".literal.mbedtls_dhm_make_public",
+    "object": "dhm",
+    "kind": "code"
+   },
+   {
+    "start": 1074689616,
+    "end": 1074689737,
+    "section": ".text.dhm_check_range",
+    "object": "dhm",
+    "kind": "code"
+   },
+   {
+    "start": 1074689740,
+    "end": 1074689777,
+    "section": ".text.mbedtls_dhm_init",
+    "object": "dhm",
+    "kind": "code"
+   },
+   {
+    "start": 1074689780,
+    "end": 1074689816,
+    "section": ".text.mbedtls_dhm_get_len",
+    "object": "dhm",
+    "kind": "code"
+   },
+   {
+    "start": 1074689816,
+    "end": 1074689887,
+    "section": ".text.dhm_random_below",
+    "object": "dhm",
+    "kind": "code"
+   },
+   {
+    "start": 1074689888,
+    "end": 1074690125,
+    "section": ".text.dhm_make_common",
+    "object": "dhm",
+    "kind": "code"
+   },
+   {
+    "start": 1074690128,
+    "end": 1074690229,
+    "section": ".text.mbedtls_dhm_set_group",
+    "object": "dhm",
+    "kind": "code"
+   },
+   {
+    "start": 1074690232,
+    "end": 1074690387,
+    "section": ".text.mbedtls_dhm_make_public",
+    "object": "dhm",
+    "kind": "code"
+   },
+   {
+    "start": 1074690388,
+    "end": 1074690561,
+    "section": ".text.mbedtls_dhm_free",
+    "object": "dhm",
+    "kind": "code"
+   },
+   {
+    "start": 1074766640,
+    "end": 1074766672,
+    "section": ".text.mbedtls_error_add",
+    "object": "dhm",
+    "kind": "code"
+   }
+  ],
+  "ECC": [
+   {
+    "start": 1061172584,
+    "end": 1061172616,
+    "section": ".rodata.x25519_bad_point_1",
+    "object": "ecp",
+    "kind": "data"
+   },
+   {
+    "start": 1061172616,
+    "end": 1061172648,
+    "section": ".rodata.x25519_bad_point_2",
+    "object": "ecp",
+    "kind": "data"
+   },
+   {
+    "start": 1061172648,
+    "end": 1061172656,
+    "section": ".rodata.ecp_x25519_bad_point_1",
+    "object": "ecp",
+    "kind": "data"
+   },
+   {
+    "start": 1061172656,
+    "end": 1061172664,
+    "section": ".rodata.ecp_x25519_bad_point_2",
+    "object": "ecp",
+    "kind": "data"
+   },
+   {
+    "start": 1061172664,
+    "end": 1061172668,
+    "section": ".rodata.mpi_one",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061172668,
+    "end": 1061172700,
+    "section": ".rodata.secp256r1_p",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061172700,
+    "end": 1061172732,
+    "section": ".rodata.secp256r1_b",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061172732,
+    "end": 1061172764,
+    "section": ".rodata.secp256r1_gx",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061172764,
+    "end": 1061172796,
+    "section": ".rodata.secp256r1_gy",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061172796,
+    "end": 1061172828,
+    "section": ".rodata.secp256r1_n",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061172828,
+    "end": 1061172860,
+    "section": ".rodata.secp256r1_T_0_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061172860,
+    "end": 1061172892,
+    "section": ".rodata.secp256r1_T_0_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061172892,
+    "end": 1061172924,
+    "section": ".rodata.secp256r1_T_1_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061172924,
+    "end": 1061172956,
+    "section": ".rodata.secp256r1_T_1_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061172956,
+    "end": 1061172988,
+    "section": ".rodata.secp256r1_T_2_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061172988,
+    "end": 1061173020,
+    "section": ".rodata.secp256r1_T_2_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173020,
+    "end": 1061173052,
+    "section": ".rodata.secp256r1_T_3_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173052,
+    "end": 1061173084,
+    "section": ".rodata.secp256r1_T_3_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173084,
+    "end": 1061173116,
+    "section": ".rodata.secp256r1_T_4_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173116,
+    "end": 1061173148,
+    "section": ".rodata.secp256r1_T_4_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173148,
+    "end": 1061173180,
+    "section": ".rodata.secp256r1_T_5_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173180,
+    "end": 1061173212,
+    "section": ".rodata.secp256r1_T_5_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173212,
+    "end": 1061173244,
+    "section": ".rodata.secp256r1_T_6_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173244,
+    "end": 1061173276,
+    "section": ".rodata.secp256r1_T_6_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173276,
+    "end": 1061173308,
+    "section": ".rodata.secp256r1_T_7_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173308,
+    "end": 1061173340,
+    "section": ".rodata.secp256r1_T_7_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173340,
+    "end": 1061173372,
+    "section": ".rodata.secp256r1_T_8_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173372,
+    "end": 1061173404,
+    "section": ".rodata.secp256r1_T_8_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173404,
+    "end": 1061173436,
+    "section": ".rodata.secp256r1_T_9_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173436,
+    "end": 1061173468,
+    "section": ".rodata.secp256r1_T_9_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173468,
+    "end": 1061173500,
+    "section": ".rodata.secp256r1_T_10_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173500,
+    "end": 1061173532,
+    "section": ".rodata.secp256r1_T_10_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173532,
+    "end": 1061173564,
+    "section": ".rodata.secp256r1_T_11_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173564,
+    "end": 1061173596,
+    "section": ".rodata.secp256r1_T_11_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173596,
+    "end": 1061173628,
+    "section": ".rodata.secp256r1_T_12_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173628,
+    "end": 1061173660,
+    "section": ".rodata.secp256r1_T_12_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173660,
+    "end": 1061173692,
+    "section": ".rodata.secp256r1_T_13_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173692,
+    "end": 1061173724,
+    "section": ".rodata.secp256r1_T_13_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173724,
+    "end": 1061173756,
+    "section": ".rodata.secp256r1_T_14_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173756,
+    "end": 1061173788,
+    "section": ".rodata.secp256r1_T_14_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173788,
+    "end": 1061173820,
+    "section": ".rodata.secp256r1_T_15_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173820,
+    "end": 1061173852,
+    "section": ".rodata.secp256r1_T_15_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061173852,
+    "end": 1061174236,
+    "section": ".rodata.secp256r1_T",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061174236,
+    "end": 1061174284,
+    "section": ".rodata.secp384r1_p",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061174284,
+    "end": 1061174332,
+    "section": ".rodata.secp384r1_b",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061174332,
+    "end": 1061174380,
+    "section": ".rodata.secp384r1_gx",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061174380,
+    "end": 1061174428,
+    "section": ".rodata.secp384r1_gy",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061174428,
+    "end": 1061174476,
+    "section": ".rodata.secp384r1_n",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061174476,
+    "end": 1061174524,
+    "section": ".rodata.secp384r1_T_0_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061174524,
+    "end": 1061174572,
+    "section": ".rodata.secp384r1_T_0_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061174572,
+    "end": 1061174620,
+    "section": ".rodata.secp384r1_T_1_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061174620,
+    "end": 1061174668,
+    "section": ".rodata.secp384r1_T_1_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061174668,
+    "end": 1061174716,
+    "section": ".rodata.secp384r1_T_2_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061174716,
+    "end": 1061174764,
+    "section": ".rodata.secp384r1_T_2_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061174764,
+    "end": 1061174812,
+    "section": ".rodata.secp384r1_T_3_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061174812,
+    "end": 1061174860,
+    "section": ".rodata.secp384r1_T_3_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061174860,
+    "end": 1061174908,
+    "section": ".rodata.secp384r1_T_4_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061174908,
+    "end": 1061174956,
+    "section": ".rodata.secp384r1_T_4_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061174956,
+    "end": 1061175004,
+    "section": ".rodata.secp384r1_T_5_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175004,
+    "end": 1061175052,
+    "section": ".rodata.secp384r1_T_5_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175052,
+    "end": 1061175100,
+    "section": ".rodata.secp384r1_T_6_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175100,
+    "end": 1061175148,
+    "section": ".rodata.secp384r1_T_6_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175148,
+    "end": 1061175196,
+    "section": ".rodata.secp384r1_T_7_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175196,
+    "end": 1061175244,
+    "section": ".rodata.secp384r1_T_7_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175244,
+    "end": 1061175292,
+    "section": ".rodata.secp384r1_T_8_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175292,
+    "end": 1061175340,
+    "section": ".rodata.secp384r1_T_8_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175340,
+    "end": 1061175388,
+    "section": ".rodata.secp384r1_T_9_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175388,
+    "end": 1061175436,
+    "section": ".rodata.secp384r1_T_9_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175436,
+    "end": 1061175484,
+    "section": ".rodata.secp384r1_T_10_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175484,
+    "end": 1061175532,
+    "section": ".rodata.secp384r1_T_10_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175532,
+    "end": 1061175580,
+    "section": ".rodata.secp384r1_T_11_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175580,
+    "end": 1061175628,
+    "section": ".rodata.secp384r1_T_11_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175628,
+    "end": 1061175676,
+    "section": ".rodata.secp384r1_T_12_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175676,
+    "end": 1061175724,
+    "section": ".rodata.secp384r1_T_12_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175724,
+    "end": 1061175772,
+    "section": ".rodata.secp384r1_T_13_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175772,
+    "end": 1061175820,
+    "section": ".rodata.secp384r1_T_13_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175820,
+    "end": 1061175868,
+    "section": ".rodata.secp384r1_T_14_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175868,
+    "end": 1061175916,
+    "section": ".rodata.secp384r1_T_14_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175916,
+    "end": 1061175964,
+    "section": ".rodata.secp384r1_T_15_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061175964,
+    "end": 1061176012,
+    "section": ".rodata.secp384r1_T_15_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176012,
+    "end": 1061176060,
+    "section": ".rodata.secp384r1_T_16_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176060,
+    "end": 1061176108,
+    "section": ".rodata.secp384r1_T_16_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176108,
+    "end": 1061176156,
+    "section": ".rodata.secp384r1_T_17_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176156,
+    "end": 1061176204,
+    "section": ".rodata.secp384r1_T_17_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176204,
+    "end": 1061176252,
+    "section": ".rodata.secp384r1_T_18_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176252,
+    "end": 1061176300,
+    "section": ".rodata.secp384r1_T_18_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176300,
+    "end": 1061176348,
+    "section": ".rodata.secp384r1_T_19_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176348,
+    "end": 1061176396,
+    "section": ".rodata.secp384r1_T_19_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176396,
+    "end": 1061176444,
+    "section": ".rodata.secp384r1_T_20_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176444,
+    "end": 1061176492,
+    "section": ".rodata.secp384r1_T_20_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176492,
+    "end": 1061176540,
+    "section": ".rodata.secp384r1_T_21_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176540,
+    "end": 1061176588,
+    "section": ".rodata.secp384r1_T_21_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176588,
+    "end": 1061176636,
+    "section": ".rodata.secp384r1_T_22_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176636,
+    "end": 1061176684,
+    "section": ".rodata.secp384r1_T_22_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176684,
+    "end": 1061176732,
+    "section": ".rodata.secp384r1_T_23_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176732,
+    "end": 1061176780,
+    "section": ".rodata.secp384r1_T_23_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176780,
+    "end": 1061176828,
+    "section": ".rodata.secp384r1_T_24_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176828,
+    "end": 1061176876,
+    "section": ".rodata.secp384r1_T_24_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176876,
+    "end": 1061176924,
+    "section": ".rodata.secp384r1_T_25_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176924,
+    "end": 1061176972,
+    "section": ".rodata.secp384r1_T_25_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061176972,
+    "end": 1061177020,
+    "section": ".rodata.secp384r1_T_26_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061177020,
+    "end": 1061177068,
+    "section": ".rodata.secp384r1_T_26_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061177068,
+    "end": 1061177116,
+    "section": ".rodata.secp384r1_T_27_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061177116,
+    "end": 1061177164,
+    "section": ".rodata.secp384r1_T_27_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061177164,
+    "end": 1061177212,
+    "section": ".rodata.secp384r1_T_28_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061177212,
+    "end": 1061177260,
+    "section": ".rodata.secp384r1_T_28_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061177260,
+    "end": 1061177308,
+    "section": ".rodata.secp384r1_T_29_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061177308,
+    "end": 1061177356,
+    "section": ".rodata.secp384r1_T_29_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061177356,
+    "end": 1061177404,
+    "section": ".rodata.secp384r1_T_30_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061177404,
+    "end": 1061177452,
+    "section": ".rodata.secp384r1_T_30_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061177452,
+    "end": 1061177500,
+    "section": ".rodata.secp384r1_T_31_X",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061177500,
+    "end": 1061177548,
+    "section": ".rodata.secp384r1_T_31_Y",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061177548,
+    "end": 1061178316,
+    "section": ".rodata.secp384r1_T",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061178316,
+    "end": 1061178348,
+    "section": ".rodata.curve25519_p",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1061178348,
+    "end": 1061178380,
+    "section": ".rodata.curve25519_n",
+    "object": "ecp_curves",
+    "kind": "data"
+   },
+   {
+    "start": 1074594668,
+    "end": 1074594676,
+    "section": ".literal.mbedtls_ecp_point_read_binary",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074594676,
+    "end": 1074594684,
+    "section": ".literal.ecp_normalize_jac_many",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074594684,
+    "end": 1074594688,
+    "section": ".literal.ecp_randomize_jac",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074594688,
+    "end": 1074594692,
+    "section": ".literal.ecp_check_pubkey_sw",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074594692,
+    "end": 1074594700,
+    "section": ".literal.ecp_check_bad_points_mx",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074594700,
+    "end": 1074594704,
+    "section": ".literal.ecp_mpi_set1",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074594704,
+    "end": 1074594716,
+    "section": ".literal.ecp_use_curve25519",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074594716,
+    "end": 1074594776,
+    "section": ".literal.mbedtls_ecp_group_load",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074690564,
+    "end": 1074690618,
+    "section": ".text.mpi_init_many",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074690620,
+    "end": 1074690674,
+    "section": ".text.mpi_free_many",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074690676,
+    "end": 1074690735,
+    "section": ".text.mbedtls_ecp_point_init",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074690736,
+    "end": 1074690892,
+    "section": ".text.mbedtls_ecp_group_init",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074690892,
+    "end": 1074690953,
+    "section": ".text.mbedtls_ecp_keypair_init",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074690956,
+    "end": 1074691025,
+    "section": ".text.mbedtls_ecp_point_free",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074691028,
+    "end": 1074691237,
+    "section": ".text.mbedtls_ecp_group_free",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074691240,
+    "end": 1074691309,
+    "section": ".text.mbedtls_ecp_keypair_free",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074691312,
+    "end": 1074691413,
+    "section": ".text.mbedtls_ecp_copy",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074691416,
+    "end": 1074691459,
+    "section": ".text.mbedtls_ecp_group_copy",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074691460,
+    "end": 1074691548,
+    "section": ".text.mbedtls_ecp_set_zero",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074691548,
+    "end": 1074691599,
+    "section": ".text.mbedtls_ecp_is_zero",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074691600,
+    "end": 1074692021,
+    "section": ".text.mbedtls_ecp_point_read_binary",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074692024,
+    "end": 1074692215,
+    "section": ".text.ecp_modp",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074692216,
+    "end": 1074692285,
+    "section": ".text.mbedtls_mpi_mul_mod",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074692288,
+    "end": 1074692403,
+    "section": ".text.mbedtls_mpi_sub_mod",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074692404,
+    "end": 1074692507,
+    "section": ".text.mbedtls_mpi_add_mod",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074692508,
+    "end": 1074692611,
+    "section": ".text.mbedtls_mpi_mul_int_mod",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074692612,
+    "end": 1074692727,
+    "section": ".text.mbedtls_mpi_sub_int_mod",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074692728,
+    "end": 1074692827,
+    "section": ".text.mbedtls_mpi_shift_l_mod",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074692828,
+    "end": 1074692983,
+    "section": ".text.ecp_sw_rhs",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074692984,
+    "end": 1074693215,
+    "section": ".text.mbedtls_ecp_sw_derive_y",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074693216,
+    "end": 1074693463,
+    "section": ".text.ecp_normalize_jac",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074693464,
+    "end": 1074694181,
+    "section": ".text.ecp_normalize_jac_many",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074694184,
+    "end": 1074694337,
+    "section": ".text.ecp_safe_invert_jac",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074694340,
+    "end": 1074695265,
+    "section": ".text.ecp_double_jac",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074695268,
+    "end": 1074696037,
+    "section": ".text.ecp_add_mixed",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074696040,
+    "end": 1074696285,
+    "section": ".text.ecp_randomize_jac",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074696288,
+    "end": 1074696700,
+    "section": ".text.ecp_comb_recode_core",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074696700,
+    "end": 1074697345,
+    "section": ".text.ecp_precompute_comb",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074697348,
+    "end": 1074697604,
+    "section": ".text.ecp_select_comb",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074697604,
+    "end": 1074697898,
+    "section": ".text.ecp_mul_comb_core",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074697900,
+    "end": 1074698139,
+    "section": ".text.ecp_comb_recode_scalar",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074698140,
+    "end": 1074698325,
+    "section": ".text.ecp_mul_comb_after_precomp",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074698328,
+    "end": 1074698440,
+    "section": ".text.ecp_pick_window_size",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074698440,
+    "end": 1074698937,
+    "section": ".text.ecp_mul_comb",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074698940,
+    "end": 1074699056,
+    "section": ".text.ecp_normalize_mxz",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074699056,
+    "end": 1074699209,
+    "section": ".text.ecp_randomize_mxz",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074699212,
+    "end": 1074699840,
+    "section": ".text.ecp_double_add_mxz",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074699840,
+    "end": 1074700379,
+    "section": ".text.ecp_mul_mxz",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074700380,
+    "end": 1074700551,
+    "section": ".text.ecp_mul_restartable_internal",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074700552,
+    "end": 1074700623,
+    "section": ".text.mbedtls_ecp_mul_restartable",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074700624,
+    "end": 1074700683,
+    "section": ".text.mbedtls_ecp_mul",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074700684,
+    "end": 1074700923,
+    "section": ".text.ecp_check_pubkey_sw",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074700924,
+    "end": 1074701249,
+    "section": ".text.mbedtls_ecp_mul_shortcuts",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074701252,
+    "end": 1074701476,
+    "section": ".text.mbedtls_ecp_muladd_restartable",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074701476,
+    "end": 1074701727,
+    "section": ".text.ecp_check_bad_points_mx",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074701728,
+    "end": 1074701833,
+    "section": ".text.ecp_check_pubkey_mx",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074701836,
+    "end": 1074701948,
+    "section": ".text.mbedtls_ecp_check_pubkey",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074701948,
+    "end": 1074702144,
+    "section": ".text.mbedtls_ecp_check_privkey",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074702144,
+    "end": 1074702319,
+    "section": ".text.mbedtls_ecp_gen_privkey_mx",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074702320,
+    "end": 1074702383,
+    "section": ".text.mbedtls_ecp_gen_privkey_sw",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074702384,
+    "end": 1074702492,
+    "section": ".text.mbedtls_ecp_gen_privkey",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074702492,
+    "end": 1074702834,
+    "section": ".text.mbedtls_ecp_check_pub_priv",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074702836,
+    "end": 1074702875,
+    "section": ".text.ecp_mpi_set1",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074702876,
+    "end": 1074703092,
+    "section": ".text.ecp_group_load",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074703092,
+    "end": 1074703287,
+    "section": ".text.ecp_use_curve25519",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074703288,
+    "end": 1074703544,
+    "section": ".text.mbedtls_ecp_group_load",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074703544,
+    "end": 1074703611,
+    "section": ".text.ecp_mod_p256",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074703612,
+    "end": 1074707962,
+    "section": ".text.mbedtls_ecp_mod_p256_raw",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074707964,
+    "end": 1074708031,
+    "section": ".text.ecp_mod_p384",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074708032,
+    "end": 1074713676,
+    "section": ".text.mbedtls_ecp_mod_p384_raw",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074713676,
+    "end": 1074713743,
+    "section": ".text.ecp_mod_p255",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074713744,
+    "end": 1074713941,
+    "section": ".text.mbedtls_ecp_mod_p255_raw",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074766672,
+    "end": 1074766706,
+    "section": ".text.mbedtls_ecp_group_a_is_minus_3",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074766708,
+    "end": 1074766753,
+    "section": ".text.mbedtls_ecp_get_type",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074766756,
+    "end": 1074766797,
+    "section": ".text.ecp_group_is_static_comb_table",
+    "object": "ecp",
+    "kind": "code"
+   },
+   {
+    "start": 1074766800,
+    "end": 1074766850,
+    "section": ".text.ecp_mpi_load",
+    "object": "ecp_curves",
+    "kind": "code"
+   },
+   {
+    "start": 1074766852,
+    "end": 1074766890,
+    "section": ".text.extract_carry",
+    "object": "ecp_curves",
+    "kind": "code"
+   }
+  ],
+  "ECDSA": [
+   {
+    "start": 1061178380,
+    "end": 1061178444,
+    "section": ".rodata",
+    "object": "ecdsa",
+    "kind": "data"
+   },
+   {
+    "start": 1074594776,
+    "end": 1074594780,
+    "section": ".literal.mbedtls_ecdsa_verify_restartable",
+    "object": "ecdsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074594780,
+    "end": 1074594784,
+    "section": ".literal.ecdsa_signature_to_asn1",
+    "object": "ecdsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074594784,
+    "end": 1074594792,
+    "section": ".literal.mbedtls_ecdsa_read_signature_restartable",
+    "object": "ecdsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074713944,
+    "end": 1074714113,
+    "section": ".text.derive_mpi",
+    "object": "ecdsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074714116,
+    "end": 1074714674,
+    "section": ".text.mbedtls_ecdsa_sign_restartable",
+    "object": "ecdsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074714676,
+    "end": 1074715254,
+    "section": ".text.mbedtls_ecdsa_verify_restartable",
+    "object": "ecdsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074715256,
+    "end": 1074715525,
+    "section": ".text.ecdsa_signature_to_asn1",
+    "object": "ecdsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074715528,
+    "end": 1074715729,
+    "section": ".text.mbedtls_ecdsa_write_signature_restartable",
+    "object": "ecdsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074715732,
+    "end": 1074715805,
+    "section": ".text.mbedtls_ecdsa_write_signature",
+    "object": "ecdsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074715808,
+    "end": 1074715860,
+    "section": ".text.mbedtls_ecdsa_read_signature",
+    "object": "ecdsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074715860,
+    "end": 1074716166,
+    "section": ".text.mbedtls_ecdsa_read_signature_restartable",
+    "object": "ecdsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074766892,
+    "end": 1074766924,
+    "section": ".text.mbedtls_error_add",
+    "object": "ecdsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074766924,
+    "end": 1074766958,
+    "section": ".text.mbedtls_ecdsa_can_do",
+    "object": "ecdsa",
+    "kind": "code"
+   }
+  ],
+  "CHACHA20": [
+   {
+    "start": 1074594004,
+    "end": 1074594020,
+    "section": ".literal.mbedtls_chacha20_setkey",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074609640,
+    "end": 1074609793,
+    "section": ".text.chacha20_inner_block",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074609796,
+    "end": 1074610255,
+    "section": ".text.chacha20_block",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074610256,
+    "end": 1074610316,
+    "section": ".text.mbedtls_chacha20_init",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074610316,
+    "end": 1074610355,
+    "section": ".text.mbedtls_chacha20_free",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074610356,
+    "end": 1074610850,
+    "section": ".text.mbedtls_chacha20_setkey",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074610852,
+    "end": 1074611062,
+    "section": ".text.mbedtls_chacha20_starts",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074611064,
+    "end": 1074611501,
+    "section": ".text.mbedtls_chacha20_update",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074764076,
+    "end": 1074764500,
+    "section": ".text.chacha20_quarter_round",
+    "object": "chacha20",
+    "kind": "code"
+   },
+   {
+    "start": 1074764500,
+    "end": 1074764717,
+    "section": ".text.mbedtls_chacha20_check_counter_wrap",
+    "object": "chacha20",
+    "kind": "code"
+   }
+  ],
+  "POLY1305": [
+   {
+    "start": 1074594020,
+    "end": 1074594024,
+    "section": ".literal.mbedtls_poly1305_starts",
+    "object": "poly1305",
+    "kind": "code"
+   },
+   {
+    "start": 1074611504,
+    "end": 1074611574,
+    "section": ".text.mul64",
+    "object": "poly1305",
+    "kind": "code"
+   },
+   {
+    "start": 1074611576,
+    "end": 1074613535,
+    "section": ".text.poly1305_process",
+    "object": "poly1305",
+    "kind": "code"
+   },
+   {
+    "start": 1074613536,
+    "end": 1074613570,
+    "section": ".text.mbedtls_poly1305_init",
+    "object": "poly1305",
+    "kind": "code"
+   },
+   {
+    "start": 1074613572,
+    "end": 1074613613,
+    "section": ".text.mbedtls_poly1305_free",
+    "object": "poly1305",
+    "kind": "code"
+   },
+   {
+    "start": 1074613616,
+    "end": 1074614168,
+    "section": ".text.mbedtls_poly1305_starts",
+    "object": "poly1305",
+    "kind": "code"
+   },
+   {
+    "start": 1074614168,
+    "end": 1074614439,
+    "section": ".text.mbedtls_poly1305_update",
+    "object": "poly1305",
+    "kind": "code"
+   },
+   {
+    "start": 1074614440,
+    "end": 1074614571,
+    "section": ".text.mbedtls_poly1305_finish",
+    "object": "poly1305",
+    "kind": "code"
+   },
+   {
+    "start": 1074764720,
+    "end": 1074765845,
+    "section": ".text.poly1305_compute_mac",
+    "object": "poly1305",
+    "kind": "code"
+   }
+  ],
+  "MD5": [
+   {
+    "start": 1074594140,
+    "end": 1074594156,
+    "section": ".literal.mbedtls_md5_starts",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074594156,
+    "end": 1074594412,
+    "section": ".literal.mbedtls_internal_md5_process",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074629212,
+    "end": 1074629249,
+    "section": ".text.mbedtls_md5_init",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074629252,
+    "end": 1074629293,
+    "section": ".text.mbedtls_md5_free",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074629296,
+    "end": 1074629358,
+    "section": ".text.mbedtls_md5_starts",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074629360,
+    "end": 1074633850,
+    "section": ".text.mbedtls_internal_md5_process",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074633852,
+    "end": 1074634105,
+    "section": ".text.mbedtls_md5_update",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074634108,
+    "end": 1074635008,
+    "section": ".text.mbedtls_md5_finish",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074635008,
+    "end": 1074635134,
+    "section": ".text.mbedtls_md5",
+    "object": "md5",
+    "kind": "code"
+   }
+  ],
+  "SHA1": [
+   {
+    "start": 1074594412,
+    "end": 1074594416,
+    "section": ".literal.mbedtls_sha1_starts",
+    "object": "sha1",
+    "kind": "code"
+   },
+   {
+    "start": 1074594416,
+    "end": 1074594432,
+    "section": ".literal.mbedtls_internal_sha1_process",
+    "object": "sha1",
+    "kind": "code"
+   },
+   {
+    "start": 1074635136,
+    "end": 1074635173,
+    "section": ".text.mbedtls_sha1_init",
+    "object": "sha1",
+    "kind": "code"
+   },
+   {
+    "start": 1074635176,
+    "end": 1074635217,
+    "section": ".text.mbedtls_sha1_free",
+    "object": "sha1",
+    "kind": "code"
+   },
+   {
+    "start": 1074635220,
+    "end": 1074635289,
+    "section": ".text.mbedtls_sha1_starts",
+    "object": "sha1",
+    "kind": "code"
+   },
+   {
+    "start": 1074635292,
+    "end": 1074643646,
+    "section": ".text.mbedtls_internal_sha1_process",
+    "object": "sha1",
+    "kind": "code"
+   },
+   {
+    "start": 1074643648,
+    "end": 1074643901,
+    "section": ".text.mbedtls_sha1_update",
+    "object": "sha1",
+    "kind": "code"
+   },
+   {
+    "start": 1074643904,
+    "end": 1074644996,
+    "section": ".text.mbedtls_sha1_finish",
+    "object": "sha1",
+    "kind": "code"
+   },
+   {
+    "start": 1074644996,
+    "end": 1074645122,
+    "section": ".text.mbedtls_sha1",
+    "object": "sha1",
+    "kind": "code"
+   }
+  ],
+  "ECDH": [
+   {
+    "start": 1074716168,
+    "end": 1074716273,
+    "section": ".text.ecdh_gen_public_restartable",
+    "object": "ecdh",
+    "kind": "code"
+   },
+   {
+    "start": 1074716276,
+    "end": 1074716328,
+    "section": ".text.mbedtls_ecdh_gen_public",
+    "object": "ecdh",
+    "kind": "code"
+   },
+   {
+    "start": 1074716328,
+    "end": 1074716473,
+    "section": ".text.ecdh_compute_shared_restartable",
+    "object": "ecdh",
+    "kind": "code"
+   },
+   {
+    "start": 1074716476,
+    "end": 1074716535,
+    "section": ".text.mbedtls_ecdh_compute_shared",
+    "object": "ecdh",
+    "kind": "code"
+   }
+  ]
+ },
+ "support_ranges": {
+  "SUPPORT": [
+   {
+    "start": 1073414152,
+    "end": 1073414156,
+    "section": ".bss.mbedtls_ct_zero",
+    "object": "constant_time",
+    "kind": "data"
+   },
+   {
+    "start": 1061170152,
+    "end": 1061170188,
+    "section": ".rodata.aes_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170188,
+    "end": 1061170434,
+    "section": ".rodata",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170436,
+    "end": 1061170444,
+    "section": ".rodata.aes_128_ecb_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170444,
+    "end": 1061170452,
+    "section": ".rodata.aes_192_ecb_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170452,
+    "end": 1061170460,
+    "section": ".rodata.aes_256_ecb_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170460,
+    "end": 1061170468,
+    "section": ".rodata.aes_128_cbc_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170468,
+    "end": 1061170476,
+    "section": ".rodata.aes_192_cbc_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170476,
+    "end": 1061170484,
+    "section": ".rodata.aes_256_cbc_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170484,
+    "end": 1061170492,
+    "section": ".rodata.aes_128_ctr_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170492,
+    "end": 1061170500,
+    "section": ".rodata.aes_192_ctr_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170500,
+    "end": 1061170508,
+    "section": ".rodata.aes_256_ctr_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170508,
+    "end": 1061170544,
+    "section": ".rodata.gcm_aes_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170544,
+    "end": 1061170552,
+    "section": ".rodata.aes_128_gcm_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170552,
+    "end": 1061170560,
+    "section": ".rodata.aes_192_gcm_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170560,
+    "end": 1061170568,
+    "section": ".rodata.aes_256_gcm_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170568,
+    "end": 1061170604,
+    "section": ".rodata.des_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170604,
+    "end": 1061170612,
+    "section": ".rodata.des_ecb_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170612,
+    "end": 1061170620,
+    "section": ".rodata.des_cbc_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170620,
+    "end": 1061170656,
+    "section": ".rodata.des_ede_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170656,
+    "end": 1061170664,
+    "section": ".rodata.des_ede_ecb_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170664,
+    "end": 1061170672,
+    "section": ".rodata.des_ede_cbc_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170672,
+    "end": 1061170708,
+    "section": ".rodata.des_ede3_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170708,
+    "end": 1061170716,
+    "section": ".rodata.des_ede3_ecb_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170716,
+    "end": 1061170724,
+    "section": ".rodata.des_ede3_cbc_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170724,
+    "end": 1061170760,
+    "section": ".rodata.chacha20_base_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170760,
+    "end": 1061170768,
+    "section": ".rodata.chacha20_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170768,
+    "end": 1061170804,
+    "section": ".rodata.chachapoly_base_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170804,
+    "end": 1061170812,
+    "section": ".rodata.chachapoly_info",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170812,
+    "end": 1061170980,
+    "section": ".rodata.mbedtls_cipher_definitions",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061170980,
+    "end": 1061171008,
+    "section": ".rodata.mbedtls_cipher_base_lookup_table",
+    "object": "cipher_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061171008,
+    "end": 1061171016,
+    "section": ".rodata.mbedtls_md5_info",
+    "object": "md",
+    "kind": "data"
+   },
+   {
+    "start": 1061171016,
+    "end": 1061171024,
+    "section": ".rodata.mbedtls_sha1_info",
+    "object": "md",
+    "kind": "data"
+   },
+   {
+    "start": 1061171024,
+    "end": 1061171032,
+    "section": ".rodata.mbedtls_sha224_info",
+    "object": "md",
+    "kind": "data"
+   },
+   {
+    "start": 1061171032,
+    "end": 1061171040,
+    "section": ".rodata.mbedtls_sha256_info",
+    "object": "md",
+    "kind": "data"
+   },
+   {
+    "start": 1061171040,
+    "end": 1061171048,
+    "section": ".rodata.mbedtls_sha384_info",
+    "object": "md",
+    "kind": "data"
+   },
+   {
+    "start": 1061171048,
+    "end": 1061171056,
+    "section": ".rodata.mbedtls_sha512_info",
+    "object": "md",
+    "kind": "data"
+   },
+   {
+    "start": 1061171056,
+    "end": 1061171092,
+    "section": ".rodata.mbedtls_md_info_from_type",
+    "object": "md",
+    "kind": "data"
+   },
+   {
+    "start": 1061171092,
+    "end": 1061171128,
+    "section": ".rodata.mbedtls_md_free",
+    "object": "md",
+    "kind": "data"
+   },
+   {
+    "start": 1061171128,
+    "end": 1061171164,
+    "section": ".rodata.mbedtls_md_setup",
+    "object": "md",
+    "kind": "data"
+   },
+   {
+    "start": 1061171164,
+    "end": 1061171200,
+    "section": ".rodata.mbedtls_md_starts",
+    "object": "md",
+    "kind": "data"
+   },
+   {
+    "start": 1061171200,
+    "end": 1061171236,
+    "section": ".rodata.mbedtls_md_update",
+    "object": "md",
+    "kind": "data"
+   },
+   {
+    "start": 1061171236,
+    "end": 1061171272,
+    "section": ".rodata.mbedtls_md_finish",
+    "object": "md",
+    "kind": "data"
+   },
+   {
+    "start": 1061171272,
+    "end": 1061171308,
+    "section": ".rodata.mbedtls_md",
+    "object": "md",
+    "kind": "data"
+   },
+   {
+    "start": 1061178444,
+    "end": 1061181556,
+    "section": ".rodata",
+    "object": "oid",
+    "kind": "data"
+   },
+   {
+    "start": 1061181556,
+    "end": 1061181636,
+    "section": ".rodata.oid_pk_alg",
+    "object": "oid",
+    "kind": "data"
+   },
+   {
+    "start": 1061181636,
+    "end": 1061181696,
+    "section": ".rodata.oid_ecp_grp",
+    "object": "oid",
+    "kind": "data"
+   },
+   {
+    "start": 1061181696,
+    "end": 1061181736,
+    "section": ".rodata.oid_ecp_grp_algid",
+    "object": "oid",
+    "kind": "data"
+   },
+   {
+    "start": 1061181736,
+    "end": 1061181876,
+    "section": ".rodata.oid_md_alg",
+    "object": "oid",
+    "kind": "data"
+   },
+   {
+    "start": 1061181876,
+    "end": 1061181922,
+    "section": ".rodata",
+    "object": "pk_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061181924,
+    "end": 1061181972,
+    "section": ".rodata.mbedtls_rsa_info",
+    "object": "pk_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061181972,
+    "end": 1061182020,
+    "section": ".rodata.mbedtls_eckey_info",
+    "object": "pk_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061182020,
+    "end": 1061182068,
+    "section": ".rodata.mbedtls_eckeydh_info",
+    "object": "pk_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061182068,
+    "end": 1061182116,
+    "section": ".rodata.mbedtls_ecdsa_info",
+    "object": "pk_wrap",
+    "kind": "data"
+   },
+   {
+    "start": 1061182116,
+    "end": 1061182487,
+    "section": ".rodata",
+    "object": "pkparse",
+    "kind": "data"
+   },
+   {
+    "start": 1061182488,
+    "end": 1061182706,
+    "section": ".rodata",
+    "object": "pem",
+    "kind": "data"
+   },
+   {
+    "start": 1061182708,
+    "end": 1061182712,
+    "section": ".rodata.memset_func",
+    "object": "platform_util",
+    "kind": "data"
+   },
+   {
+    "start": 1074594028,
+    "end": 1074594032,
+    "section": ".literal.mbedtls_cipher_get_base",
+    "object": "cipher",
+    "kind": "code"
+   },
+   {
+    "start": 1074594032,
+    "end": 1074594036,
+    "section": ".literal.mbedtls_cipher_info_from_values",
+    "object": "cipher",
+    "kind": "code"
+   },
+   {
+    "start": 1074594036,
+    "end": 1074594044,
+    "section": ".literal.mbedtls_cipher_setup",
+    "object": "cipher",
+    "kind": "code"
+   },
+   {
+    "start": 1074594044,
+    "end": 1074594060,
+    "section": ".literal.mbedtls_cipher_setkey",
+    "object": "cipher",
+    "kind": "code"
+   },
+   {
+    "start": 1074594060,
+    "end": 1074594080,
+    "section": ".literal.mbedtls_cipher_update",
+    "object": "cipher",
+    "kind": "code"
+   },
+   {
+    "start": 1074594080,
+    "end": 1074594108,
+    "section": ".literal.mbedtls_md_info_from_type",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074594108,
+    "end": 1074594112,
+    "section": ".literal.mbedtls_md_free",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074594112,
+    "end": 1074594124,
+    "section": ".literal.mbedtls_md_setup",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074594124,
+    "end": 1074594128,
+    "section": ".literal.mbedtls_md_starts",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074594128,
+    "end": 1074594132,
+    "section": ".literal.mbedtls_md_update",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074594132,
+    "end": 1074594136,
+    "section": ".literal.mbedtls_md_finish",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074594136,
+    "end": 1074594140,
+    "section": ".literal.mbedtls_md",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074594792,
+    "end": 1074594796,
+    "section": ".literal.oid_pk_alg_from_asn1",
+    "object": "oid",
+    "kind": "code"
+   },
+   {
+    "start": 1074594796,
+    "end": 1074594800,
+    "section": ".literal.oid_grp_id_from_asn1",
+    "object": "oid",
+    "kind": "code"
+   },
+   {
+    "start": 1074594800,
+    "end": 1074594804,
+    "section": ".literal.oid_grp_id_algid_from_asn1",
+    "object": "oid",
+    "kind": "code"
+   },
+   {
+    "start": 1074594804,
+    "end": 1074594808,
+    "section": ".literal.mbedtls_oid_get_oid_by_md",
+    "object": "oid",
+    "kind": "code"
+   },
+   {
+    "start": 1074594808,
+    "end": 1074594824,
+    "section": ".literal.mbedtls_pk_info_from_type",
+    "object": "pk",
+    "kind": "code"
+   },
+   {
+    "start": 1074594824,
+    "end": 1074594832,
+    "section": ".literal.mbedtls_pk_setup",
+    "object": "pk",
+    "kind": "code"
+   },
+   {
+    "start": 1074594832,
+    "end": 1074594836,
+    "section": ".literal.mbedtls_pk_verify_restartable",
+    "object": "pk",
+    "kind": "code"
+   },
+   {
+    "start": 1074594836,
+    "end": 1074594840,
+    "section": ".literal.rsa_verify_wrap",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074594840,
+    "end": 1074594844,
+    "section": ".literal.rsa_sign_wrap",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074594844,
+    "end": 1074594852,
+    "section": ".literal.rsa_debug",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074594852,
+    "end": 1074594856,
+    "section": ".literal.eckey_debug",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074594856,
+    "end": 1074594860,
+    "section": ".literal.pk_use_ecparams",
+    "object": "pkparse",
+    "kind": "code"
+   },
+   {
+    "start": 1074594860,
+    "end": 1074594864,
+    "section": ".literal.pk_use_ecparams_rfc8410",
+    "object": "pkparse",
+    "kind": "code"
+   },
+   {
+    "start": 1074594864,
+    "end": 1074594876,
+    "section": ".literal.pk_get_pk_alg",
+    "object": "pkparse",
+    "kind": "code"
+   },
+   {
+    "start": 1074594876,
+    "end": 1074594880,
+    "section": ".literal.mbedtls_pk_parse_subpubkey",
+    "object": "pkparse",
+    "kind": "code"
+   },
+   {
+    "start": 1074594880,
+    "end": 1074594900,
+    "section": ".literal.mbedtls_pk_parse_public_key",
+    "object": "pkparse",
+    "kind": "code"
+   },
+   {
+    "start": 1074594900,
+    "end": 1074594904,
+    "section": ".literal.pem_get_iv",
+    "object": "pem",
+    "kind": "code"
+   },
+   {
+    "start": 1074594904,
+    "end": 1074594912,
+    "section": ".literal.pem_check_pkcs_padding",
+    "object": "pem",
+    "kind": "code"
+   },
+   {
+    "start": 1074594912,
+    "end": 1074594960,
+    "section": ".literal.mbedtls_pem_read_buffer",
+    "object": "pem",
+    "kind": "code"
+   },
+   {
+    "start": 1074594960,
+    "end": 1074594964,
+    "section": ".literal.mbedtls_platform_zeroize",
+    "object": "platform_util",
+    "kind": "code"
+   },
+   {
+    "start": 1074623716,
+    "end": 1074623756,
+    "section": ".text.mbedtls_cipher_get_base",
+    "object": "cipher",
+    "kind": "code"
+   },
+   {
+    "start": 1074623756,
+    "end": 1074623872,
+    "section": ".text.mbedtls_cipher_info_from_values",
+    "object": "cipher",
+    "kind": "code"
+   },
+   {
+    "start": 1074623872,
+    "end": 1074623945,
+    "section": ".text.mbedtls_cipher_free",
+    "object": "cipher",
+    "kind": "code"
+   },
+   {
+    "start": 1074623948,
+    "end": 1074624053,
+    "section": ".text.mbedtls_cipher_setup",
+    "object": "cipher",
+    "kind": "code"
+   },
+   {
+    "start": 1074624056,
+    "end": 1074624316,
+    "section": ".text.mbedtls_cipher_setkey",
+    "object": "cipher",
+    "kind": "code"
+   },
+   {
+    "start": 1074624316,
+    "end": 1074625226,
+    "section": ".text.mbedtls_cipher_update",
+    "object": "cipher",
+    "kind": "code"
+   },
+   {
+    "start": 1074625228,
+    "end": 1074625279,
+    "section": ".text.gcm_ctx_alloc",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074625280,
+    "end": 1074625321,
+    "section": ".text.gcm_ctx_free",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074625324,
+    "end": 1074625371,
+    "section": ".text.aes_crypt_ecb_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074625372,
+    "end": 1074625427,
+    "section": ".text.aes_crypt_cbc_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074625428,
+    "end": 1074625487,
+    "section": ".text.aes_crypt_ctr_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074625488,
+    "end": 1074625531,
+    "section": ".text.aes_setkey_dec_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074625532,
+    "end": 1074625575,
+    "section": ".text.aes_setkey_enc_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074625576,
+    "end": 1074625632,
+    "section": ".text.aes_ctx_alloc",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074625632,
+    "end": 1074625673,
+    "section": ".text.aes_ctx_free",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074625676,
+    "end": 1074625720,
+    "section": ".text.gcm_aes_setkey_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074625720,
+    "end": 1074625764,
+    "section": ".text.des_crypt_ecb_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074625764,
+    "end": 1074625808,
+    "section": ".text.des3_crypt_ecb_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074625808,
+    "end": 1074625863,
+    "section": ".text.des_crypt_cbc_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074625864,
+    "end": 1074625919,
+    "section": ".text.des3_crypt_cbc_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074625920,
+    "end": 1074625960,
+    "section": ".text.des_setkey_dec_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074625960,
+    "end": 1074626000,
+    "section": ".text.des_setkey_enc_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074626000,
+    "end": 1074626040,
+    "section": ".text.des3_set2key_dec_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074626040,
+    "end": 1074626080,
+    "section": ".text.des3_set2key_enc_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074626080,
+    "end": 1074626120,
+    "section": ".text.des3_set3key_dec_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074626120,
+    "end": 1074626160,
+    "section": ".text.des3_set3key_enc_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074626160,
+    "end": 1074626216,
+    "section": ".text.des_ctx_alloc",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074626216,
+    "end": 1074626257,
+    "section": ".text.des_ctx_free",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074626260,
+    "end": 1074626316,
+    "section": ".text.des3_ctx_alloc",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074626316,
+    "end": 1074626357,
+    "section": ".text.des3_ctx_free",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074626360,
+    "end": 1074626421,
+    "section": ".text.chacha20_setkey_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074626424,
+    "end": 1074626491,
+    "section": ".text.chacha20_stream_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074626492,
+    "end": 1074626548,
+    "section": ".text.chacha20_ctx_alloc",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074626548,
+    "end": 1074626589,
+    "section": ".text.chacha20_ctx_free",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074626592,
+    "end": 1074626653,
+    "section": ".text.chachapoly_setkey_wrap",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074626656,
+    "end": 1074626712,
+    "section": ".text.chachapoly_ctx_alloc",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074626712,
+    "end": 1074626753,
+    "section": ".text.chachapoly_ctx_free",
+    "object": "cipher_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074626756,
+    "end": 1074626837,
+    "section": ".text.mbedtls_md_info_from_type",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074626840,
+    "end": 1074626877,
+    "section": ".text.mbedtls_md_init",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074626880,
+    "end": 1074627105,
+    "section": ".text.mbedtls_md_free",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074627108,
+    "end": 1074627541,
+    "section": ".text.mbedtls_md_setup",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074627544,
+    "end": 1074627729,
+    "section": ".text.mbedtls_md_starts",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074627732,
+    "end": 1074627940,
+    "section": ".text.mbedtls_md_update",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074627940,
+    "end": 1074628133,
+    "section": ".text.mbedtls_md_finish",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074628136,
+    "end": 1074628317,
+    "section": ".text.mbedtls_md",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074628320,
+    "end": 1074628770,
+    "section": ".text.mbedtls_md_hmac_starts",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074628772,
+    "end": 1074628837,
+    "section": ".text.mbedtls_md_hmac_update",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074628840,
+    "end": 1074629046,
+    "section": ".text.mbedtls_md_hmac_finish",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074629048,
+    "end": 1074629209,
+    "section": ".text.mbedtls_md_hmac",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074716536,
+    "end": 1074716627,
+    "section": ".text.mbedtls_asn1_get_tag",
+    "object": "asn1parse",
+    "kind": "code"
+   },
+   {
+    "start": 1074716628,
+    "end": 1074716723,
+    "section": ".text.mbedtls_asn1_get_mpi",
+    "object": "asn1parse",
+    "kind": "code"
+   },
+   {
+    "start": 1074716724,
+    "end": 1074716831,
+    "section": ".text.mbedtls_asn1_get_bitstring_null",
+    "object": "asn1parse",
+    "kind": "code"
+   },
+   {
+    "start": 1074716832,
+    "end": 1074717100,
+    "section": ".text.mbedtls_asn1_get_alg",
+    "object": "asn1parse",
+    "kind": "code"
+   },
+   {
+    "start": 1074717100,
+    "end": 1074717207,
+    "section": ".text.mbedtls_asn1_write_len_and_tag",
+    "object": "asn1write",
+    "kind": "code"
+   },
+   {
+    "start": 1074717208,
+    "end": 1074717429,
+    "section": ".text.mbedtls_asn1_write_mpi",
+    "object": "asn1write",
+    "kind": "code"
+   },
+   {
+    "start": 1074717432,
+    "end": 1074717542,
+    "section": ".text.oid_pk_alg_from_asn1",
+    "object": "oid",
+    "kind": "code"
+   },
+   {
+    "start": 1074717544,
+    "end": 1074717600,
+    "section": ".text.mbedtls_oid_get_pk_alg",
+    "object": "oid",
+    "kind": "code"
+   },
+   {
+    "start": 1074717600,
+    "end": 1074717710,
+    "section": ".text.oid_grp_id_from_asn1",
+    "object": "oid",
+    "kind": "code"
+   },
+   {
+    "start": 1074717712,
+    "end": 1074717768,
+    "section": ".text.mbedtls_oid_get_ec_grp",
+    "object": "oid",
+    "kind": "code"
+   },
+   {
+    "start": 1074717768,
+    "end": 1074717878,
+    "section": ".text.oid_grp_id_algid_from_asn1",
+    "object": "oid",
+    "kind": "code"
+   },
+   {
+    "start": 1074717880,
+    "end": 1074717936,
+    "section": ".text.mbedtls_oid_get_ec_grp_algid",
+    "object": "oid",
+    "kind": "code"
+   },
+   {
+    "start": 1074717936,
+    "end": 1074718015,
+    "section": ".text.mbedtls_oid_get_oid_by_md",
+    "object": "oid",
+    "kind": "code"
+   },
+   {
+    "start": 1074718016,
+    "end": 1074718061,
+    "section": ".text.mbedtls_md_get_size_from_type",
+    "object": "pk",
+    "kind": "code"
+   },
+   {
+    "start": 1074718064,
+    "end": 1074718137,
+    "section": ".text.mbedtls_pk_free",
+    "object": "pk",
+    "kind": "code"
+   },
+   {
+    "start": 1074718140,
+    "end": 1074718225,
+    "section": ".text.mbedtls_pk_info_from_type",
+    "object": "pk",
+    "kind": "code"
+   },
+   {
+    "start": 1074718228,
+    "end": 1074718311,
+    "section": ".text.mbedtls_pk_setup",
+    "object": "pk",
+    "kind": "code"
+   },
+   {
+    "start": 1074718312,
+    "end": 1074718379,
+    "section": ".text.pk_hashlen_helper",
+    "object": "pk",
+    "kind": "code"
+   },
+   {
+    "start": 1074718380,
+    "end": 1074718500,
+    "section": ".text.mbedtls_pk_verify_restartable",
+    "object": "pk",
+    "kind": "code"
+   },
+   {
+    "start": 1074718500,
+    "end": 1074718559,
+    "section": ".text.mbedtls_pk_verify",
+    "object": "pk",
+    "kind": "code"
+   },
+   {
+    "start": 1074718560,
+    "end": 1074718600,
+    "section": ".text.rsa_get_bitlen",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074718600,
+    "end": 1074718712,
+    "section": ".text.rsa_verify_wrap",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074718712,
+    "end": 1074718813,
+    "section": ".text.rsa_sign_wrap",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074718816,
+    "end": 1074718907,
+    "section": ".text.rsa_decrypt_wrap",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074718908,
+    "end": 1074719000,
+    "section": ".text.rsa_encrypt_wrap",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074719000,
+    "end": 1074719051,
+    "section": ".text.rsa_check_pair_wrap",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074719052,
+    "end": 1074719103,
+    "section": ".text.rsa_alloc_wrap",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074719104,
+    "end": 1074719145,
+    "section": ".text.rsa_free_wrap",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074719148,
+    "end": 1074719225,
+    "section": ".text.rsa_debug",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074719228,
+    "end": 1074719305,
+    "section": ".text.ecdsa_verify_wrap",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074719308,
+    "end": 1074719381,
+    "section": ".text.ecdsa_sign_wrap",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074719384,
+    "end": 1074719439,
+    "section": ".text.eckey_check_pair_wrap",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074719440,
+    "end": 1074719491,
+    "section": ".text.eckey_alloc_wrap",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074719492,
+    "end": 1074719533,
+    "section": ".text.eckey_free_wrap",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074719536,
+    "end": 1074719586,
+    "section": ".text.eckey_debug",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074719588,
+    "end": 1074719635,
+    "section": ".text.mbedtls_pk_rsa",
+    "object": "pkparse",
+    "kind": "code"
+   },
+   {
+    "start": 1074719636,
+    "end": 1074719661,
+    "section": ".text.pk_ecc_group_id_from_specified",
+    "object": "pkparse",
+    "kind": "code"
+   },
+   {
+    "start": 1074719664,
+    "end": 1074719763,
+    "section": ".text.pk_use_ecparams",
+    "object": "pkparse",
+    "kind": "code"
+   },
+   {
+    "start": 1074719764,
+    "end": 1074719823,
+    "section": ".text.pk_use_ecparams_rfc8410",
+    "object": "pkparse",
+    "kind": "code"
+   },
+   {
+    "start": 1074719824,
+    "end": 1074720013,
+    "section": ".text.pk_get_pk_alg",
+    "object": "pkparse",
+    "kind": "code"
+   },
+   {
+    "start": 1074720016,
+    "end": 1074720549,
+    "section": ".text.mbedtls_pk_parse_subpubkey",
+    "object": "pkparse",
+    "kind": "code"
+   },
+   {
+    "start": 1074720552,
+    "end": 1074721101,
+    "section": ".text.mbedtls_pk_parse_public_key",
+    "object": "pkparse",
+    "kind": "code"
+   },
+   {
+    "start": 1074721104,
+    "end": 1074721137,
+    "section": ".text.mbedtls_ct_compiler_opaque",
+    "object": "base64",
+    "kind": "code"
+   },
+   {
+    "start": 1074721140,
+    "end": 1074721281,
+    "section": ".text.mbedtls_ct_uchar_in_range_if",
+    "object": "base64",
+    "kind": "code"
+   },
+   {
+    "start": 1074721284,
+    "end": 1074721525,
+    "section": ".text.mbedtls_ct_base64_dec_value",
+    "object": "base64",
+    "kind": "code"
+   },
+   {
+    "start": 1074721528,
+    "end": 1074722198,
+    "section": ".text.mbedtls_base64_decode",
+    "object": "base64",
+    "kind": "code"
+   },
+   {
+    "start": 1074722200,
+    "end": 1074722237,
+    "section": ".text.mbedtls_pem_init",
+    "object": "pem",
+    "kind": "code"
+   },
+   {
+    "start": 1074722240,
+    "end": 1074722476,
+    "section": ".text.pem_get_iv",
+    "object": "pem",
+    "kind": "code"
+   },
+   {
+    "start": 1074722476,
+    "end": 1074722918,
+    "section": ".text.pem_pbkdf1",
+    "object": "pem",
+    "kind": "code"
+   },
+   {
+    "start": 1074722920,
+    "end": 1074723102,
+    "section": ".text.pem_des_decrypt",
+    "object": "pem",
+    "kind": "code"
+   },
+   {
+    "start": 1074723104,
+    "end": 1074723286,
+    "section": ".text.pem_des3_decrypt",
+    "object": "pem",
+    "kind": "code"
+   },
+   {
+    "start": 1074723288,
+    "end": 1074723479,
+    "section": ".text.pem_aes_decrypt",
+    "object": "pem",
+    "kind": "code"
+   },
+   {
+    "start": 1074723480,
+    "end": 1074723596,
+    "section": ".text.pem_check_pkcs_padding",
+    "object": "pem",
+    "kind": "code"
+   },
+   {
+    "start": 1074723596,
+    "end": 1074724852,
+    "section": ".text.mbedtls_pem_read_buffer",
+    "object": "pem",
+    "kind": "code"
+   },
+   {
+    "start": 1074724852,
+    "end": 1074724933,
+    "section": ".text.mbedtls_pem_free",
+    "object": "pem",
+    "kind": "code"
+   },
+   {
+    "start": 1074724936,
+    "end": 1074725023,
+    "section": ".text.mbedtls_platform_zeroize",
+    "object": "platform_util",
+    "kind": "code"
+   },
+   {
+    "start": 1074725024,
+    "end": 1074725073,
+    "section": ".text.mbedtls_zeroize_and_free",
+    "object": "platform_util",
+    "kind": "code"
+   },
+   {
+    "start": 1074725076,
+    "end": 1074725109,
+    "section": ".text.mbedtls_ct_compiler_opaque",
+    "object": "constant_time",
+    "kind": "code"
+   },
+   {
+    "start": 1074725112,
+    "end": 1074725177,
+    "section": ".text.mbedtls_ct_bool",
+    "object": "constant_time",
+    "kind": "code"
+   },
+   {
+    "start": 1074725180,
+    "end": 1074725243,
+    "section": ".text.mbedtls_ct_if",
+    "object": "constant_time",
+    "kind": "code"
+   },
+   {
+    "start": 1074725244,
+    "end": 1074725349,
+    "section": ".text.mbedtls_ct_uint_lt",
+    "object": "constant_time",
+    "kind": "code"
+   },
+   {
+    "start": 1074725352,
+    "end": 1074725395,
+    "section": ".text.mbedtls_ct_uint_if",
+    "object": "constant_time",
+    "kind": "code"
+   },
+   {
+    "start": 1074725396,
+    "end": 1074725435,
+    "section": ".text.mbedtls_ct_uint_gt",
+    "object": "constant_time",
+    "kind": "code"
+   },
+   {
+    "start": 1074725436,
+    "end": 1074725650,
+    "section": ".text.mbedtls_ct_memmove_left",
+    "object": "constant_time",
+    "kind": "code"
+   },
+   {
+    "start": 1074725652,
+    "end": 1074725791,
+    "section": ".text.mbedtls_ct_memcpy_if",
+    "object": "constant_time",
+    "kind": "code"
+   },
+   {
+    "start": 1074735580,
+    "end": 1074735629,
+    "section": ".text.mbedtls_pk_ec_ro",
+    "object": "pk_ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074735632,
+    "end": 1074735681,
+    "section": ".text.mbedtls_pk_ec_rw",
+    "object": "pk_ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074735684,
+    "end": 1074735784,
+    "section": ".text.mbedtls_pk_ecc_set_group",
+    "object": "pk_ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074735784,
+    "end": 1074735869,
+    "section": ".text.mbedtls_pk_ecc_set_pubkey",
+    "object": "pk_ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074765920,
+    "end": 1074765962,
+    "section": ".text.mbedtls_cipher_info_get_key_bitlen",
+    "object": "cipher",
+    "kind": "code"
+   },
+   {
+    "start": 1074765964,
+    "end": 1074766007,
+    "section": ".text.mbedtls_cipher_get_block_size",
+    "object": "cipher",
+    "kind": "code"
+   },
+   {
+    "start": 1074766008,
+    "end": 1074766042,
+    "section": ".text.mbedtls_md_get_size",
+    "object": "md",
+    "kind": "code"
+   },
+   {
+    "start": 1074766960,
+    "end": 1074767177,
+    "section": ".text.mbedtls_asn1_get_len",
+    "object": "asn1parse",
+    "kind": "code"
+   },
+   {
+    "start": 1074767180,
+    "end": 1074767329,
+    "section": ".text.mbedtls_asn1_write_len",
+    "object": "asn1write",
+    "kind": "code"
+   },
+   {
+    "start": 1074767332,
+    "end": 1074767399,
+    "section": ".text.mbedtls_asn1_write_tag",
+    "object": "asn1write",
+    "kind": "code"
+   },
+   {
+    "start": 1074767400,
+    "end": 1074767432,
+    "section": ".text.mbedtls_pk_init",
+    "object": "pk",
+    "kind": "code"
+   },
+   {
+    "start": 1074767432,
+    "end": 1074767474,
+    "section": ".text.mbedtls_pk_get_type",
+    "object": "pk",
+    "kind": "code"
+   },
+   {
+    "start": 1074767476,
+    "end": 1074767514,
+    "section": ".text.rsa_can_do",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074767516,
+    "end": 1074767558,
+    "section": ".text.eckey_can_do",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074767560,
+    "end": 1074767590,
+    "section": ".text.eckey_get_bitlen",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074767592,
+    "end": 1074767630,
+    "section": ".text.eckeydh_can_do",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074767632,
+    "end": 1074767667,
+    "section": ".text.ecdsa_can_do",
+    "object": "pk_wrap",
+    "kind": "code"
+   },
+   {
+    "start": 1074767668,
+    "end": 1074767700,
+    "section": ".text.mbedtls_error_add",
+    "object": "pkparse",
+    "kind": "code"
+   },
+   {
+    "start": 1074767700,
+    "end": 1074767732,
+    "section": ".text.mbedtls_error_add",
+    "object": "pem",
+    "kind": "code"
+   },
+   {
+    "start": 1074767732,
+    "end": 1074767761,
+    "section": ".text.mbedtls_ct_uint_if_else_0",
+    "object": "constant_time",
+    "kind": "code"
+   },
+   {
+    "start": 1074767764,
+    "end": 1074767882,
+    "section": ".text.mbedtls_ct_memcmp",
+    "object": "constant_time",
+    "kind": "code"
+   },
+   {
+    "start": 1074767884,
+    "end": 1074767972,
+    "section": ".text.mbedtls_ct_zeroize_if",
+    "object": "constant_time",
+    "kind": "code"
+   }
+  ],
+  "GCM": [
+   {
+    "start": 1061170120,
+    "end": 1061170152,
+    "section": ".rodata.last4",
+    "object": "gcm",
+    "kind": "data"
+   },
+   {
+    "start": 1074594024,
+    "end": 1074594028,
+    "section": ".literal.gcm_mult_smalltable",
+    "object": "gcm",
+    "kind": "code"
+   },
+   {
+    "start": 1074616356,
+    "end": 1074616393,
+    "section": ".text.mbedtls_gcm_init",
+    "object": "gcm",
+    "kind": "code"
+   },
+   {
+    "start": 1074616396,
+    "end": 1074617180,
+    "section": ".text.gcm_gen_table_rightshift",
+    "object": "gcm",
+    "kind": "code"
+   },
+   {
+    "start": 1074617180,
+    "end": 1074618018,
+    "section": ".text.gcm_gen_table",
+    "object": "gcm",
+    "kind": "code"
+   },
+   {
+    "start": 1074618020,
+    "end": 1074618207,
+    "section": ".text.mbedtls_gcm_setkey",
+    "object": "gcm",
+    "kind": "code"
+   },
+   {
+    "start": 1074618208,
+    "end": 1074619644,
+    "section": ".text.gcm_mult_smalltable",
+    "object": "gcm",
+    "kind": "code"
+   },
+   {
+    "start": 1074619644,
+    "end": 1074619703,
+    "section": ".text.gcm_mult",
+    "object": "gcm",
+    "kind": "code"
+   },
+   {
+    "start": 1074619704,
+    "end": 1074620489,
+    "section": ".text.mbedtls_gcm_starts",
+    "object": "gcm",
+    "kind": "code"
+   },
+   {
+    "start": 1074620492,
+    "end": 1074621149,
+    "section": ".text.mbedtls_gcm_update_ad",
+    "object": "gcm",
+    "kind": "code"
+   },
+   {
+    "start": 1074621152,
+    "end": 1074621353,
+    "section": ".text.gcm_incr",
+    "object": "gcm",
+    "kind": "code"
+   },
+   {
+    "start": 1074621356,
+    "end": 1074621760,
+    "section": ".text.gcm_mask",
+    "object": "gcm",
+    "kind": "code"
+   },
+   {
+    "start": 1074621760,
+    "end": 1074622481,
+    "section": ".text.mbedtls_gcm_update",
+    "object": "gcm",
+    "kind": "code"
+   },
+   {
+    "start": 1074622484,
+    "end": 1074623499,
+    "section": ".text.mbedtls_gcm_finish",
+    "object": "gcm",
+    "kind": "code"
+   },
+   {
+    "start": 1074623500,
+    "end": 1074623659,
+    "section": ".text.mbedtls_gcm_crypt_and_tag",
+    "object": "gcm",
+    "kind": "code"
+   },
+   {
+    "start": 1074623660,
+    "end": 1074623713,
+    "section": ".text.mbedtls_gcm_free",
+    "object": "gcm",
+    "kind": "code"
+   },
+   {
+    "start": 1074765848,
+    "end": 1074765887,
+    "section": ".text.mbedtls_cipher_info_get_block_size",
+    "object": "gcm",
+    "kind": "code"
+   },
+   {
+    "start": 1074765888,
+    "end": 1074765918,
+    "section": ".text.gcm_set_acceleration",
+    "object": "gcm",
+    "kind": "code"
+   }
+  ],
+  "HKDF": [
+   {
+    "start": 1061172208,
+    "end": 1061172209,
+    "section": ".rodata",
+    "object": "hkdf",
+    "kind": "data"
+   },
+   {
+    "start": 1074594568,
+    "end": 1074594572,
+    "section": ".literal.mbedtls_hkdf_extract",
+    "object": "hkdf",
+    "kind": "code"
+   },
+   {
+    "start": 1074594572,
+    "end": 1074594576,
+    "section": ".literal.mbedtls_hkdf_expand",
+    "object": "hkdf",
+    "kind": "code"
+   },
+   {
+    "start": 1074663420,
+    "end": 1074663567,
+    "section": ".text.mbedtls_hkdf",
+    "object": "hkdf",
+    "kind": "code"
+   },
+   {
+    "start": 1074663568,
+    "end": 1074663704,
+    "section": ".text.mbedtls_hkdf_extract",
+    "object": "hkdf",
+    "kind": "code"
+   },
+   {
+    "start": 1074663704,
+    "end": 1074664195,
+    "section": ".text.mbedtls_hkdf_expand",
+    "object": "hkdf",
+    "kind": "code"
+   }
+  ],
+  "BIGNUM": [
+   {
+    "start": 1061172212,
+    "end": 1061172388,
+    "section": ".rodata.small_primes_product_limbs",
+    "object": "bignum",
+    "kind": "data"
+   },
+   {
+    "start": 1061172388,
+    "end": 1061172396,
+    "section": ".rodata.small_primes_product",
+    "object": "bignum",
+    "kind": "data"
+   },
+   {
+    "start": 1074594580,
+    "end": 1074594584,
+    "section": ".literal.mbedtls_ct_compiler_opaque",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074594584,
+    "end": 1074594588,
+    "section": ".literal.mbedtls_mpi_cmp_abs",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074594588,
+    "end": 1074594592,
+    "section": ".literal.mbedtls_mpi_div_mpi",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074594592,
+    "end": 1074594596,
+    "section": ".literal.mbedtls_mpi_exp_mod_optionally_safe",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074594596,
+    "end": 1074594600,
+    "section": ".literal.mpi_check_small_factors",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074594600,
+    "end": 1074594604,
+    "section": ".literal.mbedtls_mpi_gen_prime",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074666564,
+    "end": 1074666597,
+    "section": ".text.mbedtls_ct_compiler_opaque",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074666600,
+    "end": 1074666665,
+    "section": ".text.mbedtls_ct_bool",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074666668,
+    "end": 1074666731,
+    "section": ".text.mbedtls_ct_if",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074666732,
+    "end": 1074666775,
+    "section": ".text.mbedtls_ct_uint_if",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074666776,
+    "end": 1074666865,
+    "section": ".text.mbedtls_ct_mpi_sign_if",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074666868,
+    "end": 1074667093,
+    "section": ".text.mbedtls_mpi_safe_cond_assign",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074667096,
+    "end": 1074667333,
+    "section": ".text.mbedtls_mpi_safe_cond_swap",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074667336,
+    "end": 1074667417,
+    "section": ".text.mbedtls_mpi_free",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074667420,
+    "end": 1074667565,
+    "section": ".text.mbedtls_mpi_grow",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074667568,
+    "end": 1074667787,
+    "section": ".text.mbedtls_mpi_shrink",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074667788,
+    "end": 1074667895,
+    "section": ".text.mbedtls_mpi_resize_clear",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074667896,
+    "end": 1074668152,
+    "section": ".text.mbedtls_mpi_copy",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074668152,
+    "end": 1074668214,
+    "section": ".text.mbedtls_mpi_swap",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074668216,
+    "end": 1074668347,
+    "section": ".text.mbedtls_mpi_lset",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074668348,
+    "end": 1074668544,
+    "section": ".text.mbedtls_mpi_set_bit",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074668544,
+    "end": 1074668589,
+    "section": ".text.mbedtls_mpi_bitlen",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074668592,
+    "end": 1074668632,
+    "section": ".text.mbedtls_mpi_size",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074668632,
+    "end": 1074668735,
+    "section": ".text.mbedtls_mpi_read_binary_le",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074668736,
+    "end": 1074668839,
+    "section": ".text.mbedtls_mpi_read_binary",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074668840,
+    "end": 1074668893,
+    "section": ".text.mbedtls_mpi_write_binary",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074668896,
+    "end": 1074669023,
+    "section": ".text.mbedtls_mpi_shift_l",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074669024,
+    "end": 1074669080,
+    "section": ".text.mbedtls_mpi_shift_r",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074669080,
+    "end": 1074669320,
+    "section": ".text.mbedtls_mpi_cmp_abs",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074669320,
+    "end": 1074669686,
+    "section": ".text.mbedtls_mpi_cmp_mpi",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074669688,
+    "end": 1074669783,
+    "section": ".text.mbedtls_mpi_cmp_int",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074669784,
+    "end": 1074670076,
+    "section": ".text.mbedtls_mpi_add_abs",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074670076,
+    "end": 1074670421,
+    "section": ".text.mbedtls_mpi_sub_abs",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074670424,
+    "end": 1074670643,
+    "section": ".text.add_sub_mpi",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074670644,
+    "end": 1074670688,
+    "section": ".text.mbedtls_mpi_add_mpi",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074670688,
+    "end": 1074670732,
+    "section": ".text.mbedtls_mpi_sub_mpi",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074670732,
+    "end": 1074670831,
+    "section": ".text.mbedtls_mpi_add_int",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074670832,
+    "end": 1074670931,
+    "section": ".text.mbedtls_mpi_sub_int",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074670932,
+    "end": 1074671319,
+    "section": ".text.mbedtls_mpi_mul_mpi",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074671320,
+    "end": 1074671492,
+    "section": ".text.mbedtls_mpi_mul_int",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074671492,
+    "end": 1074671653,
+    "section": ".text.mbedtls_int_div_int",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074671656,
+    "end": 1074673101,
+    "section": ".text.mbedtls_mpi_div_mpi",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074673104,
+    "end": 1074673255,
+    "section": ".text.mbedtls_mpi_mod_mpi",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074673256,
+    "end": 1074673526,
+    "section": ".text.mbedtls_mpi_mod_int",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074673528,
+    "end": 1074674269,
+    "section": ".text.mbedtls_mpi_exp_mod_optionally_safe",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074674272,
+    "end": 1074674324,
+    "section": ".text.mbedtls_mpi_exp_mod",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074674324,
+    "end": 1074674379,
+    "section": ".text.mbedtls_mpi_exp_mod_unsafe",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074674380,
+    "end": 1074674969,
+    "section": ".text.mbedtls_mpi_gcd_modinv_odd",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074674972,
+    "end": 1074675436,
+    "section": ".text.mbedtls_mpi_gcd",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074675436,
+    "end": 1074675551,
+    "section": ".text.mbedtls_mpi_fill_random",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074675552,
+    "end": 1074675675,
+    "section": ".text.mbedtls_mpi_random",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074675676,
+    "end": 1074675839,
+    "section": ".text.mbedtls_mpi_inv_mod_odd",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074675840,
+    "end": 1074676073,
+    "section": ".text.mbedtls_mpi_inv_mod_even_in_range",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074676076,
+    "end": 1074676269,
+    "section": ".text.mpi_check_small_factors",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074676272,
+    "end": 1074676985,
+    "section": ".text.mpi_miller_rabin",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074676988,
+    "end": 1074677152,
+    "section": ".text.mbedtls_mpi_is_prime_ext",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074677152,
+    "end": 1074677889,
+    "section": ".text.mbedtls_mpi_gen_prime",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074725792,
+    "end": 1074725825,
+    "section": ".text.mbedtls_ct_compiler_opaque",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074725828,
+    "end": 1074725893,
+    "section": ".text.mbedtls_ct_bool",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074725896,
+    "end": 1074725959,
+    "section": ".text.mbedtls_ct_if",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074725960,
+    "end": 1074726065,
+    "section": ".text.mbedtls_ct_uint_lt",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074726068,
+    "end": 1074726137,
+    "section": ".text.mbedtls_ct_uint_ne",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074726140,
+    "end": 1074726183,
+    "section": ".text.mbedtls_ct_mpi_uint_if",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074726184,
+    "end": 1074726228,
+    "section": ".text.mbedtls_ct_uint_eq",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074726228,
+    "end": 1074726272,
+    "section": ".text.mbedtls_ct_uint_ge",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074726272,
+    "end": 1074726374,
+    "section": ".text.mbedtls_mpi_core_bitlen",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074726376,
+    "end": 1074726411,
+    "section": ".text.mpi_bigendian_to_host",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074726412,
+    "end": 1074726529,
+    "section": ".text.mbedtls_mpi_core_bigendian_to_host",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074726532,
+    "end": 1074726652,
+    "section": ".text.mbedtls_mpi_core_uint_le_mpi",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074726652,
+    "end": 1074726878,
+    "section": ".text.mbedtls_mpi_core_lt_ct",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074726880,
+    "end": 1074726991,
+    "section": ".text.mbedtls_mpi_core_cond_assign",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074726992,
+    "end": 1074727152,
+    "section": ".text.mbedtls_mpi_core_cond_swap",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074727152,
+    "end": 1074727324,
+    "section": ".text.mbedtls_mpi_core_read_le",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074727324,
+    "end": 1074727467,
+    "section": ".text.mbedtls_mpi_core_read_be",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074727468,
+    "end": 1074727687,
+    "section": ".text.mbedtls_mpi_core_write_be",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074727688,
+    "end": 1074727996,
+    "section": ".text.mbedtls_mpi_core_shift_r",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074727996,
+    "end": 1074728245,
+    "section": ".text.mbedtls_mpi_core_shift_l",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074728248,
+    "end": 1074728422,
+    "section": ".text.mbedtls_mpi_core_add_if",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074728424,
+    "end": 1074730165,
+    "section": ".text.mbedtls_mpi_core_mla",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074730168,
+    "end": 1074730284,
+    "section": ".text.mbedtls_mpi_core_mul",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074730284,
+    "end": 1074730523,
+    "section": ".text.mbedtls_mpi_core_montmul",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074730524,
+    "end": 1074730635,
+    "section": ".text.mbedtls_mpi_core_get_mont_r2_unsafe",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074730636,
+    "end": 1074730727,
+    "section": ".text.mbedtls_mpi_core_ct_uint_table_lookup",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074730728,
+    "end": 1074730892,
+    "section": ".text.mbedtls_mpi_core_fill_random",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074730892,
+    "end": 1074731117,
+    "section": ".text.mbedtls_mpi_core_random",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074731120,
+    "end": 1074731204,
+    "section": ".text.mbedtls_mpi_core_exp_mod_working_limbs",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074731204,
+    "end": 1074731394,
+    "section": ".text.exp_mod_precompute_window",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074731396,
+    "end": 1074731490,
+    "section": ".text.exp_mod_calc_first_bit_optionally_safe",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074731492,
+    "end": 1074731585,
+    "section": ".text.exp_mod_table_lookup_optionally_safe",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074731588,
+    "end": 1074731991,
+    "section": ".text.mbedtls_mpi_core_exp_mod_optionally_safe",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074731992,
+    "end": 1074732058,
+    "section": ".text.mbedtls_mpi_core_exp_mod",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074732060,
+    "end": 1074732127,
+    "section": ".text.mbedtls_mpi_core_exp_mod_unsafe",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074732128,
+    "end": 1074732213,
+    "section": ".text.mbedtls_mpi_core_check_zero_ct",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074732216,
+    "end": 1074732277,
+    "section": ".text.mbedtls_mpi_core_to_mont_rep",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074732280,
+    "end": 1074732351,
+    "section": ".text.mbedtls_mpi_core_from_mont_rep",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074732352,
+    "end": 1074732414,
+    "section": ".text.mpi_core_sub_mod",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074732416,
+    "end": 1074732521,
+    "section": ".text.mbedtls_mpi_core_div2_mod_odd",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074732524,
+    "end": 1074733255,
+    "section": ".text.mbedtls_mpi_core_gcd_modinv_odd",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074766084,
+    "end": 1074766113,
+    "section": ".text.mbedtls_ct_mpi_uint_if_else_0",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074766116,
+    "end": 1074766143,
+    "section": ".text.mbedtls_ct_bool_not",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074766144,
+    "end": 1074766184,
+    "section": ".text.mbedtls_mpi_init",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074766184,
+    "end": 1074766220,
+    "section": ".text.mpi_sint_abs",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074766220,
+    "end": 1074766290,
+    "section": ".text.mbedtls_mpi_get_bit",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074766292,
+    "end": 1074766391,
+    "section": ".text.mbedtls_mpi_lsb",
+    "object": "bignum",
+    "kind": "code"
+   },
+   {
+    "start": 1074767972,
+    "end": 1074768001,
+    "section": ".text.mbedtls_ct_mpi_uint_if_else_0",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074768004,
+    "end": 1074768033,
+    "section": ".text.mbedtls_ct_bool_and",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074768036,
+    "end": 1074768065,
+    "section": ".text.mbedtls_ct_bool_or",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074768068,
+    "end": 1074768095,
+    "section": ".text.mbedtls_ct_bool_not",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074768096,
+    "end": 1074768121,
+    "section": ".text.mbedtls_mpi_core_clz",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074768124,
+    "end": 1074768280,
+    "section": ".text.mbedtls_mpi_core_add",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074768280,
+    "end": 1074768434,
+    "section": ".text.mbedtls_mpi_core_sub",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074768436,
+    "end": 1074768526,
+    "section": ".text.mbedtls_mpi_core_montmul_init",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074768528,
+    "end": 1074768562,
+    "section": ".text.exp_mod_get_window_size",
+    "object": "bignum_core",
+    "kind": "code"
+   },
+   {
+    "start": 1074768564,
+    "end": 1074768664,
+    "section": ".text.mbedtls_mpi_core_sub_int",
+    "object": "bignum_core",
+    "kind": "code"
+   }
+  ],
+  "CTR_DRBG": [
+   {
+    "start": 1074594576,
+    "end": 1074594580,
+    "section": ".literal.mbedtls_ctr_drbg_init",
+    "object": "ctr_drbg",
+    "kind": "code"
+   },
+   {
+    "start": 1074664196,
+    "end": 1074664428,
+    "section": ".text.mbedtls_ctr_increment_counter",
+    "object": "ctr_drbg",
+    "kind": "code"
+   },
+   {
+    "start": 1074664428,
+    "end": 1074664491,
+    "section": ".text.mbedtls_ctr_drbg_init",
+    "object": "ctr_drbg",
+    "kind": "code"
+   },
+   {
+    "start": 1074664492,
+    "end": 1074665274,
+    "section": ".text.block_cipher_df",
+    "object": "ctr_drbg",
+    "kind": "code"
+   },
+   {
+    "start": 1074665276,
+    "end": 1074665553,
+    "section": ".text.ctr_drbg_update_internal",
+    "object": "ctr_drbg",
+    "kind": "code"
+   },
+   {
+    "start": 1074665556,
+    "end": 1074665910,
+    "section": ".text.mbedtls_ctr_drbg_reseed_internal",
+    "object": "ctr_drbg",
+    "kind": "code"
+   },
+   {
+    "start": 1074665912,
+    "end": 1074665956,
+    "section": ".text.mbedtls_ctr_drbg_reseed",
+    "object": "ctr_drbg",
+    "kind": "code"
+   },
+   {
+    "start": 1074665956,
+    "end": 1074666129,
+    "section": ".text.mbedtls_ctr_drbg_seed",
+    "object": "ctr_drbg",
+    "kind": "code"
+   },
+   {
+    "start": 1074666132,
+    "end": 1074666504,
+    "section": ".text.mbedtls_ctr_drbg_random_with_add",
+    "object": "ctr_drbg",
+    "kind": "code"
+   },
+   {
+    "start": 1074666504,
+    "end": 1074666561,
+    "section": ".text.mbedtls_ctr_drbg_random",
+    "object": "ctr_drbg",
+    "kind": "code"
+   },
+   {
+    "start": 1074766044,
+    "end": 1074766083,
+    "section": ".text.good_nonce_len",
+    "object": "ctr_drbg",
+    "kind": "code"
+   }
+  ],
+  "AEAD": [
+   {
+    "start": 1074614572,
+    "end": 1074614665,
+    "section": ".text.chachapoly_pad_aad",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074614668,
+    "end": 1074614761,
+    "section": ".text.chachapoly_pad_ciphertext",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074614764,
+    "end": 1074614851,
+    "section": ".text.mbedtls_chachapoly_init",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074614852,
+    "end": 1074614947,
+    "section": ".text.mbedtls_chachapoly_free",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074614948,
+    "end": 1074614995,
+    "section": ".text.mbedtls_chachapoly_setkey",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074614996,
+    "end": 1074615201,
+    "section": ".text.mbedtls_chachapoly_starts",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074615204,
+    "end": 1074615304,
+    "section": ".text.mbedtls_chachapoly_update_aad",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074615304,
+    "end": 1074615595,
+    "section": ".text.mbedtls_chachapoly_update",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074615596,
+    "end": 1074616155,
+    "section": ".text.mbedtls_chachapoly_finish",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074616156,
+    "end": 1074616285,
+    "section": ".text.chachapoly_crypt_and_tag",
+    "object": "chachapoly",
+    "kind": "code"
+   },
+   {
+    "start": 1074616288,
+    "end": 1074616356,
+    "section": ".text.mbedtls_chachapoly_encrypt_and_tag",
+    "object": "chachapoly",
+    "kind": "code"
+   }
+  ]
+ },
+ "sample": "m36rom__O0__full_stack",
+ "variant": "m36rom",
+ "variant_label": "mbedTLS 3.6.7, AES tables in flash (ROM tables)",
+ "opt": "O0",
+ "profile": "full_stack",
+ "intended_families": [
+  "RSA",
+  "ECDSA",
+  "ECDH",
+  "FFDH",
+  "AES",
+  "DES",
+  "CHACHA20",
+  "POLY1305",
+  "MD5",
+  "SHA1",
+  "SHA256",
+  "SHA512"
+ ],
+ "uses_hw_accel": true,
+ "secure_boot": "none",
+ "toolchain": "xtensa-lx106-elf",
+ "bin_sha256": "4eb5c96c2715be057de556471c5b1552439a82f25be504e0f4d87d0d60401468",
+ "bin_size": 242720
+}

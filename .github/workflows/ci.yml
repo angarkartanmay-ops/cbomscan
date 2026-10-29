@@ -1,0 +1,30 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Unit and dataset tests
+        run: python -m pytest -q tests
+      - name: Scan an example image
+        run: python -m cbomscan scan dataset/out/samples/m36rom__Os__full_stack__sbv2_rsa3072/firmware.bin -o ci_out
+      - name: Reproduce Phase I metrics and guard against regressions
+        run: |
+          python eval/evaluate.py --out ci_results > /dev/null
+          python - <<'EOF'
+          import json
+          m = json.load(open("ci_results/metrics.json"))["systems"]["rules:all"]["micro"]
+          print(f"precision {m['precision']:.3f} recall {m['recall']:.3f} f1 {m['f1']:.3f}")
+          assert m["precision"] >= 0.99, "precision regressed"
+          assert m["f1"] >= 0.92, "F1 regressed"
+          EOF
