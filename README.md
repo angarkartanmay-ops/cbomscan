@@ -69,7 +69,7 @@ It does **not** break or fix anything on the device. It is the diagnosis step of
 | I | Evaluation harness with strings-only baseline and ablations; tests; CI | Done |
 | II | Rebuild dataset with Espressif's `xtensa-esp32-elf-gcc` (windowed ABI) | To do |
 | II | Held-out test set (wolfSSL, real ESP-IDF example apps) | To do |
-| II | Xtensa disassembly + function boundary recovery for stripped code | To do |
+| II | Xtensa disassembly (done, [docs/DISASM.md](docs/DISASM.md)) + function boundary recovery for stripped code (to do) | In progress |
 | II | Tier 2 ML classifier for the rule gaps (ECDSA vs ECDH, run-time AES tables, Poly1305) | To do |
 | II | Detection rules for post-quantum algorithms (ML-KEM, ML-DSA, LMS) so migrated firmware shows up correctly | Done for ML-KEM, ML-DSA (verified on real builds) and LMS public keys (verifier-only code is a known miss); see [docs/PQC_RULES.md](docs/PQC_RULES.md) |
 | III | Migration feasibility model (flash, RAM, boot-time budget per chip) | To do |

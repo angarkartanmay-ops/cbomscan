@@ -51,6 +51,10 @@ small table-driven decoder in Python for the instruction subset we need.
 **Done when:** `cbomscan/disasm.py` returns a list of `(address, size, mnemonic, operands)` for a
 code segment and agrees with objdump on the test images.
 
+**Status (branch `phase2`): done for the ESP32 / windowed ABI.** Capstone 6 plus a small own decoder;
+99.84 % address+size and 99.46 % mnemonic agreement with objdump over 207 224 instructions; rationale,
+residue and limits in [DISASM.md](DISASM.md).
+
 ### P2.4 Function boundary recovery in stripped code
 Windowed ABI: functions start with `entry`. Call0 ABI: use `call0`/`callx0` targets and
 literal-pool function pointers. Ends at the next start.
