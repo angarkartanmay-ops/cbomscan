@@ -4,12 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cryptolens</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #eef1f4;
+  --bg: #f4f7fa;
   --panel: #ffffff;
   --panel-2: #f5f7f9;
   --ink: #111a22;
@@ -26,63 +27,12 @@
   --ok-soft: #e0f2e9;
   --seg-code: #d3dbe3;
   --seg-data: #e9edf1;
+  --display: "Bricolage Grotesque", "IBM Plex Sans", system-ui, sans-serif;
   --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0c1013;
-    --panel: #131a1f;
-    --panel-2: #192127;
-    --ink: #e7ecf0;
-    --ink-2: #a2aeb9;
-    --ink-3: #75828e;
-    --line: #243038;
-    --accent: #7b97ff;
-    --accent-soft: #1c2748;
-    --crit: #f06a62;
-    --crit-soft: #3a1c1b;
-    --warn: #e59a4a;
-    --warn-soft: #382a15;
-    --ok: #55c28a;
-    --ok-soft: #14301f;
-    --seg-code: #2a3640;
-    --seg-data: #1d272e;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0c1013;
-  --panel: #131a1f;
-  --panel-2: #192127;
-  --ink: #e7ecf0;
-  --ink-2: #a2aeb9;
-  --ink-3: #75828e;
-  --line: #243038;
-  --accent: #7b97ff;
-  --accent-soft: #1c2748;
-  --crit: #f06a62;
-  --crit-soft: #3a1c1b;
-  --warn: #e59a4a;
-  --warn-soft: #382a15;
-  --ok: #55c28a;
-  --ok-soft: #14301f;
-  --seg-code: #2a3640;
-  --seg-data: #1d272e;
-  color-scheme: dark;
-}
 * { box-sizing: border-box; }
-html, body { height: 100%; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font: 13px/1.45 var(--sans);
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 12px;
-  -webkit-font-smoothing: antialiased;
-}
+body { margin: 0; background: var(--bg); color: var(--ink); font: 13px/1.45 var(--sans); -webkit-font-smoothing: antialiased; }
 button, select, input { font: inherit; color: inherit; }
 button { cursor: pointer; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -109,7 +59,6 @@ select {
 .btn:disabled { color: var(--ink-3); cursor: not-allowed; }
 .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
 .btn.primary:hover:not(:disabled) { background: var(--accent); filter: brightness(1.08); }
-:root[data-theme="dark"] .btn.primary, :root:not([data-theme="light"]) .btn.primary { color: #0c1013; }
 input[type="range"] { width: 130px; accent-color: var(--accent); }
 .thr { min-width: 34px; text-align: right; color: var(--ink); }
 .reset { background: none; border: 0; padding: 0; color: var(--accent); font-size: 12px; text-decoration: underline; }
@@ -224,14 +173,227 @@ input[type="range"] { width: 130px; accent-color: var(--accent); }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+
+html:not(.in-app) body { background: var(--bg); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--bg); z-index: 40; }
+#view-landing { position: relative; }
+#stage { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.wash { position: fixed; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(46% 50% at 74% 46%, var(--accent-soft), transparent 72%); }
+.land-top {
+  position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 30; height: 58px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: var(--bg); border-bottom: 1px solid transparent; transition: border-color .4s;
+}
+.land-top.line { border-bottom-color: var(--line); }
+.mark-logo { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); text-decoration: none; }
+.mark-logo svg { width: 22px; height: 22px; color: var(--accent); }
+.mark-logo b { font-family: var(--display); font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
+.link-btn { background: none; border: 0; padding: 0; color: var(--ink-2); font-size: 13px; }
+.link-btn:hover { color: var(--ink); }
+a.btn { text-decoration: none; display: inline-block; }
+.cta { padding: 12px 20px; font-size: 14px; font-weight: 500; border-radius: 6px; }
+.cta.primary { box-shadow: 0 1px 0 rgba(14, 27, 43, .08); }
+.cta .arr { display: inline-block; transition: transform .3s cubic-bezier(.2, .7, .2, 1); margin-left: 6px; }
+.cta:hover .arr { transform: translateX(4px); }
+
+.rail { position: fixed; z-index: 25; right: max(14px, env(safe-area-inset-right, 0px)); top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 14px; }
+.rail button { position: relative; width: 12px; height: 12px; padding: 0; border: 0; background: none; display: block; }
+.rail button::before { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: var(--line); transition: background .3s, transform .3s; }
+.rail button.on::before { background: var(--accent); transform: scale(1.5); }
+.rail button span { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font: 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); white-space: nowrap; opacity: 0; transition: opacity .3s; pointer-events: none; }
+.rail button.on span, .rail button:hover span { opacity: 1; }
+
+.story { position: relative; z-index: 1; }
+.step {
+  min-height: 100vh; min-height: 100svh; display: flex; align-items: center;
+  padding: 96px max(16px, env(safe-area-inset-right, 0px)) 72px max(16px, env(safe-area-inset-left, 0px));
+}
+.step > .in-wrap { width: 100%; max-width: 1280px; margin: 0 auto; }
+.copy { width: min(540px, 46vw); }
+.eyebrow { font: 500 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 0 0 14px; }
+.copy h1, .copy h2 { font-family: var(--display); letter-spacing: -0.025em; line-height: 1.04; margin: 0 0 18px; text-wrap: balance; color: var(--ink); }
+.copy h1 { font-size: clamp(2.4rem, 4.9vw, 4.3rem); font-weight: 700; }
+.copy h2 { font-size: clamp(1.9rem, 3.3vw, 2.9rem); font-weight: 650; }
+.copy p { font-size: 16px; line-height: 1.65; color: var(--ink-2); margin: 0 0 14px; max-width: 52ch; }
+.copy p.fine { font-size: 13px; color: var(--ink-3); }
+.actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 26px 0 14px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; }
+.tags li { font: 12px var(--mono); padding: 3px 10px; border: 1px solid var(--line); border-radius: 12px; color: var(--ink-2); background: var(--panel); }
+.tags li i { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 7px; }
+.kicker { display: flex; gap: 26px; margin: 22px 0 0; font: 13px var(--mono); color: var(--ink-2); }
+.kicker b { display: block; font: 600 26px var(--display); letter-spacing: -0.02em; color: var(--ink); }
+.kicker b.hot { color: var(--crit); }
+.figs { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: 0; margin: 22px 0 8px; padding: 0; }
+.figs div { padding: 0 20px; border-left: 1px solid var(--line); }
+.figs div:first-child { padding-left: 0; border-left: 0; }
+.figs dt { font: 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.figs dd { margin: 2px 0 0; font: 600 30px var(--display); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.figs small { display: block; font: 11px var(--sans); color: var(--ink-3); letter-spacing: 0; }
+.gaps { margin: 6px 0 0; padding-left: 18px; color: var(--ink-2); font-size: 14px; }
+.phases { list-style: none; margin: 22px 0 0; padding: 0; max-width: 520px; }
+.phases li { display: grid; grid-template-columns: 96px 1fr; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); }
+.phases li:last-child { border-bottom: 1px solid var(--line); }
+.phases .st { font: 500 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; padding-top: 3px; }
+.phases .st.done { color: var(--ok); }
+.phases .st.now { color: var(--accent); }
+.phases .st.next { color: var(--ink-3); }
+.phases b { display: block; font-weight: 600; }
+.phases span { color: var(--ink-2); font-size: 14px; }
+.foot { margin-top: 36px; font-size: 12px; color: var(--ink-3); }
+
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .9s cubic-bezier(.2, .7, .2, 1), transform .9s cubic-bezier(.2, .7, .2, 1); transition-delay: var(--d, 0s); }
+.reveal.in { opacity: 1; transform: none; }
+.scrollcue { display: inline-flex; align-items: center; gap: 8px; }
+.scrollcue i { width: 1px; height: 22px; background: var(--ink-3); transform-origin: top; animation: cue 2.2s cubic-bezier(.6, 0, .3, 1) infinite; }
+@keyframes cue { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+.enter { animation: enter .5s cubic-bezier(.2, .7, .2, 1); }
+@keyframes enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+#view-app { height: 100%; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 12px; }
+html.in-app, html.in-app body { height: 100%; overflow: hidden; }
+.back { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 9px; }
+.back svg { width: 22px; height: 22px; color: var(--accent); }
+.back h1 { font-family: var(--display); letter-spacing: -0.02em; }
+.navlink { color: var(--ink-2); text-decoration: none; font-size: 13px; }
+.navlink:hover { color: var(--ink); }
+
+@media (max-width: 1000px) {
+  html.in-app, html.in-app body { height: auto; overflow: visible; }
+  #view-app { height: auto; }
+  .step { align-items: flex-end; padding-top: 70px; padding-bottom: 7vh; }
+  .copy { width: 100%; }
+  .copy h1 { font-size: clamp(2.1rem, 9vw, 3rem); }
+  .copy h2 { font-size: clamp(1.7rem, 7vw, 2.3rem); }
+  .copy p { font-size: 15px; }
+  .rail { display: none; }
+  .figs { grid-template-columns: repeat(2, auto); row-gap: 14px; }
+  .figs div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .land-top .link-btn { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .scrollcue i, .enter { animation: none; }
+}
 </style>
 </head>
 <body>
-<div class="app">
+<div id="view-landing">
+  <canvas id="stage" aria-hidden="true"></canvas>
+  <div class="wash"></div>
+
+  <header class="land-top" id="landtop">
+    <a class="mark-logo" href="#overview" aria-label="Cryptolens overview">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><ellipse cx="12" cy="12" rx="8.5" ry="3.4"/><circle cx="12" cy="12" r="1.8" fill="currentColor" stroke="none"/></svg>
+      <b>Cryptolens</b>
+    </a>
+    <div style="display:flex;align-items:center;gap:20px">
+      <button class="link-btn" data-go="read">How it works</button>
+      <a class="btn primary" href="#console">Open console</a>
+    </div>
+  </header>
+
+  <nav class="rail" id="rail" aria-label="Sections"></nav>
+
+  <main class="story" id="story">
+    <section class="step" id="hero" data-label="Start">
+      <div class="in-wrap"><div class="copy">
+        <p class="eyebrow reveal">RVCE Experiential Learning &middot; Phase II</p>
+        <h1 class="reveal" style="--d:.08s">Find the cryptography in your firmware before a quantum computer does.</h1>
+        <p class="reveal" style="--d:.16s">Cryptolens shows what cbomscan finds inside compiled ESP32 firmware: which algorithms are present, how sure we are, and what to replace them with.</p>
+        <div class="actions reveal" style="--d:.24s">
+          <a class="btn primary cta" href="#console">Open the console<span class="arr">&rarr;</span></a>
+          <button class="link-btn scrollcue" data-go="threat"><i></i>See how it works</button>
+        </div>
+        <p class="fine reveal" style="--d:.3s">The console opens with sample scans. Run it locally to scan your own .bin file.</p>
+      </div></div>
+    </section>
+
+    <section class="step" id="threat" data-label="Threat">
+      <div class="in-wrap"><div class="copy">
+        <p class="eyebrow reveal">The problem</p>
+        <h2 class="reveal" style="--d:.06s">An ESP32 ships once and stays in the field for ten years.</h2>
+        <p class="reveal" style="--d:.12s">Secure Boot, OTA updates and device certificates rest on RSA and elliptic curves. Shor's algorithm breaks both. Published estimates for breaking RSA-2048 fell from about 20 million qubits in 2019 to under one million in 2025.</p>
+        <div class="kicker reveal" style="--d:.18s">
+          <div><b class="hot">2030</b>NIST draft: deprecate</div>
+          <div><b class="hot">2035</b>NIST draft: disallow</div>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="step" id="read" data-label="Read">
+      <div class="in-wrap"><div class="copy">
+        <p class="eyebrow reveal">01 &middot; Read the binary</p>
+        <h2 class="reveal" style="--d:.06s">Open the image. No source code needed.</h2>
+        <p class="reveal" style="--d:.12s">cbomscan parses the compiled, stripped app image: its memory segments, the app descriptor and the Secure Boot V2 signature block.</p>
+        <ul class="tags reveal" style="--d:.18s">
+          <li>DROM</li><li>IRAM</li><li>IROM</li><li>Signature block</li>
+        </ul>
+      </div></div>
+    </section>
+
+    <section class="step" id="match" data-label="Match">
+      <div class="in-wrap"><div class="copy">
+        <p class="eyebrow reveal">02 &middot; Match the maths</p>
+        <h2 class="reveal" style="--d:.06s">Every algorithm leaves a fingerprint.</h2>
+        <p class="reveal" style="--d:.12s">S-boxes, round constants, OIDs, embedded public keys, algorithm names and accelerator registers. Each hit becomes evidence at an address, and the evidence adds up to one confidence score per algorithm.</p>
+        <ul class="tags reveal" style="--d:.18s">
+          <li><i style="background:var(--crit)"></i>Quantum-vulnerable</li>
+          <li><i style="background:var(--warn)"></i>Weak today</li>
+          <li><i style="background:var(--ok)"></i>Quantum-safe</li>
+        </ul>
+      </div></div>
+    </section>
+
+    <section class="step" id="migrate" data-label="Migrate">
+      <div class="in-wrap"><div class="copy">
+        <p class="eyebrow reveal">03 &middot; Plan the migration</p>
+        <h2 class="reveal" style="--d:.06s">Every finding comes with a replacement.</h2>
+        <p class="reveal" style="--d:.12s">RSA and ECDSA signatures move to ML-DSA or LMS. Key agreement moves to ML-KEM. MD5, SHA-1 and 3DES are flagged as weak today. The report is a CycloneDX 1.6 Cryptography Bill of Materials.</p>
+        <ul class="tags reveal" style="--d:.18s">
+          <li>ML-KEM &middot; FIPS 203</li><li>ML-DSA &middot; FIPS 204</li><li>LMS &middot; SP 800-208</li>
+        </ul>
+      </div></div>
+    </section>
+
+    <section class="step" id="result" data-label="Result">
+      <div class="in-wrap"><div class="copy">
+        <p class="eyebrow reveal">04 &middot; Check the result</p>
+        <h2 class="reveal" style="--d:.06s">Measured on 198 labelled firmware images.</h2>
+        <dl class="figs reveal" style="--d:.12s">
+          <div><dt>Precision</dt><dd>1.00</dd></div>
+          <div><dt>Recall</dt><dd>0.86</dd></div>
+          <div><dt>F1</dt><dd>0.93<small>strings only: 0.83</small></dd></div>
+          <div><dt>Flagged</dt><dd>108/108<small>0 false alarms</small></dd></div>
+        </dl>
+        <p class="reveal" style="--d:.18s">Image-level detection of 13 algorithm families. These scores come from the dataset the rules were tuned on, so Phase II adds a held-out test set.</p>
+        <p class="fine reveal" style="--d:.22s">Known gaps: ECDH, AES with run-time tables, Poly1305.</p>
+      </div></div>
+    </section>
+
+    <section class="step" id="status" data-label="Status">
+      <div class="in-wrap"><div class="copy">
+        <p class="eyebrow reveal">Where the project stands</p>
+        <h2 class="reveal" style="--d:.06s">Phase I is done. Phase II closes the gaps.</h2>
+        <ol class="phases reveal" style="--d:.12s">
+          <li><span class="st done">Done</span><div><b>Phase I</b><span>Image parser, rule engine, labelled dataset, evaluation, CBOM export.</span></div></li>
+          <li><span class="st now">In progress</span><div><b>Phase II</b><span>ESP-IDF rebuild, held-out test set, machine learning for the three gaps.</span></div></li>
+          <li><span class="st next">Planned</span><div><b>Phase III</b><span>Migration feasibility, more ESP32 chips, optional board demo, write-up.</span></div></li>
+        </ol>
+        <div class="actions reveal" style="--d:.18s">
+          <a class="btn primary cta" href="#console">Open the console<span class="arr">&rarr;</span></a>
+        </div>
+        <p class="foot reveal" style="--d:.22s">cbomscan &middot; github.com/angarkartanmay-ops/cbomscan</p>
+      </div></div>
+    </section>
+  </main>
+</div>
+<div id="view-app" hidden><div class="app">
   <header class="top">
     <div class="brand">
-      <h1>Cryptolens</h1>
-      <span>cbomscan firmware inspector</span>
+      <a class="back" href="#overview" aria-label="Back to overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><ellipse cx="12" cy="12" rx="8.5" ry="3.4"/><circle cx="12" cy="12" r="1.8" fill="currentColor" stroke="none"/></svg><h1>Cryptolens</h1></a>
+      <span>Console</span>
+      <a class="navlink" href="#overview">Overview</a>
     </div>
     <div class="controls">
       <span class="badge" id="mode" hidden>Sample data</span>
@@ -243,7 +405,6 @@ input[type="range"] { width: 130px; accent-color: var(--accent); }
         <span class="thr mono" id="thrv">0.50</span>
       </label>
       <button class="reset" id="reset" hidden>reset</button>
-      <button class="btn" id="theme" aria-label="Toggle theme">Theme</button>
     </div>
   </header>
 
@@ -278,9 +439,10 @@ input[type="range"] { width: 130px; accent-color: var(--accent); }
       <div class="scroll" id="detail"></div>
     </aside>
   </div>
-</div>
+</div></div>
 <div class="drop" id="drop">Drop an ESP32 firmware .bin to scan it</div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const EMBEDDED = null;
 
@@ -549,17 +711,6 @@ el("segs").addEventListener("click", e => {
   const row = el("table").querySelector(`.row[data-id="${state.selected}"]`);
   if (row) row.scrollIntoView({ block: "nearest" });
 });
-el("theme").addEventListener("click", () => {
-  const dark = document.documentElement.dataset.theme === "dark" ||
-    (!document.documentElement.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
-  const next = dark ? "light" : "dark";
-  document.documentElement.dataset.theme = next;
-  try { localStorage.setItem("cryptolens-theme", next); } catch (err) {}
-});
-try {
-  const saved = localStorage.getItem("cryptolens-theme");
-  if (saved) document.documentElement.dataset.theme = saved;
-} catch (err) {}
 
 let depth = 0;
 window.addEventListener("dragenter", e => { e.preventDefault(); depth++; el("drop").classList.add("show"); });
@@ -573,6 +724,312 @@ window.addEventListener("drop", e => {
 });
 
 init();
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let stageRunning = false;
+
+function route() {
+  const app = location.hash === "#console";
+  el("view-app").hidden = !app;
+  el("view-landing").hidden = app;
+  document.documentElement.classList.toggle("in-app", app);
+  window.scrollTo(0, 0);
+  if (app) {
+    el("view-app").classList.remove("enter");
+    void el("view-app").offsetWidth;
+    el("view-app").classList.add("enter");
+  }
+  stageRunning = !app;
+}
+
+function setupLanding() {
+  const sections = [...document.querySelectorAll(".step")];
+  const rail = el("rail");
+  rail.innerHTML = sections.map((s, i) => i === 0 ? "" : `<button data-go="${s.id}" aria-label="${s.dataset.label}"><span>${s.dataset.label}</span></button>`).join("");
+  document.addEventListener("click", e => {
+    const b = e.target.closest("[data-go]");
+    if (!b) return;
+    const target = el(b.dataset.go);
+    if (target) target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll(".reveal").forEach(n => io.observe(n));
+  window.addEventListener("scroll", () => el("landtop").classList.toggle("line", scrollY > 8), { passive: true });
+}
+
+function buildStage() {
+  const T = window.THREE;
+  const canvas = el("stage");
+  if (!T) { canvas.style.display = "none"; return; }
+  let renderer;
+  try {
+    renderer = new T.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: "low-power" });
+  } catch (err) {
+    canvas.style.display = "none";
+    return;
+  }
+  renderer.setClearColor(0x000000, 0);
+  const scene = new T.Scene();
+  const cam = new T.PerspectiveCamera(36, 1, 0.1, 60);
+  cam.position.set(0, 0.3, 9.5);
+  cam.lookAt(0, 0, 0);
+
+  const C = { ink: 0x0e1b2b, soft: 0xc3cfdc, wash: 0xe4ebf7, acc: 0x2347d9, crit: 0xc62f29, warn: 0xb0600c, ok: 0x2a7f54 };
+  const critColor = new T.Color(C.crit);
+  const groups = {};
+
+  function make(name, a, b) {
+    const g = new T.Group();
+    g.userData = { mats: [], a, b, w: 0 };
+    g.visible = false;
+    scene.add(g);
+    groups[name] = g;
+    return g;
+  }
+  function track(g, m, op) {
+    m.transparent = true;
+    m.opacity = op;
+    m.userData.base = op;
+    m.userData.color = m.color ? m.color.clone() : null;
+    g.userData.mats.push(m);
+    return m;
+  }
+  const lm = (g, c, op) => track(g, new T.LineBasicMaterial({ color: c }), op);
+  const fm = (g, c, op) => { const m = track(g, new T.MeshBasicMaterial({ color: c }), op); m.depthWrite = false; return m; };
+  function edged(g, geo, fill, fo, line, lo, angle) {
+    const mesh = new T.Mesh(geo, fm(g, fill, fo));
+    mesh.add(new T.LineSegments(new T.EdgesGeometry(geo, angle || 20), lm(g, line, lo)));
+    return mesh;
+  }
+  function ring(g, r, c, op, seg) {
+    const n = seg || 96, pts = [];
+    for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2; pts.push(new T.Vector3(Math.cos(a) * r, 0, Math.sin(a) * r)); }
+    return new T.LineLoop(new T.BufferGeometry().setFromPoints(pts), lm(g, c, op));
+  }
+  function seg(g, pts, c, op) {
+    return new T.LineSegments(new T.BufferGeometry().setFromPoints(pts.map(p => new T.Vector3(p[0], p[1], p[2]))), lm(g, c, op));
+  }
+  let seed = 7;
+  const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
+  const smooth = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+
+  const bloch = make("bloch", 0, 0);
+  const R = 1.7;
+  bloch.add(new T.Mesh(new T.SphereGeometry(R, 28, 20), fm(bloch, C.wash, 0.4)));
+  bloch.add(ring(bloch, R, C.ink, 0.55));
+  const m1 = ring(bloch, R, C.ink, 0.3); m1.rotation.x = Math.PI / 2; bloch.add(m1);
+  const m2 = ring(bloch, R, C.ink, 0.3); m2.rotation.z = Math.PI / 2; bloch.add(m2);
+  [-0.5, 0.5].forEach(k => { const r = ring(bloch, R * Math.sqrt(1 - k * k), C.ink, 0.16); r.position.y = k * R; bloch.add(r); });
+  bloch.add(seg(bloch, [[-R * 1.3, 0, 0], [R * 1.3, 0, 0], [0, -R * 1.3, 0], [0, R * 1.3, 0], [0, 0, -R * 1.3], [0, 0, R * 1.3]], C.ink, 0.5));
+  [-1, 1].forEach(k => { const d = new T.Mesh(new T.SphereGeometry(0.06, 10, 8), fm(bloch, C.ink, 1)); d.position.y = k * R; bloch.add(d); });
+  const spin = new T.Group();
+  const vec = new T.Group();
+  const shaft = new T.Mesh(new T.CylinderGeometry(0.035, 0.035, R * 0.88, 10), fm(bloch, C.acc, 1));
+  shaft.position.y = R * 0.44;
+  const tip = new T.Mesh(new T.ConeGeometry(0.1, 0.3, 14), fm(bloch, C.acc, 1));
+  tip.position.y = R * 0.88 + 0.15;
+  const dot = new T.Mesh(new T.SphereGeometry(0.08, 12, 10), fm(bloch, C.acc, 1));
+  dot.position.y = R;
+  vec.add(shaft, tip, dot);
+  spin.add(vec);
+  bloch.add(spin);
+  const phase = ring(bloch, 1, C.acc, 0.6);
+  bloch.add(phase);
+
+  const key = make("key", 1, 1);
+  const head = edged(key, new T.TorusGeometry(0.62, 0.15, 10, 30), C.wash, 0.6, C.ink, 0.85, 10);
+  head.position.x = -1.5;
+  const bar = edged(key, new T.CylinderGeometry(0.11, 0.11, 2.8, 14), C.wash, 0.6, C.ink, 0.85, 20);
+  bar.rotation.z = Math.PI / 2;
+  bar.position.x = 0.15;
+  const teeth = [0, 1, 2].map(i => {
+    const t = edged(key, new T.BoxGeometry(0.2, 0.5 - i * 0.07, 0.16), C.wash, 0.7, C.ink, 0.9);
+    t.position.set(0.5 + i * 0.42, -0.3, 0);
+    t.userData.home = t.position.clone();
+    return t;
+  });
+  key.add(head, bar, ...teeth);
+
+  const chip = make("chip", 2, 3);
+  const board = edged(chip, new T.BoxGeometry(3.4, 0.14, 2.3), C.wash, 0.75, C.ink, 0.9);
+  const die = edged(chip, new T.BoxGeometry(1.1, 0.1, 1.1), C.soft, 0.7, C.ink, 0.9);
+  die.position.y = 0.12;
+  chip.add(board, die);
+  const pins = new T.InstancedMesh(new T.BoxGeometry(0.1, 0.05, 0.22), fm(chip, C.ink, 0.7), 32);
+  const mx = new T.Matrix4();
+  let pi = 0;
+  for (let i = 0; i < 8; i++) {
+    const x = -1.4 + i * 0.4;
+    [[x, 1.25], [x, -1.25]].forEach(p => { mx.setPosition(p[0], 0, p[1]); pins.setMatrixAt(pi++, mx); });
+    const z = -0.9 + i * 0.26;
+    [[1.75, z], [-1.75, z]].forEach(p => { mx.makeRotationY(Math.PI / 2); mx.setPosition(p[0], 0, p[1]); pins.setMatrixAt(pi++, mx); });
+  }
+  chip.add(pins);
+  const specs = [["DROM", 1.9], ["IRAM", 0.9], ["IROM", 2.9], ["SIG", 0.9]];
+  const plates = specs.map((s, i) => {
+    const p = edged(chip, new T.BoxGeometry(s[1], 0.05, 1.7), C.wash, 0.55, C.ink, 0.75);
+    p.userData = { i, markers: [], label: null };
+    chip.add(p);
+    return p;
+  });
+  const markSpec = [
+    [C.crit, C.ok, C.warn, C.ok, C.crit, C.ok, C.ok],
+    [C.ok],
+    [C.crit, C.ok, C.warn],
+    [C.crit]
+  ];
+  plates.forEach((p, i) => markSpec[i].forEach(c => {
+    const m = new T.Mesh(new T.SphereGeometry(0.075, 10, 8), fm(chip, c, 1));
+    const w = specs[i][1];
+    m.position.set((rnd() - 0.5) * (w - 0.3), 0.06, (rnd() - 0.5) * 1.3);
+    m.scale.setScalar(0.001);
+    p.add(m);
+    p.userData.markers.push(m);
+  }));
+  function labelSprite(text) {
+    const cv = document.createElement("canvas");
+    cv.width = 256; cv.height = 64;
+    const cx = cv.getContext("2d");
+    cx.font = "500 26px 'IBM Plex Mono', ui-monospace, monospace";
+    cx.fillStyle = "#44546a";
+    cx.textBaseline = "middle";
+    cx.fillText(text, 6, 32);
+    const tex = new T.CanvasTexture(cv);
+    const sm = track(chip, new T.SpriteMaterial({ map: tex, depthTest: false }), 1);
+    const sp = new T.Sprite(sm);
+    sp.scale.set(1.0, 0.25, 1);
+    return sp;
+  }
+  plates.forEach((p, i) => {
+    const sp = labelSprite(specs[i][0]);
+    sp.position.set(specs[i][1] / 2 + 0.65, 0, 0.5);
+    p.add(sp);
+    p.userData.label = sp;
+  });
+
+  const lat = make("lattice", 4, 6);
+  const N = 4, gap = 0.78, off = (N - 1) * gap / 2;
+  const pts = [];
+  for (let x = 0; x < N; x++) for (let y = 0; y < N; y++) for (let z = 0; z < N; z++) pts.push([x * gap - off, y * gap - off, z * gap - off]);
+  const nodes = new T.InstancedMesh(new T.SphereGeometry(0.06, 8, 6), fm(lat, C.ink, 0.85), pts.length);
+  lat.add(nodes);
+  const lines = [];
+  for (let x = 0; x < N; x++) for (let y = 0; y < N; y++) for (let z = 0; z < N; z++) {
+    const p = [x * gap - off, y * gap - off, z * gap - off];
+    if (x < N - 1) lines.push(p, [p[0] + gap, p[1], p[2]]);
+    if (y < N - 1) lines.push(p, [p[0], p[1] + gap, p[2]]);
+    if (z < N - 1) lines.push(p, [p[0], p[1], p[2] + gap]);
+  }
+  lat.add(seg(lat, lines, C.ink, 0.16));
+  const hv = seg(lat, [[-off, -off, -off], [-off + gap, -off + gap, -off], [-off, -off, -off], [-off + gap, -off, -off + gap]], C.acc, 1);
+  lat.add(hv);
+  [[-off + gap, -off + gap, -off], [-off + gap, -off, -off + gap]].forEach(p => {
+    const d = new T.Mesh(new T.SphereGeometry(0.11, 12, 10), fm(lat, C.acc, 1));
+    d.position.set(p[0], p[1], p[2]);
+    lat.add(d);
+  });
+
+  const order = Object.keys(groups).map(k => groups[k]);
+  let aspect = 1;
+  function resize() {
+    const w = innerWidth, h = innerHeight;
+    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 1.75));
+    renderer.setSize(w, h, false);
+    aspect = w / h;
+    cam.aspect = aspect;
+    cam.updateProjectionMatrix();
+  }
+  resize();
+  addEventListener("resize", resize);
+
+  const sections = [...document.querySelectorAll(".step")];
+  function scrollCoord() {
+    const mid = innerHeight / 2;
+    const cs = sections.map(s => { const r = s.getBoundingClientRect(); return r.top + r.height / 2; });
+    if (mid <= cs[0]) return 0;
+    for (let i = 0; i < cs.length - 1; i++) if (mid < cs[i + 1]) return i + (mid - cs[i]) / (cs[i + 1] - cs[i]);
+    return cs.length - 1;
+  }
+  const halfH = Math.tan(cam.fov * Math.PI / 360) * cam.position.z;
+  let sS = 0, last = performance.now(), time = 0, railOn = -1;
+  const railBtns = [...el("rail").querySelectorAll("button")];
+
+  function frame(now) {
+    requestAnimationFrame(frame);
+    if (!stageRunning || document.hidden) { last = now; return; }
+    const dt = Math.min(0.05, (now - last) / 1000);
+    last = now;
+    if (!reduceMotion) time += dt;
+    const target = scrollCoord();
+    sS = reduceMotion ? target : sS + (target - sS) * (1 - Math.exp(-dt * 5.5));
+    const wide = aspect > 1.05;
+    const px = wide ? halfH * aspect * 0.46 : 0;
+    const py = wide ? 0 : halfH * 0.4;
+    const sc = wide ? 1 : 0.55;
+    order.forEach(g => {
+      const d = sS < g.userData.a ? g.userData.a - sS : (sS > g.userData.b ? sS - g.userData.b : 0);
+      const w = smooth(0, 1, 1 - Math.min(1, d / 0.85));
+      g.userData.w = w;
+      g.visible = w > 0.01;
+      if (!g.visible) return;
+      g.position.set(px, py, 0);
+      g.scale.setScalar(sc * (0.88 + 0.12 * w));
+      g.userData.mats.forEach(m => { m.opacity = m.userData.base * w; });
+    });
+
+    const th = 0.9 + 0.28 * Math.sin(time * 0.6);
+    vec.rotation.z = th;
+    spin.rotation.y = time * 0.7;
+    phase.position.y = R * Math.cos(th);
+    phase.scale.setScalar(Math.max(0.01, R * Math.sin(th)));
+    bloch.rotation.set(0.38, time * 0.12 - 0.4, 0);
+
+    const f = smooth(0.72, 1.25, sS);
+    key.rotation.set(0.25, time * 0.18 - 0.35, -0.12);
+    teeth.forEach((t, i) => {
+      t.position.set(t.userData.home.x + f * 0.25 * (i - 1), t.userData.home.y - f * (0.7 + 0.45 * i), f * (i - 1) * 0.7);
+      t.rotation.z = f * (i - 1) * 0.9;
+    });
+    bar.rotation.z = Math.PI / 2 + f * 0.12;
+    head.position.x = -1.5 - f * 0.45;
+    key.userData.mats.forEach(m => { if (m.userData.color) m.color.copy(m.userData.color).lerp(critColor, f * 0.85); });
+
+    const ex = smooth(2.0, 2.7, sS);
+    const mk = smooth(2.75, 3.45, sS);
+    plates.forEach((p, i) => {
+      p.position.y = 0.3 + i * 0.62 * ex;
+      p.userData.markers.forEach(m => m.scale.setScalar(Math.max(0.001, mk)));
+      p.userData.label.material.opacity = p.userData.label.material.userData.base * g(chip) * ex;
+    });
+    function g(grp) { return grp.userData.w; }
+    chip.rotation.set(0.5, time * 0.1 - 0.6, 0);
+
+    const wv = Math.sin(time * 0.8);
+    for (let i = 0; i < pts.length; i++) {
+      const p = pts[i];
+      const k = 1 + 0.05 * Math.sin(time * 1.1 + p[0] * 2 + p[2] * 1.5);
+      mx.makeScale(k, k, k);
+      mx.setPosition(p[0], p[1] + wv * 0.03 * p[0], p[2]);
+      nodes.setMatrixAt(i, mx);
+    }
+    nodes.instanceMatrix.needsUpdate = true;
+    lat.rotation.set(0.35, time * 0.14, 0.05);
+
+    const idx = Math.round(sS);
+    if (idx !== railOn) {
+      railOn = idx;
+      railBtns.forEach((b, i) => b.classList.toggle("on", i + 1 === idx));
+    }
+    renderer.render(scene, cam);
+  }
+  requestAnimationFrame(frame);
+}
+
+window.addEventListener("hashchange", route);
+setupLanding();
+buildStage();
+route();
 </script>
 </body>
 </html>

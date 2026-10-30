@@ -134,17 +134,31 @@ Sample outputs are in [`examples/`](examples/).
 
 ## Dashboard (Cryptolens)
 
-A local web app that shows a scan at a glance: the ESP32 image layout with every finding placed at
-its address, each algorithm with its confidence and quantum risk, and the evidence and migration
-advice behind it. A threshold slider re-filters the findings live.
+Cryptolens is the web front end for cbomscan. It opens on an overview page that walks through
+how the system works as you scroll (read the binary, match the maths, plan the migration, check
+the result, project status), then leads into the console.
 
 ```bash
 python -m cbomscan serve          # opens http://127.0.0.1:8765
 ```
 
-Pick any bundled dataset image, or drop your own ESP32 `.bin` onto the page to scan it. A
-read-only demo page with ten sample scans is built by `python scripts/build_demo_page.py`
-(output: `docs/dashboard-demo.html`). The page is a single file, `cbomscan/dashboard/index.html`.
+**Console**
+
+- Pick any bundled dataset image from the Firmware list, or drop your own ESP32 `.bin` on the page
+  (or press Scan a file) to scan it.
+- The image map shows the real layout of the firmware (DROM, DRAM, IRAM, IROM, signature block)
+  with every finding at its address. Click a tick or a table row to select an algorithm; the code
+  that reads its table lights up.
+- The table lists all 13 algorithm families with confidence, quantum risk and fix priority.
+- The side panel shows the evidence behind the selected algorithm, the NIST replacement and the
+  published ESP32 cost figures.
+- The Threshold slider changes the confidence needed to count an algorithm as present (the scanner
+  default is 0.50). Lower it to see the findings the rules are unsure about, such as ECDH.
+
+**Share it without installing anything.** `python scripts/build_demo_page.py` writes
+`docs/dashboard-demo.html`, a single file with ten sample scans built in. It cannot scan new
+files. Overview and console share one file, `cbomscan/dashboard/index.html`; the 3D scenes are
+procedural Three.js (loaded from a CDN), with no image or model files.
 
 ## Phase I results
 
