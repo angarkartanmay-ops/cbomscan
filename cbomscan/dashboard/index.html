@@ -509,7 +509,7 @@ function renderMap(r) {
         if (a < g.addr || a >= g.addr + g.size) return;
         const on = sel && sel.id === f.id ? " on" : "";
         const left = ((a - g.addr) / g.size * 100).toFixed(2);
-        marks += `<button class="mark${on}" data-fam="${f.id}" style="left:${left}%;--c:${riskVar[f.risk]}" title="${esc(f.name)} · ${esc(e.rule)} · ${esc(e.address)} · ${e.confidence.toFixed(2)}" aria-label="${esc(f.name)} evidence at ${esc(e.address)}"></button>`;
+        marks += `<button class="mark${on}" data-fam="${f.id}" style="left:${left}%;--c:${(riskVar[f.risk] || "var(--ok)")}" title="${esc(f.name)} · ${esc(e.rule)} · ${esc(e.address)} · ${e.confidence.toFixed(2)}" aria-label="${esc(f.name)} evidence at ${esc(e.address)}"></button>`;
       }));
       if (sel && detected(sel)) sel.evidence.forEach(e => (e.xrefs || []).forEach(x => {
         const a = parseInt(x, 16);
@@ -522,7 +522,7 @@ function renderMap(r) {
       r.families.filter(detected).forEach(f => f.evidence.forEach(e => {
         if (e.address != null) return;
         const on = sel && sel.id === f.id ? " on" : "";
-        marks += `<button class="mark trail${on}" data-fam="${f.id}" style="--c:${riskVar[f.risk]}" title="${esc(f.name)} · ${esc(e.rule)} · ${e.confidence.toFixed(2)}" aria-label="${esc(f.name)} signature block"></button>`;
+        marks += `<button class="mark trail${on}" data-fam="${f.id}" style="--c:${(riskVar[f.risk] || "var(--ok)")}" title="${esc(f.name)} · ${esc(e.rule)} · ${e.confidence.toFixed(2)}" aria-label="${esc(f.name)} signature block"></button>`;
       }));
     }
     return `<div class="${cls}" style="flex:${Math.round(b.weight)} 1 0"><div class="seg-label">${label}</div><div class="seg-body ${sel ? "dim" : ""}">${marks}</div></div>`;
@@ -540,7 +540,7 @@ function renderTable(r) {
     <button class="row ${detected(f) ? "" : "off"} ${state.selected === f.id ? "sel" : ""}" data-id="${f.id}">
       <span class="name"><b>${esc(f.name)}</b><small>${esc(f.primitive)}</small></span>
       <span class="conf"><span class="bar"><i data-w="${(f.confidence * 100).toFixed(1)}"></i><b style="left:${state.threshold * 100}%"></b></span><span class="mono">${f.confidence.toFixed(2)}</span></span>
-      <span><span class="pill ${riskClass[f.risk]}">${riskText[f.risk]}</span></span>
+      <span><span class="pill ${riskClass[f.risk] || "ok"}">${riskText[f.risk] || f.risk}</span></span>
       <span class="mono">P${f.priority}</span>
       <span class="mono">${f.evidence.length}</span>
     </button>`;
@@ -570,7 +570,7 @@ function renderDetail(r) {
     : `<div class="empty">No evidence found for this algorithm.</div>`;
   el("detail").innerHTML = `
     <div class="detail-top">
-      <h3>${esc(f.name)} <span class="pill ${riskClass[f.risk]}">${riskText[f.risk]}</span><span class="big">${f.confidence.toFixed(2)}</span></h3>
+      <h3>${esc(f.name)} <span class="pill ${riskClass[f.risk] || "ok"}">${riskText[f.risk] || f.risk}</span><span class="big">${f.confidence.toFixed(2)}</span></h3>
       <dl class="kv">
         <dt>Fix order</dt><dd>P${f.priority}. ${esc(f.priorityReason)}</dd>
         <dt>Replace with</dt><dd>${esc(f.replacement)}</dd>
