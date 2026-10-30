@@ -15,7 +15,7 @@ def scan_to_dict(path, name=None, threshold=DEFAULT_THRESHOLD):
     for fam in SCORED_FAMILIES:
         info = FAMILIES[fam]
         f = res.findings.get(fam)
-        priority, reason = PRIORITY[fam]
+        priority, reason = PRIORITY.get(fam, (5, "No migration guidance recorded for this family yet."))
         families.append({
             "id": fam,
             "name": info.name,
