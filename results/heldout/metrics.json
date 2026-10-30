@@ -1,0 +1,5723 @@
+{
+ "dataset": {
+  "code_samples": 32,
+  "signed_samples": 0,
+  "variants": [
+   "esp-idf-v5.5.6",
+   "wolfssl-v5.9.4-on-esp-idf-v5.5.6"
+  ],
+  "opts": [
+   "O0",
+   "O2",
+   "Og",
+   "Os"
+  ],
+  "profiles": [
+   "https_mbedtls",
+   "https_request",
+   "mqtt_ssl",
+   "simple_ota",
+   "wolf_wolfssl_benchmark",
+   "wolf_wolfssl_client",
+   "wolf_wolfssl_server",
+   "wolf_wolfssl_test"
+  ]
+ },
+ "systems": {
+  "strings-baseline": {
+   "micro": {
+    "tp": 328,
+    "fp": 24,
+    "fn": 8,
+    "tn": 56,
+    "precision": 0.9318181818181818,
+    "recall": 0.9761904761904762,
+    "f1": 0.9534883720930233
+   },
+   "per_family": {
+    "AES": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "DES": {
+     "tp": 16,
+     "fp": 16,
+     "fn": 0,
+     "tn": 0,
+     "precision": 0.5,
+     "recall": 1.0,
+     "f1": 0.6666666666666666
+    },
+    "CHACHA20": {
+     "tp": 0,
+     "fp": 4,
+     "fn": 0,
+     "tn": 28,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "POLY1305": {
+     "tp": 4,
+     "fp": 0,
+     "fn": 0,
+     "tn": 28,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "MD5": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "SHA1": {
+     "tp": 24,
+     "fp": 0,
+     "fn": 8,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 0.75,
+     "f1": 0.8571428571428571
+    },
+    "SHA256": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "SHA512": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "RSA": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "ECDSA": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "ECDH": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "ECC": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "FFDH": {
+     "tp": 28,
+     "fp": 4,
+     "fn": 0,
+     "tn": 0,
+     "precision": 0.875,
+     "recall": 1.0,
+     "f1": 0.9333333333333333
+    }
+   },
+   "per_opt": {
+    "O0": {
+     "tp": 82,
+     "fp": 6,
+     "fn": 2,
+     "tn": 14,
+     "precision": 0.9318181818181818,
+     "recall": 0.9761904761904762,
+     "f1": 0.9534883720930233
+    },
+    "O2": {
+     "tp": 82,
+     "fp": 6,
+     "fn": 2,
+     "tn": 14,
+     "precision": 0.9318181818181818,
+     "recall": 0.9761904761904762,
+     "f1": 0.9534883720930233
+    },
+    "Og": {
+     "tp": 82,
+     "fp": 6,
+     "fn": 2,
+     "tn": 14,
+     "precision": 0.9318181818181818,
+     "recall": 0.9761904761904762,
+     "f1": 0.9534883720930233
+    },
+    "Os": {
+     "tp": 82,
+     "fp": 6,
+     "fn": 2,
+     "tn": 14,
+     "precision": 0.9318181818181818,
+     "recall": 0.9761904761904762,
+     "f1": 0.9534883720930233
+    }
+   },
+   "per_variant": {
+    "esp-idf-v5.5.6": {
+     "tp": 160,
+     "fp": 16,
+     "fn": 0,
+     "tn": 32,
+     "precision": 0.9090909090909091,
+     "recall": 1.0,
+     "f1": 0.9523809523809523
+    },
+    "wolfssl-v5.9.4-on-esp-idf-v5.5.6": {
+     "tp": 168,
+     "fp": 8,
+     "fn": 8,
+     "tn": 24,
+     "precision": 0.9545454545454546,
+     "recall": 0.9545454545454546,
+     "f1": 0.9545454545454546
+    }
+   },
+   "per_opt_family": {
+    "O0": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 4,
+      "fn": 0,
+      "tn": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "tn": 7,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "MD5": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA1": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571428571428571
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDH": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 1,
+      "fn": 0,
+      "tn": 0,
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1": 0.9333333333333333
+     }
+    },
+    "O2": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 4,
+      "fn": 0,
+      "tn": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "tn": 7,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "MD5": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA1": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571428571428571
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDH": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 1,
+      "fn": 0,
+      "tn": 0,
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1": 0.9333333333333333
+     }
+    },
+    "Og": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 4,
+      "fn": 0,
+      "tn": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "tn": 7,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "MD5": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA1": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571428571428571
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDH": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 1,
+      "fn": 0,
+      "tn": 0,
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1": 0.9333333333333333
+     }
+    },
+    "Os": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 4,
+      "fn": 0,
+      "tn": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "tn": 7,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "MD5": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA1": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571428571428571
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDH": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 1,
+      "fn": 0,
+      "tn": 0,
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1": 0.9333333333333333
+     }
+    }
+   },
+   "per_variant_family": {
+    "esp-idf-v5.5.6": {
+     "AES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 0,
+      "fp": 16,
+      "fn": 0,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA1": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDH": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECC": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "wolfssl-v5.9.4-on-esp-idf-v5.5.6": {
+     "AES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 4,
+      "fn": 0,
+      "tn": 12,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 12,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "MD5": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA256": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDH": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECC": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 12,
+      "fp": 4,
+      "fn": 0,
+      "tn": 0,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571
+     }
+    }
+   },
+   "pk_class": {
+    "RSA": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "ECC": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "FFDH": {
+     "tp": 28,
+     "fp": 4,
+     "fn": 0,
+     "tn": 0,
+     "precision": 0.875,
+     "recall": 1.0,
+     "f1": 0.9333333333333333
+    }
+   },
+   "image_quantum_vulnerable": {
+    "tp": 32,
+    "fp": 0,
+    "fn": 0,
+    "tn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   }
+  },
+  "rules:constants": {
+   "micro": {
+    "tp": 220,
+    "fp": 1,
+    "fn": 116,
+    "tn": 79,
+    "precision": 0.995475113122172,
+    "recall": 0.6547619047619048,
+    "f1": 0.7899461400359067
+   },
+   "per_family": {
+    "AES": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "DES": {
+     "tp": 16,
+     "fp": 0,
+     "fn": 0,
+     "tn": 16,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "CHACHA20": {
+     "tp": 0,
+     "fp": 1,
+     "fn": 0,
+     "tn": 31,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "POLY1305": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 4,
+     "tn": 28,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "MD5": {
+     "tp": 16,
+     "fp": 0,
+     "fn": 16,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 0.5,
+     "f1": 0.6666666666666666
+    },
+    "SHA1": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "SHA256": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "SHA512": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "RSA": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 32,
+     "tn": 0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "ECDSA": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 32,
+     "tn": 0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "ECDH": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 32,
+     "tn": 0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "ECC": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "FFDH": {
+     "tp": 28,
+     "fp": 0,
+     "fn": 0,
+     "tn": 4,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    }
+   },
+   "per_opt": {
+    "O0": {
+     "tp": 55,
+     "fp": 0,
+     "fn": 29,
+     "tn": 20,
+     "precision": 1.0,
+     "recall": 0.6547619047619048,
+     "f1": 0.7913669064748202
+    },
+    "O2": {
+     "tp": 55,
+     "fp": 0,
+     "fn": 29,
+     "tn": 20,
+     "precision": 1.0,
+     "recall": 0.6547619047619048,
+     "f1": 0.7913669064748202
+    },
+    "Og": {
+     "tp": 55,
+     "fp": 0,
+     "fn": 29,
+     "tn": 20,
+     "precision": 1.0,
+     "recall": 0.6547619047619048,
+     "f1": 0.7913669064748202
+    },
+    "Os": {
+     "tp": 55,
+     "fp": 1,
+     "fn": 29,
+     "tn": 19,
+     "precision": 0.9821428571428571,
+     "recall": 0.6547619047619048,
+     "f1": 0.7857142857142857
+    }
+   },
+   "per_variant": {
+    "esp-idf-v5.5.6": {
+     "tp": 96,
+     "fp": 0,
+     "fn": 64,
+     "tn": 48,
+     "precision": 1.0,
+     "recall": 0.6,
+     "f1": 0.7499999999999999
+    },
+    "wolfssl-v5.9.4-on-esp-idf-v5.5.6": {
+     "tp": 124,
+     "fp": 1,
+     "fn": 52,
+     "tn": 31,
+     "precision": 0.992,
+     "recall": 0.7045454545454546,
+     "f1": 0.8239202657807309
+    }
+   },
+   "per_opt_family": {
+    "O0": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "O2": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "Og": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "Os": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    }
+   },
+   "per_variant_family": {
+    "esp-idf-v5.5.6": {
+     "AES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "SHA1": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "wolfssl-v5.9.4-on-esp-idf-v5.5.6": {
+     "AES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 15,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 12,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA1": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 12,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    }
+   },
+   "pk_class": {
+    "RSA": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 32,
+     "tn": 0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "ECC": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "FFDH": {
+     "tp": 28,
+     "fp": 0,
+     "fn": 0,
+     "tn": 4,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    }
+   },
+   "image_quantum_vulnerable": {
+    "tp": 32,
+    "fp": 0,
+    "fn": 0,
+    "tn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   }
+  },
+  "rules:constants+oid": {
+   "micro": {
+    "tp": 252,
+    "fp": 1,
+    "fn": 84,
+    "tn": 79,
+    "precision": 0.9960474308300395,
+    "recall": 0.75,
+    "f1": 0.8556876061120543
+   },
+   "per_family": {
+    "AES": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "DES": {
+     "tp": 16,
+     "fp": 0,
+     "fn": 0,
+     "tn": 16,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "CHACHA20": {
+     "tp": 0,
+     "fp": 1,
+     "fn": 0,
+     "tn": 31,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "POLY1305": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 4,
+     "tn": 28,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "MD5": {
+     "tp": 16,
+     "fp": 0,
+     "fn": 16,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 0.5,
+     "f1": 0.6666666666666666
+    },
+    "SHA1": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "SHA256": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "SHA512": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "RSA": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "ECDSA": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 32,
+     "tn": 0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "ECDH": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 32,
+     "tn": 0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "ECC": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "FFDH": {
+     "tp": 28,
+     "fp": 0,
+     "fn": 0,
+     "tn": 4,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    }
+   },
+   "per_opt": {
+    "O0": {
+     "tp": 63,
+     "fp": 0,
+     "fn": 21,
+     "tn": 20,
+     "precision": 1.0,
+     "recall": 0.75,
+     "f1": 0.8571428571428571
+    },
+    "O2": {
+     "tp": 63,
+     "fp": 0,
+     "fn": 21,
+     "tn": 20,
+     "precision": 1.0,
+     "recall": 0.75,
+     "f1": 0.8571428571428571
+    },
+    "Og": {
+     "tp": 63,
+     "fp": 0,
+     "fn": 21,
+     "tn": 20,
+     "precision": 1.0,
+     "recall": 0.75,
+     "f1": 0.8571428571428571
+    },
+    "Os": {
+     "tp": 63,
+     "fp": 1,
+     "fn": 21,
+     "tn": 19,
+     "precision": 0.984375,
+     "recall": 0.75,
+     "f1": 0.8513513513513513
+    }
+   },
+   "per_variant": {
+    "esp-idf-v5.5.6": {
+     "tp": 112,
+     "fp": 0,
+     "fn": 48,
+     "tn": 48,
+     "precision": 1.0,
+     "recall": 0.7,
+     "f1": 0.8235294117647058
+    },
+    "wolfssl-v5.9.4-on-esp-idf-v5.5.6": {
+     "tp": 140,
+     "fp": 1,
+     "fn": 36,
+     "tn": 31,
+     "precision": 0.9929078014184397,
+     "recall": 0.7954545454545454,
+     "f1": 0.8832807570977916
+    }
+   },
+   "per_opt_family": {
+    "O0": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "O2": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "Og": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "Os": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    }
+   },
+   "per_variant_family": {
+    "esp-idf-v5.5.6": {
+     "AES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "SHA1": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "wolfssl-v5.9.4-on-esp-idf-v5.5.6": {
+     "AES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 15,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 12,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA1": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 12,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    }
+   },
+   "pk_class": {
+    "RSA": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "ECC": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "FFDH": {
+     "tp": 28,
+     "fp": 0,
+     "fn": 0,
+     "tn": 4,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    }
+   },
+   "image_quantum_vulnerable": {
+    "tp": 32,
+    "fp": 0,
+    "fn": 0,
+    "tn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   }
+  },
+  "rules:constants+oid+keys": {
+   "micro": {
+    "tp": 252,
+    "fp": 1,
+    "fn": 84,
+    "tn": 79,
+    "precision": 0.9960474308300395,
+    "recall": 0.75,
+    "f1": 0.8556876061120543
+   },
+   "per_family": {
+    "AES": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "DES": {
+     "tp": 16,
+     "fp": 0,
+     "fn": 0,
+     "tn": 16,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "CHACHA20": {
+     "tp": 0,
+     "fp": 1,
+     "fn": 0,
+     "tn": 31,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "POLY1305": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 4,
+     "tn": 28,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "MD5": {
+     "tp": 16,
+     "fp": 0,
+     "fn": 16,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 0.5,
+     "f1": 0.6666666666666666
+    },
+    "SHA1": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "SHA256": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "SHA512": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "RSA": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "ECDSA": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 32,
+     "tn": 0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "ECDH": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 32,
+     "tn": 0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "ECC": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "FFDH": {
+     "tp": 28,
+     "fp": 0,
+     "fn": 0,
+     "tn": 4,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    }
+   },
+   "per_opt": {
+    "O0": {
+     "tp": 63,
+     "fp": 0,
+     "fn": 21,
+     "tn": 20,
+     "precision": 1.0,
+     "recall": 0.75,
+     "f1": 0.8571428571428571
+    },
+    "O2": {
+     "tp": 63,
+     "fp": 0,
+     "fn": 21,
+     "tn": 20,
+     "precision": 1.0,
+     "recall": 0.75,
+     "f1": 0.8571428571428571
+    },
+    "Og": {
+     "tp": 63,
+     "fp": 0,
+     "fn": 21,
+     "tn": 20,
+     "precision": 1.0,
+     "recall": 0.75,
+     "f1": 0.8571428571428571
+    },
+    "Os": {
+     "tp": 63,
+     "fp": 1,
+     "fn": 21,
+     "tn": 19,
+     "precision": 0.984375,
+     "recall": 0.75,
+     "f1": 0.8513513513513513
+    }
+   },
+   "per_variant": {
+    "esp-idf-v5.5.6": {
+     "tp": 112,
+     "fp": 0,
+     "fn": 48,
+     "tn": 48,
+     "precision": 1.0,
+     "recall": 0.7,
+     "f1": 0.8235294117647058
+    },
+    "wolfssl-v5.9.4-on-esp-idf-v5.5.6": {
+     "tp": 140,
+     "fp": 1,
+     "fn": 36,
+     "tn": 31,
+     "precision": 0.9929078014184397,
+     "recall": 0.7954545454545454,
+     "f1": 0.8832807570977916
+    }
+   },
+   "per_opt_family": {
+    "O0": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "O2": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "Og": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "Os": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    }
+   },
+   "per_variant_family": {
+    "esp-idf-v5.5.6": {
+     "AES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "SHA1": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "wolfssl-v5.9.4-on-esp-idf-v5.5.6": {
+     "AES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 15,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 12,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA1": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 12,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    }
+   },
+   "pk_class": {
+    "RSA": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "ECC": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "FFDH": {
+     "tp": 28,
+     "fp": 0,
+     "fn": 0,
+     "tn": 4,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    }
+   },
+   "image_quantum_vulnerable": {
+    "tp": 32,
+    "fp": 0,
+    "fn": 0,
+    "tn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   }
+  },
+  "rules:no-names": {
+   "micro": {
+    "tp": 252,
+    "fp": 1,
+    "fn": 84,
+    "tn": 79,
+    "precision": 0.9960474308300395,
+    "recall": 0.75,
+    "f1": 0.8556876061120543
+   },
+   "per_family": {
+    "AES": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "DES": {
+     "tp": 16,
+     "fp": 0,
+     "fn": 0,
+     "tn": 16,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "CHACHA20": {
+     "tp": 0,
+     "fp": 1,
+     "fn": 0,
+     "tn": 31,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "POLY1305": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 4,
+     "tn": 28,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "MD5": {
+     "tp": 16,
+     "fp": 0,
+     "fn": 16,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 0.5,
+     "f1": 0.6666666666666666
+    },
+    "SHA1": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "SHA256": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "SHA512": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "RSA": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "ECDSA": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 32,
+     "tn": 0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "ECDH": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 32,
+     "tn": 0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "ECC": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "FFDH": {
+     "tp": 28,
+     "fp": 0,
+     "fn": 0,
+     "tn": 4,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    }
+   },
+   "per_opt": {
+    "O0": {
+     "tp": 63,
+     "fp": 0,
+     "fn": 21,
+     "tn": 20,
+     "precision": 1.0,
+     "recall": 0.75,
+     "f1": 0.8571428571428571
+    },
+    "O2": {
+     "tp": 63,
+     "fp": 0,
+     "fn": 21,
+     "tn": 20,
+     "precision": 1.0,
+     "recall": 0.75,
+     "f1": 0.8571428571428571
+    },
+    "Og": {
+     "tp": 63,
+     "fp": 0,
+     "fn": 21,
+     "tn": 20,
+     "precision": 1.0,
+     "recall": 0.75,
+     "f1": 0.8571428571428571
+    },
+    "Os": {
+     "tp": 63,
+     "fp": 1,
+     "fn": 21,
+     "tn": 19,
+     "precision": 0.984375,
+     "recall": 0.75,
+     "f1": 0.8513513513513513
+    }
+   },
+   "per_variant": {
+    "esp-idf-v5.5.6": {
+     "tp": 112,
+     "fp": 0,
+     "fn": 48,
+     "tn": 48,
+     "precision": 1.0,
+     "recall": 0.7,
+     "f1": 0.8235294117647058
+    },
+    "wolfssl-v5.9.4-on-esp-idf-v5.5.6": {
+     "tp": 140,
+     "fp": 1,
+     "fn": 36,
+     "tn": 31,
+     "precision": 0.9929078014184397,
+     "recall": 0.7954545454545454,
+     "f1": 0.8832807570977916
+    }
+   },
+   "per_opt_family": {
+    "O0": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "O2": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "Og": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "Os": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    }
+   },
+   "per_variant_family": {
+    "esp-idf-v5.5.6": {
+     "AES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "SHA1": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "wolfssl-v5.9.4-on-esp-idf-v5.5.6": {
+     "AES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 15,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 12,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA1": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 12,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    }
+   },
+   "pk_class": {
+    "RSA": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "ECC": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "FFDH": {
+     "tp": 28,
+     "fp": 0,
+     "fn": 0,
+     "tn": 4,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    }
+   },
+   "image_quantum_vulnerable": {
+    "tp": 32,
+    "fp": 0,
+    "fn": 0,
+    "tn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   }
+  },
+  "rules:all": {
+   "micro": {
+    "tp": 276,
+    "fp": 1,
+    "fn": 60,
+    "tn": 79,
+    "precision": 0.9963898916967509,
+    "recall": 0.8214285714285714,
+    "f1": 0.9004893964110929
+   },
+   "per_family": {
+    "AES": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "DES": {
+     "tp": 16,
+     "fp": 0,
+     "fn": 0,
+     "tn": 16,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "CHACHA20": {
+     "tp": 0,
+     "fp": 1,
+     "fn": 0,
+     "tn": 31,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "POLY1305": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 4,
+     "tn": 28,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "MD5": {
+     "tp": 16,
+     "fp": 0,
+     "fn": 16,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 0.5,
+     "f1": 0.6666666666666666
+    },
+    "SHA1": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "SHA256": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "SHA512": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "RSA": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "ECDSA": {
+     "tp": 24,
+     "fp": 0,
+     "fn": 8,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 0.75,
+     "f1": 0.8571428571428571
+    },
+    "ECDH": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 32,
+     "tn": 0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    },
+    "ECC": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "FFDH": {
+     "tp": 28,
+     "fp": 0,
+     "fn": 0,
+     "tn": 4,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    }
+   },
+   "per_opt": {
+    "O0": {
+     "tp": 69,
+     "fp": 0,
+     "fn": 15,
+     "tn": 20,
+     "precision": 1.0,
+     "recall": 0.8214285714285714,
+     "f1": 0.9019607843137255
+    },
+    "O2": {
+     "tp": 69,
+     "fp": 0,
+     "fn": 15,
+     "tn": 20,
+     "precision": 1.0,
+     "recall": 0.8214285714285714,
+     "f1": 0.9019607843137255
+    },
+    "Og": {
+     "tp": 69,
+     "fp": 0,
+     "fn": 15,
+     "tn": 20,
+     "precision": 1.0,
+     "recall": 0.8214285714285714,
+     "f1": 0.9019607843137255
+    },
+    "Os": {
+     "tp": 69,
+     "fp": 1,
+     "fn": 15,
+     "tn": 19,
+     "precision": 0.9857142857142858,
+     "recall": 0.8214285714285714,
+     "f1": 0.8961038961038961
+    }
+   },
+   "per_variant": {
+    "esp-idf-v5.5.6": {
+     "tp": 128,
+     "fp": 0,
+     "fn": 32,
+     "tn": 48,
+     "precision": 1.0,
+     "recall": 0.8,
+     "f1": 0.888888888888889
+    },
+    "wolfssl-v5.9.4-on-esp-idf-v5.5.6": {
+     "tp": 148,
+     "fp": 1,
+     "fn": 28,
+     "tn": 31,
+     "precision": 0.9932885906040269,
+     "recall": 0.8409090909090909,
+     "f1": 0.9107692307692309
+    }
+   },
+   "per_opt_family": {
+    "O0": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571428571428571
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "O2": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571428571428571
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "Og": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571428571428571
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "Os": {
+     "AES": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "SHA1": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571428571428571
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    }
+   },
+   "per_variant_family": {
+    "esp-idf-v5.5.6": {
+     "AES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "SHA1": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    },
+    "wolfssl-v5.9.4-on-esp-idf-v5.5.6": {
+     "AES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "DES": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "CHACHA20": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 15,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "POLY1305": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 12,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "MD5": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA1": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA256": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "SHA512": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "RSA": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "ECDSA": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+     },
+     "ECDH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "tn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+     },
+     "ECC": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     },
+     "FFDH": {
+      "tp": 12,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+     }
+    }
+   },
+   "pk_class": {
+    "RSA": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "ECC": {
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "FFDH": {
+     "tp": 28,
+     "fp": 0,
+     "fn": 0,
+     "tn": 4,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    }
+   },
+   "image_quantum_vulnerable": {
+    "tp": 32,
+    "fp": 0,
+    "fn": 0,
+    "tn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   }
+  }
+ },
+ "secure_boot": {
+  "total": 0,
+  "correct": 0,
+  "rows": []
+ },
+ "localisation": {
+  "constants": {
+   "application / other": 67,
+   "same-family object": 442,
+   "other crypto object": 12
+  },
+  "oid": {
+   "application / other": 136
+  },
+  "strings": {
+   "application / other": 66
+  },
+  "names": {
+   "application / other": 219
+  },
+  "keys": {
+   "application / other": 1432
+  },
+  "hw": {
+   "application / other": 64
+  }
+ },
+ "scan_time_s": {
+  "mean": 0.4393096125058946,
+  "max": 0.8887680000625551
+ }
+}
