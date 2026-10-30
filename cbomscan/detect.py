@@ -250,7 +250,7 @@ def _combine(evs):
 ALL_GROUPS = ["constants", "oid", "keys", "strings", "names", "hw", "secure-boot"]
 
 
-def scan(fw: Firmware, threshold=DEFAULT_THRESHOLD, groups=None) -> ScanResult:
+def scan(fw: Firmware, threshold=DEFAULT_THRESHOLD, groups=None, ml=False) -> ScanResult:
     groups = list(groups or ALL_GROUPS)
     idx = WordIndex(fw)
     evidence: List[Evidence] = []
@@ -295,6 +295,10 @@ def scan(fw: Firmware, threshold=DEFAULT_THRESHOLD, groups=None) -> ScanResult:
                                      k.param))
     hw = _scan_hw(fw, idx) if "hw" in groups else []
     evidence += [e for e in hw if e.family in FAMILIES]
+
+    if ml:   # Phase II, off by default: function-classifier evidence (cbomscan.ml)
+        from .ml import ml_evidence
+        evidence += ml_evidence(fw)
 
     by_fam = defaultdict(list)
     for e in evidence:

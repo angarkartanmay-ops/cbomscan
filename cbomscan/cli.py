@@ -16,7 +16,14 @@ from .report import to_html, to_markdown
 def cmd_scan(a):
     fw = load(a.firmware)
     groups = a.groups.split(",") if a.groups else ALL_GROUPS
-    res = scan(fw, threshold=a.threshold, groups=groups)
+    try:
+        res = scan(fw, threshold=a.threshold, groups=groups, ml=a.ml)
+    except (FileNotFoundError, ImportError) as e:
+        if not a.ml:
+            raise
+        print(f"--ml needs a trained model and numpy, scikit-learn, capstone ({e}).", file=sys.stderr)
+        print("Train it with: python eval/phase2_ml.py   (see docs/PHASE2_ML.md)", file=sys.stderr)
+        return 2
     bom = build_cbom(res)
     if not a.no_validate:
         from .validate import validate
@@ -79,6 +86,8 @@ def main(argv=None):
     s.add_argument("--threshold", type=float, default=DEFAULT_THRESHOLD)
     s.add_argument("--groups", default="", help=f"comma list from {','.join(ALL_GROUPS)}")
     s.add_argument("--no-validate", action="store_true")
+    s.add_argument("--ml", action="store_true",
+                   help="also run the Phase II function classifier (needs numpy, scikit-learn, capstone; off by default)")
     s.set_defaults(fn=cmd_scan)
     i = sub.add_parser("info", help="print image structure")
     i.add_argument("firmware")
