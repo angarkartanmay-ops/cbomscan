@@ -117,8 +117,8 @@ def extract_truth(mapfile):
             "support_ranges": {}}
 
 
-def main():
-    build, app, opt, out = sys.argv[1:5]
+def build_sample(build, app, opt, out):
+    """Copy the app image and write truth.json for one IDF build directory; returns the truth dict."""
     build = Path(build)
     sample = f"{app}__{opt}"
     d = Path(out) / sample
@@ -135,7 +135,13 @@ def main():
                   "bin_sha256": hashlib.sha256((d / "firmware.bin").read_bytes()).hexdigest(),
                   "bin_size": (d / "firmware.bin").stat().st_size})
     (d / "truth.json").write_text(json.dumps(truth, indent=1))
-    print(f"{sample}: {truth['bin_size']} B  {','.join(truth['present_families']) or '-'}")
+    return truth
+
+
+def main():
+    build, app, opt, out = sys.argv[1:5]
+    truth = build_sample(build, app, opt, out)
+    print(f"{truth['sample']}: {truth['bin_size']} B  {','.join(truth['present_families']) or '-'}")
 
 
 if __name__ == "__main__":
