@@ -1,0 +1,2633 @@
+{
+ "present_families": [
+  "AES",
+  "DES",
+  "MD5",
+  "SHA1",
+  "SHA256",
+  "SHA512",
+  "RSA",
+  "ECDSA",
+  "ECDH",
+  "ECC"
+ ],
+ "family_ranges": {
+  "AES": [
+   {
+    "start": 1073423904,
+    "end": 1073423908,
+    "section": ".bss.always_prefetch",
+    "object": "aes",
+    "kind": "data"
+   },
+   {
+    "start": 1061193444,
+    "end": 1061193484,
+    "section": ".rodata.rcon",
+    "object": "aes",
+    "kind": "data"
+   },
+   {
+    "start": 1061193484,
+    "end": 1061197580,
+    "section": ".rodata.Te",
+    "object": "aes",
+    "kind": "data"
+   },
+   {
+    "start": 1061197580,
+    "end": 1061201676,
+    "section": ".rodata.Td",
+    "object": "aes",
+    "kind": "data"
+   },
+   {
+    "start": 1061201676,
+    "end": 1061201932,
+    "section": ".rodata.Td4",
+    "object": "aes",
+    "kind": "data"
+   },
+   {
+    "start": 1074597108,
+    "end": 1074597116,
+    "section": ".literal.ByteReverseWord32",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074597116,
+    "end": 1074597132,
+    "section": ".literal.AesEncrypt_C",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074597132,
+    "end": 1074597140,
+    "section": ".literal.AesDecrypt_C",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074597140,
+    "end": 1074597144,
+    "section": ".literal.AesSetKey_C",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074597144,
+    "end": 1074597148,
+    "section": ".literal.AesSetKeyLocal_body",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074597148,
+    "end": 1074597152,
+    "section": ".literal.wc_AesGcmSetKey",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074597152,
+    "end": 1074597156,
+    "section": ".literal.GMULT",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074702624,
+    "end": 1074702684,
+    "section": ".text.ByteReverseWord32",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074702684,
+    "end": 1074702795,
+    "section": ".text.ByteReverseWords",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074702796,
+    "end": 1074702890,
+    "section": ".text.ByteReverseWord64",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074702892,
+    "end": 1074703013,
+    "section": ".text.ByteReverseWords64",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074703016,
+    "end": 1074703498,
+    "section": ".text.xorbufout",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074703500,
+    "end": 1074703866,
+    "section": ".text.xorbuf",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074703868,
+    "end": 1074703964,
+    "section": ".text.min",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074703964,
+    "end": 1074711010,
+    "section": ".text.AesEncrypt_C",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074711012,
+    "end": 1074711138,
+    "section": ".text.AesEncrypt_preFetchOpt",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074711140,
+    "end": 1074718070,
+    "section": ".text.AesDecrypt_C",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074718072,
+    "end": 1074718198,
+    "section": ".text.AesDecrypt_preFetchOpt",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074718200,
+    "end": 1074718376,
+    "section": ".text.wc_AesSetKey_for_ESP32",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074718376,
+    "end": 1074720977,
+    "section": ".text.AesSetKey_C",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074720980,
+    "end": 1074721139,
+    "section": ".text.wc_AesSetKeyLocal",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074721140,
+    "end": 1074721453,
+    "section": ".text.AesSetKeyLocal_body",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074721456,
+    "end": 1074721606,
+    "section": ".text.wc_AesSetKey",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074721608,
+    "end": 1074721707,
+    "section": ".text.wc_AesSetKeyDirect",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074721708,
+    "end": 1074721804,
+    "section": ".text.wc_AesSetIV",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074721804,
+    "end": 1074722095,
+    "section": ".text.wc_AesCbcEncrypt",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074722096,
+    "end": 1074722426,
+    "section": ".text.wc_AesCbcDecrypt",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074722428,
+    "end": 1074723021,
+    "section": ".text.wc_AesCtrEncrypt",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074723024,
+    "end": 1074723228,
+    "section": ".text.wc_AesGcmSetKey",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074723228,
+    "end": 1074723867,
+    "section": ".text.GMULT",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074723868,
+    "end": 1074724910,
+    "section": ".text.GHASH",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074724912,
+    "end": 1074725508,
+    "section": ".text.AES_GCM_encrypt_C",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074725508,
+    "end": 1074725739,
+    "section": ".text.wc_AesGcmEncrypt",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074725740,
+    "end": 1074726534,
+    "section": ".text.AES_GCM_decrypt_C",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074726536,
+    "end": 1074726755,
+    "section": ".text.wc_AesGcmDecrypt",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074726756,
+    "end": 1074726816,
+    "section": ".text.wc_GmacSetKey",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074726816,
+    "end": 1074726930,
+    "section": ".text.wc_GmacUpdate",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074726932,
+    "end": 1074727004,
+    "section": ".text.wc_AesInit",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074727004,
+    "end": 1074727040,
+    "section": ".text.wc_AesFree",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074956728,
+    "end": 1074956759,
+    "section": ".text.rotlFixed",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074956760,
+    "end": 1074956875,
+    "section": ".text.XorWordsOut",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074956876,
+    "end": 1074956973,
+    "section": ".text.XorWords",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074956976,
+    "end": 1074957153,
+    "section": ".text.ForceZero",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074957156,
+    "end": 1074957274,
+    "section": ".text.ConstantCompare",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074957276,
+    "end": 1074957329,
+    "section": ".text.ctMaskWord32GTE",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074957332,
+    "end": 1074957428,
+    "section": ".text.IncrementAesCounter",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074957428,
+    "end": 1074957459,
+    "section": ".text.wc_local_AesGcmCheckTagSz",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 1074957460,
+    "end": 1074957556,
+    "section": ".text.IncrementGcmCounter",
+    "object": "aes",
+    "kind": "code"
+   },
+   {
+    "start": 111,
+    "end": 159,
+    "section": ".comment",
+    "object": "aes",
+    "kind": "data"
+   }
+  ],
+  "DES": [
+   {
+    "start": 1061203224,
+    "end": 1061203280,
+    "section": ".rodata.pc1",
+    "object": "des3",
+    "kind": "data"
+   },
+   {
+    "start": 1061203280,
+    "end": 1061203296,
+    "section": ".rodata.totrot",
+    "object": "des3",
+    "kind": "data"
+   },
+   {
+    "start": 1061203296,
+    "end": 1061203344,
+    "section": ".rodata.pc2",
+    "object": "des3",
+    "kind": "data"
+   },
+   {
+    "start": 1061203344,
+    "end": 1061203376,
+    "section": ".rodata.bytebit",
+    "object": "des3",
+    "kind": "data"
+   },
+   {
+    "start": 1061203376,
+    "end": 1061205424,
+    "section": ".rodata.Spbox",
+    "object": "des3",
+    "kind": "data"
+   },
+   {
+    "start": 1061205424,
+    "end": 1061205463,
+    "section": ".rodata",
+    "object": "des3",
+    "kind": "data"
+   },
+   {
+    "start": 1061205464,
+    "end": 1061205474,
+    "section": ".rodata.__func__$0",
+    "object": "des3",
+    "kind": "data"
+   },
+   {
+    "start": 1074597796,
+    "end": 1074597812,
+    "section": ".literal.IPERM",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074597812,
+    "end": 1074597844,
+    "section": ".literal.DesSetKey",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074597844,
+    "end": 1074597848,
+    "section": ".literal.DesRawProcessBlock",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074742392,
+    "end": 1074742452,
+    "section": ".text.ByteReverseWord32",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074742452,
+    "end": 1074742818,
+    "section": ".text.xorbuf",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074742820,
+    "end": 1074743236,
+    "section": ".text.IPERM",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074743236,
+    "end": 1074743652,
+    "section": ".text.FPERM",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074743652,
+    "end": 1074744718,
+    "section": ".text.DesSetKey",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074744720,
+    "end": 1074745047,
+    "section": ".text.wc_Des3_SetKey",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074745048,
+    "end": 1074745752,
+    "section": ".text.DesRawProcessBlock",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074745752,
+    "end": 1074746022,
+    "section": ".text.Des3ProcessBlock",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074746024,
+    "end": 1074746241,
+    "section": ".text.wc_Des3_CbcEncrypt",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074746244,
+    "end": 1074746331,
+    "section": ".text.wc_Des3_SetIV",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074746332,
+    "end": 1074746368,
+    "section": ".text.wc_Des3Free",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074960992,
+    "end": 1074961023,
+    "section": ".text.rotlFixed",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074961024,
+    "end": 1074961055,
+    "section": ".text.rotrFixed",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074961056,
+    "end": 1074961153,
+    "section": ".text.XorWords",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074961156,
+    "end": 1074961331,
+    "section": ".text.ForceZero",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 1074961332,
+    "end": 1074961406,
+    "section": ".text.wc_Des3Init",
+    "object": "des3",
+    "kind": "code"
+   },
+   {
+    "start": 111,
+    "end": 159,
+    "section": ".comment",
+    "object": "des3",
+    "kind": "data"
+   }
+  ],
+  "ECC": [
+   {
+    "start": 1061205476,
+    "end": 1061205481,
+    "section": ".rodata.ecc_oid_secp224r1",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061205484,
+    "end": 1061205492,
+    "section": ".rodata.ecc_oid_prime239v1",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061205492,
+    "end": 1061205500,
+    "section": ".rodata.ecc_oid_secp256r1",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061205500,
+    "end": 1061205505,
+    "section": ".rodata.ecc_oid_secp384r1",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061205508,
+    "end": 1061205513,
+    "section": ".rodata.ecc_oid_secp521r1",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061205516,
+    "end": 1061208158,
+    "section": ".rodata",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208160,
+    "end": 1061208472,
+    "section": ".rodata.ecc_sets",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208472,
+    "end": 1061208498,
+    "section": ".rodata.__func__$27",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208500,
+    "end": 1061208526,
+    "section": ".rodata.__func__$26",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208528,
+    "end": 1061208539,
+    "section": ".rodata.__func__$25",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208540,
+    "end": 1061208558,
+    "section": ".rodata.__func__$24",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208560,
+    "end": 1061208584,
+    "section": ".rodata.__func__$23",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208584,
+    "end": 1061208604,
+    "section": ".rodata.__func__$22",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208604,
+    "end": 1061208624,
+    "section": ".rodata.__func__$21",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208624,
+    "end": 1061208654,
+    "section": ".rodata.__func__$19",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208656,
+    "end": 1061208673,
+    "section": ".rodata.__func__$16",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208676,
+    "end": 1061208693,
+    "section": ".rodata.__func__$12",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208696,
+    "end": 1061208713,
+    "section": ".rodata.__func__$11",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208716,
+    "end": 1061208736,
+    "section": ".rodata.__func__$10",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208736,
+    "end": 1061208755,
+    "section": ".rodata.__func__$9",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208756,
+    "end": 1061208779,
+    "section": ".rodata.__func__$8",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208780,
+    "end": 1061208796,
+    "section": ".rodata.__func__$7",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1061208796,
+    "end": 1061208818,
+    "section": ".rodata.__func__$6",
+    "object": "ecc",
+    "kind": "data"
+   },
+   {
+    "start": 1074597848,
+    "end": 1074597852,
+    "section": ".literal.wc_ecc_get_name",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074597852,
+    "end": 1074597900,
+    "section": ".literal._ecc_projective_add_point",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074597900,
+    "end": 1074597936,
+    "section": ".literal._ecc_projective_dbl_point",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074597936,
+    "end": 1074597972,
+    "section": ".literal.ecc_map_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074597972,
+    "end": 1074597984,
+    "section": ".literal.ecc_point_to_mont",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074597984,
+    "end": 1074597996,
+    "section": ".literal.ecc_check_order_minus_1",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074597996,
+    "end": 1074598008,
+    "section": ".literal.wc_ecc_new_point_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074598008,
+    "end": 1074598016,
+    "section": ".literal.wc_ecc_del_point_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074598016,
+    "end": 1074598036,
+    "section": ".literal.wc_ecc_shared_secret_gen_sync",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074598036,
+    "end": 1074598052,
+    "section": ".literal._ecc_make_key_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074598052,
+    "end": 1074598100,
+    "section": ".literal.wc_ecc_sign_hash",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074598100,
+    "end": 1074598112,
+    "section": ".literal.ecc_sign_hash_sw",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074598112,
+    "end": 1074598140,
+    "section": ".literal.wc_ecc_sign_hash_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074598140,
+    "end": 1074598188,
+    "section": ".literal.wc_ecc_verify_hash",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074598188,
+    "end": 1074598204,
+    "section": ".literal.wc_ecc_check_r_s_range",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074598204,
+    "end": 1074598228,
+    "section": ".literal.ecc_verify_hash",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074598228,
+    "end": 1074598260,
+    "section": ".literal.wc_ecc_verify_hash_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074746368,
+    "end": 1074746447,
+    "section": ".text.wc_ecc_curve_cache_free_spec_item",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074746448,
+    "end": 1074746692,
+    "section": ".text.wc_ecc_curve_cache_free_spec",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074746692,
+    "end": 1074746721,
+    "section": ".text.wc_ecc_curve_free",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074746724,
+    "end": 1074746893,
+    "section": ".text.wc_ecc_curve_cache_load_item",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074746896,
+    "end": 1074747417,
+    "section": ".text.wc_ecc_curve_load",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074747420,
+    "end": 1074747489,
+    "section": ".text.wc_ecc_get_name",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074747492,
+    "end": 1074747796,
+    "section": ".text.wc_ecc_set_curve",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074747796,
+    "end": 1074750041,
+    "section": ".text._ecc_projective_add_point",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074750044,
+    "end": 1074751437,
+    "section": ".text._ecc_projective_dbl_point",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074751440,
+    "end": 1074752377,
+    "section": ".text.ecc_map_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074752380,
+    "end": 1074752423,
+    "section": ".text.ecc_map",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074752424,
+    "end": 1074752885,
+    "section": ".text.wc_ecc_gen_z",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074752888,
+    "end": 1074754133,
+    "section": ".text.ecc_mulmod",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074754136,
+    "end": 1074754565,
+    "section": ".text.ecc_point_to_mont",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074754568,
+    "end": 1074755061,
+    "section": ".text.wc_ecc_mulmod_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074755064,
+    "end": 1074755433,
+    "section": ".text.ecc_check_order_minus_1",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074755436,
+    "end": 1074755961,
+    "section": ".text.wc_ecc_mulmod_ex2",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074755964,
+    "end": 1074756216,
+    "section": ".text.wc_ecc_new_point_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074756216,
+    "end": 1074756317,
+    "section": ".text.wc_ecc_del_point_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074756320,
+    "end": 1074756486,
+    "section": ".text.wc_ecc_copy_point",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074756488,
+    "end": 1074756591,
+    "section": ".text.wc_ecc_is_valid_idx",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074756592,
+    "end": 1074756737,
+    "section": ".text.wc_ecc_get_curve_idx",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074756740,
+    "end": 1074756810,
+    "section": ".text.wc_ecc_get_curve_size_from_id",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074756812,
+    "end": 1074757043,
+    "section": ".text.wc_ecc_shared_secret",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074757044,
+    "end": 1074757817,
+    "section": ".text.wc_ecc_shared_secret_gen_sync",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074757820,
+    "end": 1074758055,
+    "section": ".text.wc_ecc_shared_secret_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074758056,
+    "end": 1074758122,
+    "section": ".text.wc_ecc_point_is_at_infinity",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074758124,
+    "end": 1074758381,
+    "section": ".text.wc_ecc_gen_k",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074758384,
+    "end": 1074758833,
+    "section": ".text.ecc_make_pub_sw",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074758836,
+    "end": 1074759094,
+    "section": ".text.ecc_make_pub_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074759096,
+    "end": 1074759557,
+    "section": ".text._ecc_make_key_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074759560,
+    "end": 1074759633,
+    "section": ".text.wc_ecc_make_key_ex2",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074759636,
+    "end": 1074759687,
+    "section": ".text.wc_ecc_make_key_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074759688,
+    "end": 1074759832,
+    "section": ".text.wc_ecc_init_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074759832,
+    "end": 1074760485,
+    "section": ".text.wc_ecc_sign_hash",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074760488,
+    "end": 1074761365,
+    "section": ".text.ecc_sign_hash_sw",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074761368,
+    "end": 1074762297,
+    "section": ".text.wc_ecc_sign_hash_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074762300,
+    "end": 1074762382,
+    "section": ".text.wc_ecc_free",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074762384,
+    "end": 1074762477,
+    "section": ".text.ecc_set_point_infinity",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074762480,
+    "end": 1074762609,
+    "section": ".text.ecc_cond_copy_point",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074762612,
+    "end": 1074763569,
+    "section": ".text.ecc_projective_add_point_safe",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074763572,
+    "end": 1074763789,
+    "section": ".text.ecc_projective_dbl_point_safe",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074763792,
+    "end": 1074764537,
+    "section": ".text.wc_ecc_verify_hash",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074764540,
+    "end": 1074764897,
+    "section": ".text.wc_ecc_check_r_s_range",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074764900,
+    "end": 1074766301,
+    "section": ".text.ecc_verify_hash",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074766304,
+    "end": 1074767245,
+    "section": ".text.wc_ecc_verify_hash_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074767248,
+    "end": 1074767502,
+    "section": ".text.wc_ecc_get_oid",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074961408,
+    "end": 1074961586,
+    "section": ".text.ForceZero",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074961588,
+    "end": 1074961609,
+    "section": ".text.wc_ecc_reset",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074961612,
+    "end": 1074961654,
+    "section": ".text.ecc_verify_hash_sp",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074961656,
+    "end": 1074961716,
+    "section": ".text.wc_ecc_set_rng",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 111,
+    "end": 159,
+    "section": ".comment",
+    "object": "ecc",
+    "kind": "data"
+   }
+  ],
+  "RSA": [
+   {
+    "start": 1061210732,
+    "end": 1061210770,
+    "section": ".rodata",
+    "object": "rsa",
+    "kind": "data"
+   },
+   {
+    "start": 1061210772,
+    "end": 1061210786,
+    "section": ".rodata.__func__$11",
+    "object": "rsa",
+    "kind": "data"
+   },
+   {
+    "start": 1061210788,
+    "end": 1061210796,
+    "section": ".rodata.__func__$8",
+    "object": "rsa",
+    "kind": "data"
+   },
+   {
+    "start": 1061210796,
+    "end": 1061210808,
+    "section": ".rodata.__func__$7",
+    "object": "rsa",
+    "kind": "data"
+   },
+   {
+    "start": 1061210808,
+    "end": 1061210819,
+    "section": ".rodata.__func__$6",
+    "object": "rsa",
+    "kind": "data"
+   },
+   {
+    "start": 1061210820,
+    "end": 1061210834,
+    "section": ".rodata.__func__$5",
+    "object": "rsa",
+    "kind": "data"
+   },
+   {
+    "start": 1061210836,
+    "end": 1061210849,
+    "section": ".rodata.__func__$4",
+    "object": "rsa",
+    "kind": "data"
+   },
+   {
+    "start": 1061210852,
+    "end": 1061210871,
+    "section": ".rodata.__func__$3",
+    "object": "rsa",
+    "kind": "data"
+   },
+   {
+    "start": 1061210872,
+    "end": 1061210888,
+    "section": ".rodata.__func__$2",
+    "object": "rsa",
+    "kind": "data"
+   },
+   {
+    "start": 1061210888,
+    "end": 1061210907,
+    "section": ".rodata.__func__$1",
+    "object": "rsa",
+    "kind": "data"
+   },
+   {
+    "start": 1061210908,
+    "end": 1061210928,
+    "section": ".rodata.__func__$0",
+    "object": "rsa",
+    "kind": "data"
+   },
+   {
+    "start": 1074598824,
+    "end": 1074598832,
+    "section": ".literal.wc_RsaCleanup",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074598832,
+    "end": 1074598836,
+    "section": ".literal.wc_InitRsaKey_ex",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074598836,
+    "end": 1074598840,
+    "section": ".literal.RsaMGF1",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074598840,
+    "end": 1074598844,
+    "section": ".literal.RsaPad_OAEP",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074598844,
+    "end": 1074598848,
+    "section": ".literal.RsaPad_PSS",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074598848,
+    "end": 1074598852,
+    "section": ".literal.RsaUnPad_OAEP",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074598852,
+    "end": 1074598876,
+    "section": ".literal.RsaUnPad_PSS",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074598876,
+    "end": 1074598880,
+    "section": ".literal.RsaUnPad",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074598880,
+    "end": 1074598920,
+    "section": ".literal.RsaFunctionPrivate",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074598920,
+    "end": 1074598932,
+    "section": ".literal.RsaFunctionSync",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074598932,
+    "end": 1074598944,
+    "section": ".literal.RsaFunctionCheckIn",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074598944,
+    "end": 1074598948,
+    "section": ".literal.RsaPublicEncryptEx",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074598948,
+    "end": 1074598956,
+    "section": ".literal.RsaPrivateDecryptEx",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074802456,
+    "end": 1074802822,
+    "section": ".text.xorbuf",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074802824,
+    "end": 1074802886,
+    "section": ".text.ctMaskEq",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074802888,
+    "end": 1074802950,
+    "section": ".text.ctMask16Eq",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074802952,
+    "end": 1074803006,
+    "section": ".text.ctMaskNotEq",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074803008,
+    "end": 1074803173,
+    "section": ".text.wc_RsaCleanup",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074803176,
+    "end": 1074803421,
+    "section": ".text.wc_InitRsaKey_ex",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074803424,
+    "end": 1074803533,
+    "section": ".text.wc_FreeRsaKey",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074803536,
+    "end": 1074804228,
+    "section": ".text.RsaMGF1",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074804228,
+    "end": 1074804689,
+    "section": ".text.RsaMGF",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074804692,
+    "end": 1074806090,
+    "section": ".text.RsaPad_OAEP",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074806092,
+    "end": 1074806982,
+    "section": ".text.RsaPad_PSS",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074806984,
+    "end": 1074807382,
+    "section": ".text.RsaPad",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074807384,
+    "end": 1074807661,
+    "section": ".text.wc_RsaPad_ex",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074807664,
+    "end": 1074808569,
+    "section": ".text.RsaUnPad_OAEP",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074808572,
+    "end": 1074809421,
+    "section": ".text.RsaUnPad_PSS",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074809424,
+    "end": 1074810162,
+    "section": ".text.RsaUnPad",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074810164,
+    "end": 1074810401,
+    "section": ".text.wc_RsaUnPad_ex",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074810404,
+    "end": 1074811433,
+    "section": ".text.RsaFunctionPrivate",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074811436,
+    "end": 1074811825,
+    "section": ".text.RsaFunctionSync",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074811828,
+    "end": 1074812035,
+    "section": ".text.wc_RsaFunctionSync",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074812036,
+    "end": 1074812353,
+    "section": ".text.RsaFunctionCheckIn",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074812356,
+    "end": 1074812681,
+    "section": ".text.wc_RsaFunction_ex",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074812684,
+    "end": 1074812772,
+    "section": ".text.wc_RsaFunction",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074812772,
+    "end": 1074813350,
+    "section": ".text.RsaPublicEncryptEx",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074813352,
+    "end": 1074814529,
+    "section": ".text.RsaPrivateDecryptEx",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074814532,
+    "end": 1074814651,
+    "section": ".text.wc_RsaPublicEncrypt",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074814652,
+    "end": 1074814799,
+    "section": ".text.wc_RsaPrivateDecrypt",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074814800,
+    "end": 1074814867,
+    "section": ".text.wc_RsaSSL_Verify",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074814868,
+    "end": 1074814959,
+    "section": ".text.wc_RsaSSL_Verify_ex",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074814960,
+    "end": 1074815123,
+    "section": ".text.wc_RsaSSL_Verify_ex2",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074815124,
+    "end": 1074815243,
+    "section": ".text.wc_RsaSSL_Sign",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074815244,
+    "end": 1074815291,
+    "section": ".text.wc_RsaEncryptSize",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074966600,
+    "end": 1074966697,
+    "section": ".text.XorWords",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074966700,
+    "end": 1074966878,
+    "section": ".text.ForceZero",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074966880,
+    "end": 1074966998,
+    "section": ".text.ConstantCompare",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074967000,
+    "end": 1074967041,
+    "section": ".text.ctMaskGT",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074967044,
+    "end": 1074967083,
+    "section": ".text.ctMaskGTE",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074967084,
+    "end": 1074967125,
+    "section": ".text.ctMaskLT",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074967128,
+    "end": 1074967167,
+    "section": ".text.ctMaskLTE",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074967168,
+    "end": 1074967209,
+    "section": ".text.ctMask16GT",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074967212,
+    "end": 1074967253,
+    "section": ".text.ctMask16LT",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074967256,
+    "end": 1074967318,
+    "section": ".text.ctMaskSelInt",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074967320,
+    "end": 1074967384,
+    "section": ".text.ctMaskSelWord32",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074967384,
+    "end": 1074967824,
+    "section": ".text.wc_hash2mgf",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 1074967824,
+    "end": 1074967876,
+    "section": ".text.wc_RsaSetRNG",
+    "object": "rsa",
+    "kind": "code"
+   },
+   {
+    "start": 111,
+    "end": 159,
+    "section": ".comment",
+    "object": "rsa",
+    "kind": "data"
+   }
+  ],
+  "SHA256": [
+   {
+    "start": 1061210928,
+    "end": 1061210981,
+    "section": ".rodata",
+    "object": "sha256",
+    "kind": "data"
+   },
+   {
+    "start": 1061210984,
+    "end": 1061211240,
+    "section": ".rodata.K",
+    "object": "sha256",
+    "kind": "data"
+   },
+   {
+    "start": 1061211240,
+    "end": 1061211257,
+    "section": ".rodata.__func__$2",
+    "object": "sha256",
+    "kind": "data"
+   },
+   {
+    "start": 1074598976,
+    "end": 1074599008,
+    "section": ".literal.InitSha256",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074599008,
+    "end": 1074599036,
+    "section": ".literal.Transform_Sha256",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074599036,
+    "end": 1074599040,
+    "section": ".literal.Sha256Update",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074599040,
+    "end": 1074599044,
+    "section": ".literal.Sha256Final",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074599044,
+    "end": 1074599076,
+    "section": ".literal.InitSha224",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074826468,
+    "end": 1074826528,
+    "section": ".text.ByteReverseWord32",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074826528,
+    "end": 1074826639,
+    "section": ".text.ByteReverseWords",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074826640,
+    "end": 1074826701,
+    "section": ".text.readUnalignedWord32",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074826704,
+    "end": 1074826800,
+    "section": ".text.min",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074826800,
+    "end": 1074826943,
+    "section": ".text.InitSha256",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074826944,
+    "end": 1074826998,
+    "section": ".text.wc_InitSha256_ex",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074827000,
+    "end": 1074829682,
+    "section": ".text.Transform_Sha256",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074829684,
+    "end": 1074830217,
+    "section": ".text.Sha256Update",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074830220,
+    "end": 1074830296,
+    "section": ".text.wc_Sha256Update",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074830296,
+    "end": 1074830835,
+    "section": ".text.Sha256Final",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074830836,
+    "end": 1074830948,
+    "section": ".text.wc_Sha256Final",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074830948,
+    "end": 1074831113,
+    "section": ".text.InitSha224",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074831116,
+    "end": 1074831220,
+    "section": ".text.wc_InitSha224_ex",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074831220,
+    "end": 1074831313,
+    "section": ".text.wc_Sha224Update",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074831316,
+    "end": 1074831428,
+    "section": ".text.wc_Sha224Final",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074831428,
+    "end": 1074831464,
+    "section": ".text.wc_Sha224Free",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074831464,
+    "end": 1074831503,
+    "section": ".text.wc_InitSha256",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074831504,
+    "end": 1074831577,
+    "section": ".text.wc_Sha256Free",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074968040,
+    "end": 1074968071,
+    "section": ".text.rotlFixed",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074968072,
+    "end": 1074968103,
+    "section": ".text.rotrFixed",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074968104,
+    "end": 1074968282,
+    "section": ".text.ForceZero",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074968284,
+    "end": 1074968337,
+    "section": ".text.ctMaskWord32GTE",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 1074968340,
+    "end": 1074968420,
+    "section": ".text.AddLength",
+    "object": "sha256",
+    "kind": "code"
+   },
+   {
+    "start": 111,
+    "end": 159,
+    "section": ".comment",
+    "object": "sha256",
+    "kind": "data"
+   }
+  ],
+  "SHA512": [
+   {
+    "start": 1061211264,
+    "end": 1061211904,
+    "section": ".rodata.K512",
+    "object": "sha512",
+    "kind": "data"
+   },
+   {
+    "start": 1061211904,
+    "end": 1061211945,
+    "section": ".rodata",
+    "object": "sha512",
+    "kind": "data"
+   },
+   {
+    "start": 1061211948,
+    "end": 1061211966,
+    "section": ".rodata.__func__$2",
+    "object": "sha512",
+    "kind": "data"
+   },
+   {
+    "start": 1074599076,
+    "end": 1074599108,
+    "section": ".literal.InitSha512",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074599108,
+    "end": 1074599172,
+    "section": ".literal.InitSha512_224",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074599172,
+    "end": 1074599236,
+    "section": ".literal.InitSha512_256",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074599236,
+    "end": 1074599240,
+    "section": ".literal.wc_InitSha512_ex",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074599240,
+    "end": 1074599244,
+    "section": ".literal.wc_InitSha512_224_ex",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074599244,
+    "end": 1074599248,
+    "section": ".literal.wc_InitSha512_256_ex",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074831580,
+    "end": 1074831640,
+    "section": ".text.ByteReverseWord32",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074831640,
+    "end": 1074831734,
+    "section": ".text.ByteReverseWord64",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074831736,
+    "end": 1074831857,
+    "section": ".text.ByteReverseWords64",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074831860,
+    "end": 1074831956,
+    "section": ".text.min",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074831956,
+    "end": 1074832171,
+    "section": ".text.InitSha512",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074832172,
+    "end": 1074832387,
+    "section": ".text.InitSha512_224",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074832388,
+    "end": 1074832603,
+    "section": ".text.InitSha512_256",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074832604,
+    "end": 1074832696,
+    "section": ".text.InitSha512_Family",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074832696,
+    "end": 1074832751,
+    "section": ".text.wc_InitSha512_ex",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074832752,
+    "end": 1074832807,
+    "section": ".text.wc_InitSha512_224_ex",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074832808,
+    "end": 1074832863,
+    "section": ".text.wc_InitSha512_256_ex",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074832864,
+    "end": 1074832868,
+    "section": ".literal.Sha512Final",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074832868,
+    "end": 1074832872,
+    "section": ".literal.Sha512_Family_Final",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074832872,
+    "end": 1074832876,
+    "section": ".literal.wc_Sha512Final",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074832876,
+    "end": 1074832940,
+    "section": ".literal.InitSha384",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074832940,
+    "end": 1074832944,
+    "section": ".literal.wc_Sha512_224Final",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074832944,
+    "end": 1074832948,
+    "section": ".literal.wc_Sha512_256Final",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074835216,
+    "end": 1074836652,
+    "section": ".literal._Transform_Sha512",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074838008,
+    "end": 1074864406,
+    "section": ".text._Transform_Sha512",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074864408,
+    "end": 1074864954,
+    "section": ".text.Sha512Update",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074864956,
+    "end": 1074865038,
+    "section": ".text.wc_Sha512Update",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074865040,
+    "end": 1074865700,
+    "section": ".text.Sha512Final",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074865700,
+    "end": 1074865807,
+    "section": ".text.Sha512_Family_Final",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074865808,
+    "end": 1074865848,
+    "section": ".text.wc_Sha512Final",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074865848,
+    "end": 1074865896,
+    "section": ".text.wc_Sha512Free",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074865896,
+    "end": 1074866111,
+    "section": ".text.InitSha384",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074866112,
+    "end": 1074866194,
+    "section": ".text.wc_Sha384Update",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074866196,
+    "end": 1074866292,
+    "section": ".text.wc_Sha384Final",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074866292,
+    "end": 1074866381,
+    "section": ".text.wc_InitSha384_ex",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074866384,
+    "end": 1074866432,
+    "section": ".text.wc_Sha384Free",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074866432,
+    "end": 1074866470,
+    "section": ".text.wc_Sha512_224Update",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074866472,
+    "end": 1074866512,
+    "section": ".text.wc_Sha512_224Final",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074866512,
+    "end": 1074866532,
+    "section": ".text.wc_Sha512_224Free",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074866532,
+    "end": 1074866570,
+    "section": ".text.wc_Sha512_256Update",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074866572,
+    "end": 1074866612,
+    "section": ".text.wc_Sha512_256Final",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074866612,
+    "end": 1074866632,
+    "section": ".text.wc_Sha512_256Free",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074968420,
+    "end": 1074968451,
+    "section": ".text.rotlFixed",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074968452,
+    "end": 1074968610,
+    "section": ".text.rotrFixed64",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074968612,
+    "end": 1074968790,
+    "section": ".text.ForceZero",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074968792,
+    "end": 1074968845,
+    "section": ".text.ctMaskWord32GTE",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 1074968848,
+    "end": 1074968984,
+    "section": ".text.AddLength",
+    "object": "sha512",
+    "kind": "code"
+   },
+   {
+    "start": 111,
+    "end": 159,
+    "section": ".comment",
+    "object": "sha512",
+    "kind": "data"
+   }
+  ],
+  "ECDH": [
+   {
+    "start": 1074598016,
+    "end": 1074598036,
+    "section": ".literal.wc_ecc_shared_secret_gen_sync",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074756812,
+    "end": 1074757043,
+    "section": ".text.wc_ecc_shared_secret",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074757044,
+    "end": 1074757817,
+    "section": ".text.wc_ecc_shared_secret_gen_sync",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074757820,
+    "end": 1074758055,
+    "section": ".text.wc_ecc_shared_secret_ex",
+    "object": "ecc",
+    "kind": "code"
+   }
+  ],
+  "ECDSA": [
+   {
+    "start": 1074598052,
+    "end": 1074598100,
+    "section": ".literal.wc_ecc_sign_hash",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074598112,
+    "end": 1074598140,
+    "section": ".literal.wc_ecc_sign_hash_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074598140,
+    "end": 1074598188,
+    "section": ".literal.wc_ecc_verify_hash",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074598228,
+    "end": 1074598260,
+    "section": ".literal.wc_ecc_verify_hash_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074759832,
+    "end": 1074760485,
+    "section": ".text.wc_ecc_sign_hash",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074761368,
+    "end": 1074762297,
+    "section": ".text.wc_ecc_sign_hash_ex",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074763792,
+    "end": 1074764537,
+    "section": ".text.wc_ecc_verify_hash",
+    "object": "ecc",
+    "kind": "code"
+   },
+   {
+    "start": 1074766304,
+    "end": 1074767245,
+    "section": ".text.wc_ecc_verify_hash_ex",
+    "object": "ecc",
+    "kind": "code"
+   }
+  ],
+  "MD5": [
+   {
+    "start": 1074598400,
+    "end": 1074598656,
+    "section": ".literal.Transform",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074598656,
+    "end": 1074598672,
+    "section": ".literal._InitMd5",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074787896,
+    "end": 1074787957,
+    "section": ".text.readUnalignedWord32",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074787960,
+    "end": 1074788056,
+    "section": ".text.min",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074788056,
+    "end": 1074792938,
+    "section": ".text.Transform",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074792940,
+    "end": 1074793029,
+    "section": ".text._InitMd5",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074793032,
+    "end": 1074793118,
+    "section": ".text.wc_InitMd5_ex",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074793120,
+    "end": 1074793505,
+    "section": ".text.wc_Md5Update",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074793508,
+    "end": 1074793850,
+    "section": ".text.wc_Md5Final",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074965216,
+    "end": 1074965247,
+    "section": ".text.rotlFixed",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074965248,
+    "end": 1074965301,
+    "section": ".text.ctMaskWord32GTE",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074965304,
+    "end": 1074965378,
+    "section": ".text.AddLength",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 1074965380,
+    "end": 1074965391,
+    "section": ".text.wc_Md5Free",
+    "object": "md5",
+    "kind": "code"
+   },
+   {
+    "start": 111,
+    "end": 159,
+    "section": ".comment",
+    "object": "md5",
+    "kind": "data"
+   }
+  ],
+  "SHA1": [
+   {
+    "start": 1074598956,
+    "end": 1074598960,
+    "section": ".literal.InitSha",
+    "object": "sha",
+    "kind": "code"
+   },
+   {
+    "start": 1074598960,
+    "end": 1074598976,
+    "section": ".literal.Transform",
+    "object": "sha",
+    "kind": "code"
+   },
+   {
+    "start": 1074815292,
+    "end": 1074815352,
+    "section": ".text.ByteReverseWord32",
+    "object": "sha",
+    "kind": "code"
+   },
+   {
+    "start": 1074815352,
+    "end": 1074815463,
+    "section": ".text.ByteReverseWords",
+    "object": "sha",
+    "kind": "code"
+   },
+   {
+    "start": 1074815464,
+    "end": 1074815560,
+    "section": ".text.min",
+    "object": "sha",
+    "kind": "code"
+   },
+   {
+    "start": 1074815560,
+    "end": 1074815681,
+    "section": ".text.InitSha",
+    "object": "sha",
+    "kind": "code"
+   },
+   {
+    "start": 1074815684,
+    "end": 1074825238,
+    "section": ".text.Transform",
+    "object": "sha",
+    "kind": "code"
+   },
+   {
+    "start": 1074825240,
+    "end": 1074825335,
+    "section": ".text.wc_InitSha_ex",
+    "object": "sha",
+    "kind": "code"
+   },
+   {
+    "start": 1074825336,
+    "end": 1074825873,
+    "section": ".text.wc_ShaUpdate",
+    "object": "sha",
+    "kind": "code"
+   },
+   {
+    "start": 1074825876,
+    "end": 1074826429,
+    "section": ".text.wc_ShaFinal",
+    "object": "sha",
+    "kind": "code"
+   },
+   {
+    "start": 1074826432,
+    "end": 1074826468,
+    "section": ".text.wc_ShaFree",
+    "object": "sha",
+    "kind": "code"
+   },
+   {
+    "start": 1074967876,
+    "end": 1074967907,
+    "section": ".text.rotlFixed",
+    "object": "sha",
+    "kind": "code"
+   },
+   {
+    "start": 1074967908,
+    "end": 1074967961,
+    "section": ".text.ctMaskWord32GTE",
+    "object": "sha",
+    "kind": "code"
+   },
+   {
+    "start": 1074967964,
+    "end": 1074968038,
+    "section": ".text.AddLength",
+    "object": "sha",
+    "kind": "code"
+   },
+   {
+    "start": 111,
+    "end": 159,
+    "section": ".comment",
+    "object": "sha",
+    "kind": "data"
+   }
+  ]
+ },
+ "family_code_bytes": {
+  "AES": 25235,
+  "DES": 4425,
+  "ECC": 21738,
+  "RSA": 14156,
+  "SHA256": 5562,
+  "SHA512": 32128,
+  "ECDH": 1259,
+  "ECDSA": 3424,
+  "MD5": 6382,
+  "SHA1": 11341
+ },
+ "support_ranges": {},
+ "sample": "wolf_wolfssl_benchmark__O0",
+ "app": "wolf_wolfssl_benchmark",
+ "opt": "O0",
+ "variant": "wolfssl-v5.9.4-on-esp-idf-v5.5.6",
+ "profile": "wolf_wolfssl_benchmark",
+ "secure_boot": "none",
+ "build_system": "esp-idf v5.5.6 (cmake)",
+ "toolchain": "xtensa-esp-elf esp-14.2.0_20260121 (GCC 14.2.0), from ESP-IDF tools",
+ "intended_families": [],
+ "sdkconfig_optimization": [
+  "NONE",
+  "ASSERTIONS_ENABLE"
+ ],
+ "bin_sha256": "55c0ffc067141be77c41aaf50b7ffef3abb4ceb46e64371880786dd5548603cc",
+ "bin_size": 607216
+}
