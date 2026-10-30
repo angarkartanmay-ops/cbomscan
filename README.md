@@ -129,7 +129,36 @@ Sample outputs are in [`examples/`](examples/).
 | `  --groups constants,oid,keys,strings,names,hw,secure-boot` | Choose rule groups (ablation) |
 | `  --no-validate` | Skip CycloneDX schema validation |
 | `python -m cbomscan info FILE` | Print segments, app descriptor, signature blocks, partitions |
+| `python -m cbomscan serve` | Start the Cryptolens dashboard (`--port`, `--no-browser`) |
 | `python dataset/make_flash_dump.py app.bin dump.bin` | Wrap an app image into a 4 MB flash dump |
+
+## Dashboard (Cryptolens)
+
+Cryptolens is the web front end for cbomscan. It opens on an overview page that walks through
+how the system works as you scroll (read the binary, match the maths, plan the migration, check
+the result, project status), then leads into the console.
+
+```bash
+python -m cbomscan serve          # opens http://127.0.0.1:8765
+```
+
+**Console**
+
+- Pick any bundled dataset image from the Firmware list, or drop your own ESP32 `.bin` on the page
+  (or press Scan a file) to scan it.
+- The image map shows the real layout of the firmware (DROM, DRAM, IRAM, IROM, signature block)
+  with every finding at its address. Click a tick or a table row to select an algorithm; the code
+  that reads its table lights up.
+- The table lists all 13 algorithm families with confidence, quantum risk and fix priority.
+- The side panel shows the evidence behind the selected algorithm, the NIST replacement and the
+  published ESP32 cost figures.
+- The Threshold slider changes the confidence needed to count an algorithm as present (the scanner
+  default is 0.50). Lower it to see the findings the rules are unsure about, such as ECDH.
+
+**Share it without installing anything.** `python scripts/build_demo_page.py` writes
+`docs/dashboard-demo.html`, a single file with ten sample scans built in. It cannot scan new
+files. Overview and console share one file, `cbomscan/dashboard/index.html`; the 3D scenes are
+procedural Three.js (loaded from a CDN), with no image or model files.
 
 ## Phase I results
 
@@ -172,6 +201,8 @@ cbomscan/                 the scanner (Python package)
   migration.py            migration priority, published esp-pqc cost figures
   cbom.py, validate.py    CycloneDX 1.6 export and schema validation
   report.py, cli.py       Markdown/HTML reports, command line
+  api.py, server.py       scan result as JSON, local server for the dashboard
+  dashboard/index.html    Cryptolens dashboard (single file)
   schemas/                official CycloneDX 1.6 JSON schemas
 dataset/
   build_dataset.py        builds the labelled firmware dataset (toolchain is a parameter)

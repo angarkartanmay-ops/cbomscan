@@ -63,6 +63,12 @@ def cmd_info(a):
     return 0
 
 
+def cmd_serve(a):
+    from .server import serve
+    serve(a.host, a.port, not a.no_browser)
+    return 0
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="cbomscan", description="Find quantum-vulnerable cryptography in ESP32 firmware.")
     ap.add_argument("--version", action="version", version=__version__)
@@ -77,6 +83,11 @@ def main(argv=None):
     i = sub.add_parser("info", help="print image structure")
     i.add_argument("firmware")
     i.set_defaults(fn=cmd_info)
+    v = sub.add_parser("serve", help="open the Cryptolens dashboard in a browser")
+    v.add_argument("--host", default="127.0.0.1")
+    v.add_argument("--port", type=int, default=8765)
+    v.add_argument("--no-browser", action="store_true")
+    v.set_defaults(fn=cmd_serve)
     a = ap.parse_args(argv)
     return a.fn(a)
 
