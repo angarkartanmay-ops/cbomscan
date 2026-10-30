@@ -53,11 +53,13 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(413, {"error": "file must be between 1 byte and 16 MB"})
         body = self.rfile.read(size)
         name = parse_qs(url.query).get("name", ["upload.bin"])[0]
-        with tempfile.NamedTemporaryFile(suffix=".bin") as tmp:
-            tmp.write(body)
-            tmp.flush()
+        # A NamedTemporaryFile cannot be reopened by name on Windows while it is still open (PermissionError),
+        # so write the upload into a temporary directory and scan the closed file.
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "upload.bin"
+            path.write_bytes(body)
             try:
-                result = scan_to_dict(tmp.name, name)
+                result = scan_to_dict(path, name)
             except Exception as err:
                 return self.send(422, {"error": f"could not read this file as ESP32 firmware: {err}"})
         self.send(200, result)
