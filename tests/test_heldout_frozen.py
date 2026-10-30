@@ -14,6 +14,12 @@ def test_heldout_matches_manifest():
     for line in MANIFEST.read_text().splitlines():
         h, name = line.split("  ", 1)
         expected[name] = h
-    actual = {p.relative_to(HELD).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
-              for p in HELD.rglob("*") if p.is_file() and p.name != "MANIFEST.sha256"}
-    assert actual == expected
+    def digests(p):
+        raw = p.read_bytes()
+        crlf = raw.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+        return {hashlib.sha256(raw).hexdigest(), hashlib.sha256(crlf).hexdigest()}
+
+    files = {p.relative_to(HELD).as_posix(): p for p in HELD.rglob("*") if p.is_file() and p.name != "MANIFEST.sha256"}
+    assert set(files) == set(expected)
+    changed = [n for n, p in files.items() if expected[n] not in digests(p)]
+    assert not changed, changed

@@ -80,3 +80,9 @@ to those names by `dataset/heldout_truth.py`. Truth is linked capability, not ru
   generalisation across build system, compiler and optimisation level, not across fundamentally different crypto
   implementations (wolfSSL adds some of that).
 - Examples are built for ESP32 only; other chips are Phase III.
+
+## Line endings
+
+The manifest was written on Windows, so the text files (`index.json`, `truth.json`) were hashed with CRLF
+line endings. A Linux or CI checkout has LF. `tests/test_heldout_frozen.py` accepts either form of the
+same file; any other difference still fails. No held-out file was changed.

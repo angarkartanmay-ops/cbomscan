@@ -8,7 +8,7 @@ SAMPLE = Path(__file__).resolve().parent.parent / "dataset" / "out" / "samples" 
 def test_scan_to_dict_shape():
     d = scan_to_dict(SAMPLE, "x")
     assert d["chip"] == "ESP32"
-    assert len(d["families"]) == 13
+    assert len(d["families"]) == 16
     assert d["secureBoot"][0]["crcOk"]
     rsa = next(f for f in d["families"] if f["id"] == "RSA")
     assert rsa["quantumVulnerable"] and rsa["confidence"] >= 0.5 and rsa["evidence"]
@@ -32,4 +32,11 @@ def test_upload_endpoint_scans_a_posted_file():
     finally:
         srv.shutdown()
         srv.server_close()
-    assert d["chip"] == "ESP32" and len(d["families"]) == 13
+    assert d["chip"] == "ESP32" and len(d["families"]) == 16
+
+
+def test_post_quantum_image_reports_ml_kem():
+    path = Path(__file__).resolve().parent.parent / "dataset" / "out_pqc" / "samples" / "pqclean_mlkem768__O2" / "firmware.bin"
+    d = scan_to_dict(path, "x")
+    kem = next(f for f in d["families"] if f["id"] == "MLKEM")
+    assert kem["confidence"] >= 0.5 and not kem["quantumVulnerable"] and kem["risk"] == "none"

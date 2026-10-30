@@ -3,7 +3,7 @@ import time
 from .detect import scan, DEFAULT_THRESHOLD
 from .image import load
 from .migration import PRIORITY, notes_for
-from .taxonomy import FAMILIES, SCORED_FAMILIES
+from .taxonomy import FAMILIES, SCORED_FAMILIES, PQC_FAMILIES
 
 
 def scan_to_dict(path, name=None, threshold=DEFAULT_THRESHOLD):
@@ -12,7 +12,7 @@ def scan_to_dict(path, name=None, threshold=DEFAULT_THRESHOLD):
     res = scan(fw, threshold=threshold)
     ms = round((time.perf_counter() - start) * 1000)
     families = []
-    for fam in SCORED_FAMILIES:
+    for fam in SCORED_FAMILIES + PQC_FAMILIES:
         info = FAMILIES[fam]
         f = res.findings.get(fam)
         priority, reason = PRIORITY.get(fam, (5, "No migration guidance recorded for this family yet."))

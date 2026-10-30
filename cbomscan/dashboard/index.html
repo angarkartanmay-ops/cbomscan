@@ -130,6 +130,7 @@ input[type="range"] { width: 130px; accent-color: var(--accent); }
 .pill.crit { background: var(--crit-soft); color: var(--crit); }
 .pill.warn { background: var(--warn-soft); color: var(--warn); }
 .pill.ok { background: var(--ok-soft); color: var(--ok); }
+.pill.pq { background: var(--accent-soft); color: var(--accent); }
 .row .mono { text-align: right; font-size: 12px; color: var(--ink-2); }
 .sep { padding: 6px 16px; font-size: 11px; color: var(--ink-3); background: var(--panel-2); text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--line); }
 
@@ -422,6 +423,7 @@ html.in-app, html.in-app body { height: 100%; overflow: hidden; }
         <span><i style="background:var(--crit)"></i>Quantum-vulnerable</span>
         <span><i style="background:var(--warn)"></i>Weak today</span>
         <span><i style="background:var(--ok)"></i>Quantum-safe</span>
+        <span><i style="background:var(--accent)"></i>Post-quantum</span>
         <span><i style="background:var(--ink);opacity:.55"></i>Code that reads the selected table</span>
       </div>
     </div>
@@ -451,9 +453,9 @@ const el = id => document.getElementById(id);
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const hex = n => "0x" + n.toString(16).padStart(8, "0");
 const size = n => n >= 1024 ? (n / 1024).toFixed(1) + " KB" : n + " B";
-const riskText = { critical: "Quantum-vulnerable", high: "Weak today", low: "Quantum-safe" };
-const riskClass = { critical: "crit", high: "warn", low: "ok" };
-const riskVar = { critical: "var(--crit)", high: "var(--warn)", low: "var(--ok)" };
+const riskText = { critical: "Quantum-vulnerable", high: "Weak today", low: "Quantum-safe", none: "Post-quantum" };
+const riskClass = { critical: "crit", high: "warn", low: "ok", none: "pq" };
+const riskVar = { critical: "var(--crit)", high: "var(--warn)", low: "var(--ok)", none: "var(--accent)" };
 const groupText = { constants: "Constants", oid: "OID", keys: "Key material", strings: "Strings", names: "Names", hw: "HW registers", "secure-boot": "Secure Boot" };
 
 const detected = f => f.confidence >= state.threshold;

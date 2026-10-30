@@ -18,13 +18,17 @@ PICKS = [
     ("m36__Os__hwaccel_ecdsa_p384", "hardware accelerated ECDSA P-384", "Hardware"),
     ("m36__O2__symmetric_only", "AES and SHA only", "Symmetric"),
     ("m36__O2__noncrypto", "no cryptography", "Control"),
+    ("pqclean_mlkem768__O2", "already migrated: ML-KEM-768", "Post-quantum", "out_pqc"),
+    ("pqclean_mldsa65__O2", "already migrated: ML-DSA-65", "Post-quantum", "out_pqc"),
 ]
 
 
 def main(out):
     samples, results = [], {}
-    for name, label, group in PICKS:
-        path = ROOT / "dataset" / "out" / "samples" / name / "firmware.bin"
+    for pick in PICKS:
+        name, label, group = pick[:3]
+        root = pick[3] if len(pick) > 3 else "out"
+        path = ROOT / "dataset" / root / "samples" / name / "firmware.bin"
         if not path.exists():
             print("skip", name)
             continue

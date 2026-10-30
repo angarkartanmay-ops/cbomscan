@@ -67,10 +67,10 @@ It does **not** break or fix anything on the device. It is the diagnosis step of
 | I | CycloneDX 1.6 CBOM export, validated against the official schema on every run | Done |
 | I | Labelled dataset: 132 images + 66 Secure Boot signed copies, truth from linker maps | Done |
 | I | Evaluation harness with strings-only baseline and ablations; tests; CI | Done |
-| II | Rebuild dataset with Espressif's `xtensa-esp32-elf-gcc` (windowed ABI) | To do |
-| II | Held-out test set (wolfSSL, real ESP-IDF example apps) | To do |
-| II | Xtensa disassembly (done, [docs/DISASM.md](docs/DISASM.md)) + function boundary recovery for stripped code (to do) | In progress |
-| II | Tier 2 ML classifier for the rule gaps (ECDSA vs ECDH, run-time AES tables, Poly1305) | To do |
+| II | Rebuild dataset with Espressif's `xtensa-esp32-elf-gcc` (windowed ABI): 231 images in `dataset/out_esp32` | Done |
+| II | Held-out test set: 32 ESP-IDF v5.5.6 images (mbedTLS and wolfSSL), frozen with a SHA-256 manifest; Phase I rules scored on it ([results/heldout](results/heldout)) | Done |
+| II | Xtensa disassembly ([docs/DISASM.md](docs/DISASM.md)), function-start recovery and function-level labels ([docs/FUNCTIONS.md](docs/FUNCTIONS.md)), per-function features | Done |
+| II | Tier 2 ML classifier for the rule gaps (ECDSA vs ECDH, run-time AES tables, Poly1305): features and labels exist; classifier not yet trained or scored on the held-out set | In progress |
 | II | Detection rules for post-quantum algorithms (ML-KEM, ML-DSA, LMS) so migrated firmware shows up correctly | Done for ML-KEM, ML-DSA (verified on real builds) and LMS public keys (verifier-only code is a known miss); see [docs/PQC_RULES.md](docs/PQC_RULES.md) |
 | III | Migration feasibility model (flash, RAM, boot-time budget per chip) | To do |
 | III | Other chips: ESP32-S2/S3/C3/C6/C5 accelerator addresses and chip-specific checks | To do |
@@ -156,7 +156,7 @@ python -m cbomscan serve          # opens http://127.0.0.1:8765
   default is 0.50). Lower it to see the findings the rules are unsure about, such as ECDH.
 
 **Share it without installing anything.** `python scripts/build_demo_page.py` writes
-`docs/dashboard-demo.html`, a single file with ten sample scans built in. It cannot scan new
+`docs/dashboard-demo.html`, a single file with twelve sample scans built in. It cannot scan new
 files. Overview and console share one file, `cbomscan/dashboard/index.html`; the 3D scenes are
 procedural Three.js (loaded from a CDN), with no image or model files.
 
