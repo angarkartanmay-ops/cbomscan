@@ -129,7 +129,22 @@ Sample outputs are in [`examples/`](examples/).
 | `  --groups constants,oid,keys,strings,names,hw,secure-boot` | Choose rule groups (ablation) |
 | `  --no-validate` | Skip CycloneDX schema validation |
 | `python -m cbomscan info FILE` | Print segments, app descriptor, signature blocks, partitions |
+| `python -m cbomscan serve` | Start the Cryptolens dashboard (`--port`, `--no-browser`) |
 | `python dataset/make_flash_dump.py app.bin dump.bin` | Wrap an app image into a 4 MB flash dump |
+
+## Dashboard (Cryptolens)
+
+A local web app that shows a scan at a glance: the ESP32 image layout with every finding placed at
+its address, each algorithm with its confidence and quantum risk, and the evidence and migration
+advice behind it. A threshold slider re-filters the findings live.
+
+```bash
+python -m cbomscan serve          # opens http://127.0.0.1:8765
+```
+
+Pick any bundled dataset image, or drop your own ESP32 `.bin` onto the page to scan it. A
+read-only demo page with ten sample scans is built by `python scripts/build_demo_page.py`
+(output: `docs/dashboard-demo.html`). The page is a single file, `cbomscan/dashboard/index.html`.
 
 ## Phase I results
 
@@ -172,6 +187,8 @@ cbomscan/                 the scanner (Python package)
   migration.py            migration priority, published esp-pqc cost figures
   cbom.py, validate.py    CycloneDX 1.6 export and schema validation
   report.py, cli.py       Markdown/HTML reports, command line
+  api.py, server.py       scan result as JSON, local server for the dashboard
+  dashboard/index.html    Cryptolens dashboard (single file)
   schemas/                official CycloneDX 1.6 JSON schemas
 dataset/
   build_dataset.py        builds the labelled firmware dataset (toolchain is a parameter)
