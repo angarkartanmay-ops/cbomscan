@@ -252,6 +252,13 @@ ALL_GROUPS = ["constants", "oid", "keys", "strings", "names", "hw", "secure-boot
 
 def scan(fw: Firmware, threshold=DEFAULT_THRESHOLD, groups=None, ml=False) -> ScanResult:
     groups = list(groups or ALL_GROUPS)
+    chip = fw.chip.split(" ")[0]
+    if chip != "ESP32" and "hw" in groups:
+        groups.remove("hw")
+        fw.notes.append(f"{fw.chip}: accelerator-register rules skipped (addresses are mapped for ESP32 only)")
+    if ml and chip != "ESP32":
+        ml = False
+        fw.notes.append(f"{fw.chip}: ML tier skipped (trained on ESP32 windowed-ABI code only)")
     idx = WordIndex(fw)
     evidence: List[Evidence] = []
     for sig in S.SIGNATURES:

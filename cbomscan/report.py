@@ -2,6 +2,7 @@
 
 import html
 
+from .feasibility import for_result
 from .migration import PRIORITY, PLATFORM_NOTES
 from .taxonomy import FAMILIES, PQC_FAMILIES
 
@@ -71,6 +72,26 @@ def to_markdown(result):
         for e in r["evidence"]:
             L.append(f"- {e}")
         L.append("")
+    actions, scope = for_result(result)
+    L += ["## Can the replacement fit? (static feasibility)", "",
+          "Each check reads the image; assumptions are stated. Verdicts: ok, warn, blocked, unknown.", ""]
+    shown = [a for a in actions if a["triggeredBy"]]
+    if not shown:
+        L.append("No migration action is triggered by this image.")
+    for a in shown:
+        L.append(f"### {a['title']} ({a['verdict']})")
+        L.append(f"Triggered by: {', '.join(a['triggeredBy'])}")
+        for c in a["checks"]:
+            line = f"- **{c['check']}: {c['status']}.** {c['detail']}"
+            if c.get("assumption"):
+                line += f" _Assumption: {c['assumption']}._"
+            if c.get("source"):
+                line += f" Source: {c['source']}."
+            L.append(line)
+        L.append("")
+    L += ["## Chip scope", "", f"- Chip: {scope['chip']} ({scope['isa']})",
+          f"- Data rules: {scope['dataRules']}", f"- Accelerator registers: {scope['hwRegisters']}",
+          f"- ML tier: {scope['mlTier']}", ""]
     L += ["## Platform notes", ""] + [f"- {n}" for n in PLATFORM_NOTES]
     L += ["", "## Known Phase I limits", "",
           "- Rules cannot yet tell ECDSA from ECDH when both share curve code; ECC is reported with the curve.",
@@ -120,5 +141,18 @@ def to_html(result):
         for ev in r["evidence"]:
             out.append(f"<li>{e(ev)}</li>")
         out.append("</ul>")
+    actions, scope = for_result(result)
+    shown = [a for a in actions if a["triggeredBy"]]
+    out.append("<h2>Can the replacement fit?</h2>")
+    if not shown:
+        out.append("<p>No migration action is triggered by this image.</p>")
+    for a in shown:
+        out.append(f"<h3>{e(a['title'])} ({e(a['verdict'])})</h3><ul>")
+        for c in a["checks"]:
+            extra = f" <em>Assumption: {e(c['assumption'])}.</em>" if c.get("assumption") else ""
+            out.append(f"<li><strong>{e(c['check'])}: {e(c['status'])}.</strong> {e(c['detail'])}{extra}</li>")
+        out.append("</ul>")
+    out.append(f"<h2>Chip scope</h2><ul><li>{e(scope['chip'])} ({e(scope['isa'])})</li>"
+               f"<li>Accelerator registers: {e(scope['hwRegisters'])}</li><li>ML tier: {e(scope['mlTier'])}</li></ul>")
     out += ["</body>", "</html>"]
     return "\n".join(out) + "\n"

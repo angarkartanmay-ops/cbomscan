@@ -128,6 +128,13 @@ def build_cbom(result, tool_name="cbomscan"):
                        _prop("idfVersion", fw.app_desc.get("idf_ver", ""))]
     for n in PLATFORM_NOTES:
         meta_props.append(_prop("platformNote", n))
+    from .feasibility import for_result
+    actions, scope = for_result(result)
+    for a in actions:
+        if a["triggeredBy"]:
+            meta_props.append(_prop(f"feasibility:{a['id']}", a["verdict"] + "; " + "; ".join(
+                f"{c['check']}: {c['status']} ({c['detail']})" for c in a["checks"])))
+    meta_props.append(_prop("chipScope", f"{scope['chip']} {scope['isa']}; hw: {scope['hwRegisters']}; ml: {scope['mlTier']}"))
     for n in fw.notes:
         meta_props.append(_prop("inputNote", n))
     return {

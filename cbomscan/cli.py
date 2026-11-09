@@ -50,6 +50,13 @@ def cmd_scan(a):
         print(f"  post-quantum (not vulnerable): {', '.join(pqc)}")
     for k in res.keys:
         print(f"  key: {k.describe()}")
+    from .feasibility import for_result
+    actions, _ = for_result(res)
+    for a in actions:
+        if a["triggeredBy"]:
+            print(f"  fit check: {a['title']}: {a['verdict']}")
+    for n in fw.notes:
+        print(f"  note: {n}")
     print(f"  wrote {out / (stem + '.cbom.json')} (+ .report.md, .report.html, .evidence.json)")
     return 0
 
@@ -72,7 +79,7 @@ def cmd_info(a):
 
 def cmd_serve(a):
     from .server import serve
-    serve(a.host, a.port, not a.no_browser)
+    serve(a.host, a.port, not a.no_browser, a.ml)
     return 0
 
 
@@ -96,6 +103,7 @@ def main(argv=None):
     v.add_argument("--host", default="127.0.0.1")
     v.add_argument("--port", type=int, default=8765)
     v.add_argument("--no-browser", action="store_true")
+    v.add_argument("--ml", action="store_true", help="add Tier 2 function-classifier evidence (needs a trained model)")
     v.set_defaults(fn=cmd_serve)
     a = ap.parse_args(argv)
     return a.fn(a)

@@ -72,9 +72,9 @@ It does **not** break or fix anything on the device. It is the diagnosis step of
 | II | Xtensa disassembly ([docs/DISASM.md](docs/DISASM.md)), function-start recovery and function-level labels ([docs/FUNCTIONS.md](docs/FUNCTIONS.md)), per-function features | Done |
 | II | Tier 2 ML classifier for the rule gaps (ECDSA vs ECDH, run-time AES tables, Poly1305): features and labels exist; classifier not yet trained or scored on the held-out set | In progress |
 | II | Detection rules for post-quantum algorithms (ML-KEM, ML-DSA, LMS) so migrated firmware shows up correctly | Done for ML-KEM, ML-DSA (verified on real builds) and LMS public keys (verifier-only code is a known miss); see [docs/PQC_RULES.md](docs/PQC_RULES.md) |
-| III | Migration feasibility model (flash, RAM, boot-time budget per chip) | To do |
-| III | Other chips: ESP32-S2/S3/C3/C6/C5 accelerator addresses and chip-specific checks | To do |
-| III | Optional demo: migrate one board with esp-pqc, rescan, show the CBOM change | To do |
+| III | Migration feasibility: flash headroom, ESP-IDF version, post-quantum boot support per chip, with stated assumptions ([docs/FEASIBILITY.md](docs/FEASIBILITY.md)); RAM is reported as not readable from an image | Done |
+| III | Other chips: chip detection and per-chip scope (data rules on every chip; register rules and ML on ESP32 only) ([docs/CHIPS.md](docs/CHIPS.md)); no real S2/S3/RISC-V image tested yet | Partly done |
+| III | Optional demo: migrate one board with esp-pqc, rescan, show the CBOM change | Not started: needs an ESP32-C5/C6 board and ESP-IDF 6.0 |
 | III | Write-up and paper | To do |
 
 Each "To do" item is written up with acceptance criteria in [docs/ROADMAP.md](docs/ROADMAP.md).

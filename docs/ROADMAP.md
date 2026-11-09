@@ -108,17 +108,26 @@ builds).
 ## Phase III: migration planning, other chips, demo, write-up
 
 ### P3.1 Migration feasibility model
+**Status: done** ([FEASIBILITY.md](FEASIBILITY.md)). Flash headroom from the partition table (or a stated 1 MB
+assumption), ESP-IDF version from the app descriptor, post-quantum boot support per chip, the classical ROM
+verifier. RAM is reported as `unknown`: it cannot be read from an image. Code sizes are measured from our own
+PQC builds and re-derived by a test.
 For each finding, estimate whether the replacement fits: flash headroom (partition size minus
 image size), RAM for TLS buffers, boot-time budget, chip support (esp-pqc boot verification is
 C3/C5/C6 only). Inputs: CBOM + partition table + chip. Output: feasibility per finding, with the
 assumptions shown.
 
 ### P3.2 More chips
+**Status: partly done** ([CHIPS.md](CHIPS.md)). The scanner applies data rules on every chip and skips the
+ESP32-only register rules and ML tier elsewhere, saying so in the report. Not done: real S2/S3/RISC-V test
+images, per-chip accelerator addresses, a RISC-V disassembler.
 Chip detection from the image header already exists. Add accelerator register windows for
 ESP32-S2/S3/C3/C6/C5/P4 from their Technical Reference Manuals, and chip-specific Secure Boot
 facts.
 
 ### P3.3 Demo (optional)
+**Status: not started.** Needs an ESP32-C5 or C6 board and ESP-IDF 6.0. The board script is rehearsed on a
+synthetic dump ([BOARD_TEST.md](BOARD_TEST.md)).
 On an ESP32-C5 or C6: build a classical OTA + TLS app, scan it; migrate with esp-pqc (hybrid TLS
 X25519MLKEM768, hybrid boot ML-DSA-65); rescan; show the CBOM diff.
 

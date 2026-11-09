@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGE = Path(__file__).resolve().parent / "dashboard" / "index.html"
 SAMPLES = ROOT / "dataset" / "out"
 MAX_UPLOAD = 16 * 1024 * 1024
+USE_ML = False
 
 
 def sample_index():
@@ -41,7 +42,7 @@ class Handler(BaseHTTPRequestHandler):
             known = {s["sample"] for s in sample_index()}
             if name not in known:
                 return self.send(404, {"error": "unknown sample"})
-            return self.send(200, scan_to_dict(SAMPLES / "samples" / name / "firmware.bin", name))
+            return self.send(200, scan_to_dict(SAMPLES / "samples" / name / "firmware.bin", name, ml=USE_ML))
         self.send(404, {"error": "not found"})
 
     def do_POST(self):
@@ -59,7 +60,7 @@ class Handler(BaseHTTPRequestHandler):
             path = Path(tmpdir) / "upload.bin"
             path.write_bytes(body)
             try:
-                result = scan_to_dict(path, name)
+                result = scan_to_dict(path, name, ml=USE_ML)
             except Exception as err:
                 return self.send(422, {"error": f"could not read this file as ESP32 firmware: {err}"})
         self.send(200, result)
@@ -68,7 +69,9 @@ class Handler(BaseHTTPRequestHandler):
         pass
 
 
-def serve(host="127.0.0.1", port=8765, open_browser=True):
+def serve(host="127.0.0.1", port=8765, open_browser=True, ml=False):
+    global USE_ML
+    USE_ML = ml
     server = ThreadingHTTPServer((host, port), Handler)
     url = f"http://{host}:{port}"
     print(f"Cryptolens running at {url}  (Ctrl+C to stop)")

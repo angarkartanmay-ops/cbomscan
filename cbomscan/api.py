@@ -2,14 +2,15 @@ import time
 
 from .detect import scan, DEFAULT_THRESHOLD
 from .image import load
+from .feasibility import assess, chip_scope
 from .migration import PRIORITY, notes_for
 from .taxonomy import FAMILIES, SCORED_FAMILIES, PQC_FAMILIES
 
 
-def scan_to_dict(path, name=None, threshold=DEFAULT_THRESHOLD):
+def scan_to_dict(path, name=None, threshold=DEFAULT_THRESHOLD, ml=False):
     start = time.perf_counter()
     fw = load(path)
-    res = scan(fw, threshold=threshold)
+    res = scan(fw, threshold=threshold, ml=ml)
     ms = round((time.perf_counter() - start) * 1000)
     families = []
     for fam in SCORED_FAMILIES + PQC_FAMILIES:
@@ -51,4 +52,10 @@ def scan_to_dict(path, name=None, threshold=DEFAULT_THRESHOLD):
         "threshold": threshold,
         "scanMs": ms,
         "families": families,
+        "feasibility": assess(fw, {f["id"] for f in families if f["confidence"] >= threshold}
+                              | ({"ECC"} if any(f["id"] in ("ECDSA", "ECDH") and f["confidence"] >= threshold for f in families) else set()),
+                              signed=bool(fw.signature_blocks)),
+        "chipScope": chip_scope(fw),
+        "notes": list(fw.notes),
+        "ml": ml,
     }

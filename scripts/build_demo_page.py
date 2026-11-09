@@ -20,10 +20,12 @@ PICKS = [
     ("m36__O2__noncrypto", "no cryptography", "Control"),
     ("pqclean_mlkem768__O2", "already migrated: ML-KEM-768", "Post-quantum", "out_pqc"),
     ("pqclean_mldsa65__O2", "already migrated: ML-DSA-65", "Post-quantum", "out_pqc"),
+    ("https_request__Os", "ESP-IDF https_request (mbedTLS)", "Held-out ESP-IDF apps", "heldout"),
+    ("wolf_wolfssl_test__Os", "wolfSSL test app", "Held-out ESP-IDF apps", "heldout"),
 ]
 
 
-def main(out):
+def main(out, ml=False):
     samples, results = [], {}
     for pick in PICKS:
         name, label, group = pick[:3]
@@ -33,7 +35,7 @@ def main(out):
             print("skip", name)
             continue
         samples.append({"sample": name, "label": label, "group": group})
-        results[name] = scan_to_dict(path, name)
+        results[name] = scan_to_dict(path, name, ml=ml)
     page = (ROOT / "cbomscan" / "dashboard" / "index.html").read_text()
     data = json.dumps({"samples": samples, "results": results}, separators=(",", ":"))
     page = page.replace("const EMBEDDED = null;", "const EMBEDDED = " + data + ";", 1)
@@ -43,4 +45,5 @@ def main(out):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1] if len(sys.argv) > 1 else str(ROOT / "docs" / "dashboard-demo.html"))
+    args = [a for a in sys.argv[1:] if a != "--ml"]
+    main(args[0] if args else str(ROOT / "docs" / "dashboard-demo.html"), ml="--ml" in sys.argv)

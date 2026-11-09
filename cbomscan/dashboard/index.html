@@ -118,7 +118,7 @@ input[type="range"] { width: 130px; accent-color: var(--accent); }
 .row.sel { background: var(--accent-soft); box-shadow: inset 2px 0 0 var(--accent); }
 .row.off { color: var(--ink-3); }
 .row.off .bar i { background: var(--ink-3); }
-.name { white-space: nowrap; }
+.name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .name b { font-weight: 500; }
 .name small { color: var(--ink-3); font-size: 11px; margin-left: 6px; }
 .conf { display: flex; align-items: center; gap: 10px; }
@@ -131,6 +131,13 @@ input[type="range"] { width: 130px; accent-color: var(--accent); }
 .pill.warn { background: var(--warn-soft); color: var(--warn); }
 .pill.ok { background: var(--ok-soft); color: var(--ok); }
 .pill.pq { background: var(--accent-soft); color: var(--accent); }
+.pill.na { background: var(--panel-2); color: var(--ink-2); border: 1px solid var(--line); }
+.fit { padding: 4px 16px 10px; }
+.fit h5 { margin: 6px 0 8px; font-size: 13px; font-weight: 600; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.fit li { list-style: none; display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 10px; padding: 5px 0; border-top: 1px solid var(--line); font-size: 12px; color: var(--ink-2); }
+.fit ul { margin: 0; padding: 0; }
+.fit li b { color: var(--ink); font-weight: 500; }
+.fit li em { display: block; color: var(--ink-3); font-style: normal; margin-top: 2px; }
 .row .mono { text-align: right; font-size: 12px; color: var(--ink-2); }
 .sep { padding: 6px 16px; font-size: 11px; color: var(--ink-3); background: var(--panel-2); text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--line); }
 
@@ -456,7 +463,9 @@ const size = n => n >= 1024 ? (n / 1024).toFixed(1) + " KB" : n + " B";
 const riskText = { critical: "Quantum-vulnerable", high: "Weak today", low: "Quantum-safe", none: "Post-quantum" };
 const riskClass = { critical: "crit", high: "warn", low: "ok", none: "pq" };
 const riskVar = { critical: "var(--crit)", high: "var(--warn)", low: "var(--ok)", none: "var(--accent)" };
-const groupText = { constants: "Constants", oid: "OID", keys: "Key material", strings: "Strings", names: "Names", hw: "HW registers", "secure-boot": "Secure Boot" };
+const groupText = { constants: "Constants", oid: "OID", keys: "Key material", strings: "Strings", names: "Names", hw: "HW registers", "secure-boot": "Secure Boot", ml: "Function classifier" };
+const fitText = { ok: "Fits", warn: "Check", blocked: "Blocked", unknown: "Unknown" };
+const fitClass = { ok: "ok", warn: "warn", blocked: "crit", unknown: "na" };
 
 const detected = f => f.confidence >= state.threshold;
 
@@ -481,7 +490,8 @@ function renderIdent(r) {
     ["Application", app + (r.app && r.app.idf_ver ? " / " + r.app.idf_ver : "")],
     ["Entry point", `<span class="mono">${esc(r.entry)}</span>`],
     ["SHA-256", `<span class="mono">${esc(r.sha256.slice(0, 10))}</span>`],
-    ["Secure Boot V2", sb]
+    ["Secure Boot V2", sb],
+    ["Detection", r.ml ? "rules + ML tier" : "rules"]
   ];
   el("facts").innerHTML = facts.map(([k, v]) => `<div class="fact"><dt>${k}</dt><dd title="${esc(String(v).replace(/<[^>]+>/g, ""))}">${k === "Entry point" || k === "SHA-256" ? v : esc(v)}</dd></div>`).join("");
   const found = r.families.filter(detected);
@@ -555,6 +565,16 @@ function renderTable(r) {
   }));
 }
 
+function fitHtml(r, f) {
+  const acts = (r.feasibility || []).filter(a => a.families.includes(f.id) || (a.id === "signatures" && f.id === "RSA" && r.secureBoot.length));
+  if (!acts.length) return "";
+  return `<h4 class="sub">Can the replacement fit on this device?</h4>` + acts.map(a => `
+    <div class="fit">
+      <h5>${esc(a.title)} <span class="pill ${fitClass[a.verdict]}">${fitText[a.verdict]}</span></h5>
+      <ul>${a.checks.map(c => `<li><span><span class="pill ${fitClass[c.status]}">${fitText[c.status]}</span></span><span><b>${esc(c.check)}.</b> ${esc(c.detail)}${c.assumption ? `<em>Assumption: ${esc(c.assumption)}</em>` : ""}</span></li>`).join("")}</ul>
+    </div>`).join("");
+}
+
 function renderDetail(r) {
   const f = r.families.find(x => x.id === state.selected);
   if (!f) {
@@ -582,6 +602,7 @@ function renderDetail(r) {
       </dl>
     </div>
     ${cost}
+    ${fitHtml(r, f)}
     <h4 class="sub">Evidence (${f.evidence.length})</h4>
     ${evs}
     ${f.note ? `<p class="note">${esc(f.note)}</p>` : ""}`;
