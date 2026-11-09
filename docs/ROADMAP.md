@@ -79,12 +79,17 @@ learned embeddings.
 ECDSA vs ECDH functions.
 
 ### P2.7 Classifier
+**Status: done.** Gradient-boosted trees on 41,051 development functions; k = 2 by leave-one-optimisation-level-out
+cross-validation ([PHASE2_ML.md](PHASE2_ML.md)).
 Gradient-boosted trees or random forest first (scikit-learn); split by **sample group** (never put
 functions from the same build in train and test). Report per-family precision/recall at function
 level and the confusion between ECDSA and ECDH.
 **Done when:** trained model file, training script, and results on the held-out set.
 
 ### P2.8 Integrate Tier 2 and evaluate
+**Status: done, acceptance criterion not met.** On the held-out set rules + ML reach recall 0.92 (rules 0.82) and
+find ECDH in 13 of 32 images, but precision is 0.86, below 0.95. `--ml` stays off by default
+([results/phase2/RESULTS_phase2.md](../results/phase2/RESULTS_phase2.md)).
 Add Tier 2 evidence (`group="ml"`) to `detect.py` with calibrated confidence. Evaluate rules vs
 rules+ML on the held-out set.
 **Done when:** `results/RESULTS_phase2.md` with the comparison, and the three gap families improve

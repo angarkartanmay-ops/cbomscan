@@ -159,9 +159,15 @@ def test_lms_structure_rule_rejects_low_entropy_and_unknown_codes():
     from types import SimpleNamespace
     from cbomscan.detect import _scan_lms
     sig = next(s for s in S.SIGNATURES if s.id == "lms.pubkey")
-    good = bytes.fromhex("00000006" "00000003") + bytes(range(7, 55))
+    import hashlib
+    rand = hashlib.sha256(b"I").digest()[:16] + hashlib.sha256(b"T1").digest()   # I and T1 are uniform bytes
+    good = bytes.fromhex("00000006" "00000003") + rand
     mk = lambda data: SimpleNamespace(segments=[SimpleNamespace(data=data, addr=0x3F400000, region="DROM")])
     assert _scan_lms(mk(b"\xAA" * 8 + good + b"\xAA" * 8), sig)
     assert not _scan_lms(mk(bytes.fromhex("00000006" "00000003") + b"\x00" * 48), sig)           # zeros
-    assert not _scan_lms(mk(bytes.fromhex("0000000A" "00000003") + bytes(range(7, 55))), sig)    # type 10 unassigned
-    assert not _scan_lms(mk(bytes.fromhex("00000006" "00000005") + bytes(range(7, 55))), sig)    # OTS type 5 unassigned
+    assert not _scan_lms(mk(bytes.fromhex("0000000A" "00000003") + rand), sig)                   # type 10 unassigned
+    assert not _scan_lms(mk(bytes.fromhex("00000006" "00000005") + rand), sig)                   # OTS type 5 unassigned
+    assert not _scan_lms(mk(bytes.fromhex("00000006" "00000003") + bytes(range(7, 55))), sig)    # small-integer table
+    wolf = bytes.fromhex("0000000800000004000000020000000100000"
+                         "00e110b180105031c0f06150a17130c041a0810071b140d0229341f252f371e28332d21302c")
+    assert not _scan_lms(mk(wolf), sig)          # permutation table that matched in wolfSSL held-out images

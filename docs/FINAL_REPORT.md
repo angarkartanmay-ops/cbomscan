@@ -1,7 +1,7 @@
 # cbomscan: a Cryptography Bill of Materials for compiled ESP32 firmware
 
 III Semester Experiential Learning project, Department of CSE, RV College of Engineering, Bengaluru.
-Draft final report (P3.4). Every figure links to the file it comes from.
+Final report draft (P3.4), 9 November 2026. Every figure links to the file it comes from.
 
 ## 1. Problem
 
@@ -77,7 +77,25 @@ These are upper bounds.
 
 ### 5.2 Held-out set
 
-ML_RESULTS_TABLE
+| System (32 held-out images) | Precision | Recall | F1 |
+|---|---|---|---|
+| Strings baseline | 0.93 | 0.98 | 0.95 |
+| Rules | 1.00 | 0.82 | 0.90 |
+| ML alone | 0.85 | 0.79 | 0.82 |
+| Rules + ML | 0.86 | 0.92 | 0.89 |
+
+Sources: [results/heldout/RESULTS.md](../results/heldout/RESULTS.md),
+[results/phase2/RESULTS_phase2.md](../results/phase2/RESULTS_phase2.md). The ML tier was trained on development
+images only, k was chosen by development cross-validation, and the held-out set was predicted once.
+
+- **Rules keep their precision** on a new compiler, build system and library (0.996), but recall drops from 0.86
+  to 0.82. With the MD5 truth defect excluded, rules recall is 0.86 (post-hoc).
+- **ML finds ECDH for the first time** (13 of 32 images, no false positives), which no rule can, because ECDH
+  shares all its constants with ECDSA.
+- **ML adds false positives**: 49 against the rules' 1, mostly Poly1305 (24), DES (16) and ChaCha20 (8). Precision falls to
+  0.86, below the 0.95 goal set in the roadmap.
+- **The strings baseline wins on this set** because both libraries embed algorithm names. It would not on
+  firmware built without those strings.
 
 ### 5.3 Post-quantum detection
 
@@ -100,13 +118,27 @@ C6 only, and every chip's ROM verifier stays classical ([FEASIBILITY.md](FEASIBI
 - **Function recovery** was tuned and measured on development images (precision 1.000, recall 0.987).
 - **Chips:** measured on ESP32 only. Data rules should transfer; register rules and the ML tier do not
   ([CHIPS.md](CHIPS.md)).
+- **LMS rule false positive:** a small-integer table matched the LMS rule in 12 of 16 wolfSSL held-out images. It
+  was fixed from the RFC 8554 key format, and the held-out set can no longer test that fix independently
+  ([PQC_RULES.md](PQC_RULES.md)).
 - **No hardware test:** the board script has been rehearsed on a synthetic flash dump only
   ([BOARD_TEST.md](BOARD_TEST.md)).
 - **Feasibility is static:** RAM and AES key length cannot be read from an image.
 
 ## 7. Conclusion
 
-ML_CONCLUSION
+A rule engine built from specification constants identifies the cryptography in compiled ESP32 firmware with
+near-perfect precision on unseen builds (0.996 on the held-out set) and turns it into a schema-valid CycloneDX
+CBOM with quantum risk, NIST replacements and feasibility checks. Its recall gap is structural: ECDH, AES with
+run-time tables and Poly1305 leave no distinctive data.
+
+A function classifier closes part of that gap (ECDH found in 13 of 32 held-out images, recall 0.82 to 0.92) but,
+trained on one library family, it is not precise enough to switch on by default. The next step is training data
+from more libraries and a fresh held-out set, so that per-family acceptance can be chosen and measured cleanly.
+
+For migration planning, the feasibility checks show that on the original ESP32 the boot chain cannot move to
+post-quantum signatures with esp-pqc today, while key agreement and OTA verification can, subject to an ESP-IDF
+upgrade and a RAM check on the device.
 
 ## 8. Reproduce
 

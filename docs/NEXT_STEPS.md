@@ -1,6 +1,6 @@
 # Next steps: from here to the mentor review and Phase III
 
-Status as of `101fe46` on `main`. Owners are blank: assign a name to each row before work starts.
+Status updated 9 November 2026 after the ML run. Owners are blank: assign a name to each row before work starts.
 Order matters more than dates. Each step has a stop condition, so nothing downstream starts on a guess.
 
 ## Where things stand
@@ -14,13 +14,13 @@ Order matters more than dates. Each step has a stop condition, so nothing downst
 | P2.4 function starts | Done (dev images only) | `docs/FUNCTIONS.md` |
 | P2.5 function labels (41,051) | Done | `dataset/functions/labels.jsonl.gz` |
 | P2.6 features | Done | `cbomscan/mlfeatures.py` |
-| P2.7 classifier | **Not done**: code exists, no trained model, no held-out score | `eval/phase2_ml.py` |
-| P2.8 rules vs rules+ML on held-out | **Not done** | no `results/phase2/RESULTS_phase2.md` |
+| P2.7 classifier | Done (trained 2026-11-09, k = 2) | `models/`, `results/phase2/dev_cv.json` |
+| P2.8 rules vs rules+ML on held-out | Done once; precision goal not met (0.86 < 0.95), `--ml` off by default | `results/phase2/RESULTS_phase2.md` |
 | P2.9 post-quantum rules | Done for ML-KEM and ML-DSA; LMS partial; SLH-DSA not started | `docs/PQC_RULES.md` |
-| Board test (flash dump from a real ESP32) | **Not done**: no board attached | `scripts/board_test.py` |
+| Board test (flash dump from a real ESP32) | Rehearsed on a synthetic dump; **not run on hardware** | `docs/BOARD_TEST.md` |
 | Dashboard (Cryptolens) | Done, shows PQC families | `cbomscan/dashboard/` |
 | Git tags `phase1-demo`, `heldout-frozen-1` | Missing on GitHub (push refused, HTTP 403) | local clones only |
-| Phase III | Not started | `docs/ROADMAP.md` |
+| Phase III | P3.1 done, P3.2 partly done, P3.3 not started, P3.4 draft done | `docs/FEASIBILITY.md`, `docs/CHIPS.md`, `docs/FINAL_REPORT.md` |
 
 ## Stage 1: close Phase II (about one week)
 
@@ -41,9 +41,9 @@ Deliverable: a Phase II report with the table below, which has every number trac
 
 | Metric (held-out) | Rules | Strings baseline | Rules + ML |
 |---|---|---|---|
-| Precision | 0.996 | 0.93 | to fill |
-| Recall | 0.821 | 0.98 | to fill |
-| ECDH recall | 0 of 32 | to fill | to fill |
+| Precision | 0.996 | 0.93 | 0.86 |
+| Recall | 0.821 | 0.98 | 0.92 |
+| ECDH recall | 0 of 32 | 32 of 32 | 13 of 32 |
 
 ## Stage 2: presentation (parallel with Stage 1)
 

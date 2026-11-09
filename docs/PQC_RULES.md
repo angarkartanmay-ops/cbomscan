@@ -116,3 +116,25 @@ python eval/evaluate_pqc.py
 The revisions in the table above are what the committed images were built from; the repositories
 were cloned at their default branch on 2026-10-29, so check out those revisions to reproduce them
 byte for byte.
+
+## LMS false positive found on the held-out set (fixed 2026-11-09)
+
+While checking the dashboard, the LMS rule reported LMS in 12 of the 16 wolfSSL held-out images. The match was a
+small-integer permutation table (values below 0x40) after `00000008 00000004`: it passed the type-code test and the
+"at least 36 distinct values" test. The held-out truth covers only the 13 classical families, so this was not
+scored there.
+
+Fix, derived from RFC 8554 rather than from the failing images: the 48 bytes after the type codes are `I` (random)
+and `T1` (a SHA-256 output), so about half of them are 0x80 or above. The rule now requires at least 12 such bytes
+(`LMS_MIN_HIGH`); a real key fails this with probability about 1e-4.
+
+| Set | Before | After |
+|---|---|---|
+| LMS images in `dataset/out_pqc` | 20 / 25 | 20 / 25 |
+| Other post-quantum images (false positives) | 0 / 20 | 0 / 20 |
+| Phase I images (false positives) | 0 / 198 | 0 / 198 |
+| ESP32 rebuild (false positives) | not measured | 0 / 231 |
+| Held-out images (false positives) | 12 / 32 | 0 / 32 |
+
+**Caveat.** The defect was found by looking at held-out images, so the held-out "after" figure is not an
+independent test of the fix. `tests/test_pqc.py` pins both a realistic key and the wolfSSL table bytes.

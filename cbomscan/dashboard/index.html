@@ -374,19 +374,19 @@ html.in-app, html.in-app body { height: 100%; overflow: hidden; }
           <div><dt>F1</dt><dd>0.93<small>strings only: 0.83</small></dd></div>
           <div><dt>Flagged</dt><dd>108/108<small>0 false alarms</small></dd></div>
         </dl>
-        <p class="reveal" style="--d:.18s">Image-level detection of 13 algorithm families. These scores come from the dataset the rules were tuned on, so Phase II adds a held-out test set.</p>
-        <p class="fine reveal" style="--d:.22s">Known gaps: ECDH, AES with run-time tables, Poly1305.</p>
+        <p class="reveal" style="--d:.18s">Image-level detection of 13 algorithm families on the data the rules were built on. On 32 held-out ESP-IDF images they keep precision 1.00 with recall 0.82.</p>
+        <p class="fine reveal" style="--d:.22s">Known gaps: ECDH, AES with run-time tables, Poly1305. The optional classifier finds ECDH in 13 of 32 held-out images.</p>
       </div></div>
     </section>
 
     <section class="step" id="status" data-label="Status">
       <div class="in-wrap"><div class="copy">
         <p class="eyebrow reveal">Where the project stands</p>
-        <h2 class="reveal" style="--d:.06s">Phase I is done. Phase II closes the gaps.</h2>
+        <h2 class="reveal" style="--d:.06s">Phases I and II are done. Phase III is under way.</h2>
         <ol class="phases reveal" style="--d:.12s">
           <li><span class="st done">Done</span><div><b>Phase I</b><span>Image parser, rule engine, labelled dataset, evaluation, CBOM export.</span></div></li>
-          <li><span class="st now">In progress</span><div><b>Phase II</b><span>ESP-IDF rebuild, held-out test set, machine learning for the three gaps.</span></div></li>
-          <li><span class="st next">Planned</span><div><b>Phase III</b><span>Migration feasibility, more ESP32 chips, optional board demo, write-up.</span></div></li>
+          <li><span class="st done">Done</span><div><b>Phase II</b><span>ESP-IDF rebuild, frozen held-out set, post-quantum rules, function classifier. The classifier finds ECDH but adds false positives, so it stays optional.</span></div></li>
+          <li><span class="st now">In progress</span><div><b>Phase III</b><span>Feasibility checks and per-chip scope done. Next: real S3 and C3 images, a board test, the write-up.</span></div></li>
         </ol>
         <div class="actions reveal" style="--d:.18s">
           <a class="btn primary cta" href="#console">Open the console<span class="arr">&rarr;</span></a>

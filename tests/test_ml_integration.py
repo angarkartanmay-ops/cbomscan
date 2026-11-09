@@ -34,3 +34,16 @@ def test_ml_flag_without_a_model_exits_cleanly(tmp_path, capsys, monkeypatch):
         pytest.skip("image missing")
     rc = cli.main(["scan", str(BIN), "-o", str(tmp_path / "out"), "--ml"])
     assert rc == 2 and "phase2_ml.py" in capsys.readouterr().err
+
+
+MODEL = ROOT / "models" / "function_classifier.json"
+HELD = ROOT / "dataset" / "heldout" / "samples" / "wolf_wolfssl_test__Os" / "firmware.bin"
+
+
+@pytest.mark.skipif(not MODEL.exists() or not HELD.exists(), reason="no trained model")
+def test_ml_scan_adds_function_classifier_evidence():
+    pytest.importorskip("sklearn")
+    res = scan(load(str(HELD)), ml=True)
+    ml_ev = [e for e in res.evidence if e.group == "ml"]
+    assert ml_ev and all(e.rule == "ml.function_classifier" for e in ml_ev)
+    assert all(0 < e.confidence <= 0.99 for e in ml_ev)

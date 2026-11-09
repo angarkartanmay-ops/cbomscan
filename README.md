@@ -4,7 +4,7 @@
 CycloneDX Cryptography Bill of Materials (CBOM) with a migration plan.**
 
 III Semester Experiential Learning (EL) project, Department of CSE, RV College of Engineering,
-Bengaluru. Status: **Phase I complete**, Phase II in progress.
+Bengaluru. Status: **Phase I and Phase II complete**, Phase III partly done (see the table below).
 
 ![Phase I per-family F1](results/f1_by_family.png)
 
@@ -70,12 +70,12 @@ It does **not** break or fix anything on the device. It is the diagnosis step of
 | II | Rebuild dataset with Espressif's `xtensa-esp32-elf-gcc` (windowed ABI): 231 images in `dataset/out_esp32` | Done |
 | II | Held-out test set: 32 ESP-IDF v5.5.6 images (mbedTLS and wolfSSL), frozen with a SHA-256 manifest; Phase I rules scored on it ([results/heldout](results/heldout)) | Done |
 | II | Xtensa disassembly ([docs/DISASM.md](docs/DISASM.md)), function-start recovery and function-level labels ([docs/FUNCTIONS.md](docs/FUNCTIONS.md)), per-function features | Done |
-| II | Tier 2 ML classifier for the rule gaps (ECDSA vs ECDH, run-time AES tables, Poly1305): features and labels exist; classifier not yet trained or scored on the held-out set | In progress |
+| II | Tier 2 ML classifier for the rule gaps: trained and scored once on the held-out set. Rules + ML: recall 0.82 to 0.92, ECDH found in 13 of 32 images, but precision 1.00 to 0.86, below the 0.95 goal, so `--ml` stays off by default ([docs/PHASE2_ML.md](docs/PHASE2_ML.md)) | Done, goal not met |
 | II | Detection rules for post-quantum algorithms (ML-KEM, ML-DSA, LMS) so migrated firmware shows up correctly | Done for ML-KEM, ML-DSA (verified on real builds) and LMS public keys (verifier-only code is a known miss); see [docs/PQC_RULES.md](docs/PQC_RULES.md) |
 | III | Migration feasibility: flash headroom, ESP-IDF version, post-quantum boot support per chip, with stated assumptions ([docs/FEASIBILITY.md](docs/FEASIBILITY.md)); RAM is reported as not readable from an image | Done |
 | III | Other chips: chip detection and per-chip scope (data rules on every chip; register rules and ML on ESP32 only) ([docs/CHIPS.md](docs/CHIPS.md)); no real S2/S3/RISC-V image tested yet | Partly done |
 | III | Optional demo: migrate one board with esp-pqc, rescan, show the CBOM change | Not started: needs an ESP32-C5/C6 board and ESP-IDF 6.0 |
-| III | Write-up and paper | To do |
+| III | Write-up and paper: final report draft in [docs/FINAL_REPORT.md](docs/FINAL_REPORT.md) | Draft done |
 
 Each "To do" item is written up with acceptance criteria in [docs/ROADMAP.md](docs/ROADMAP.md).
 To turn them into GitHub issues with labels, run once (needs the GitHub CLI, `gh auth login`):

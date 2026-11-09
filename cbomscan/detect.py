@@ -138,6 +138,8 @@ def _scan_lms(fw, sig):
             body = seg.data[o + 8:o + S.LMS_PUBKEY_LEN]
             if len(body) < S.LMS_PUBKEY_LEN - 8 or len(set(body)) < S.LMS_MIN_DISTINCT:
                 continue
+            if sum(b >= 0x80 for b in body) < S.LMS_MIN_HIGH:
+                continue
             lms_t, ots_t = seg.data[o + 3], seg.data[o + 7]
             hss = o >= 4 and seg.data[o - 4:o] == b"\x00\x00\x00\x01"
             out.append(Evidence(sig.family, sig.id, sig.group, "structure-match", sig.confidence,

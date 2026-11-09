@@ -272,6 +272,9 @@ LMOTS_TYPES = {1: "LMOTS_SHA256_N32_W1", 2: "LMOTS_SHA256_N32_W2", 3: "LMOTS_SHA
                4: "LMOTS_SHA256_N32_W8"}
 LMS_PUBKEY_LEN = 56
 LMS_MIN_DISTINCT = 36  # distinct byte values required in the 48 random bytes (I and T1); expected ~44
+# I and T1 are uniform bytes, so about 24 of 48 are >= 0x80; fewer than 12 has probability ~1e-4. Rejects small-integer
+# tables (e.g. permutation tables) that pass the distinct-value test; added after such tables matched in wolfSSL images.
+LMS_MIN_HIGH = 12
 _add("lms.pubkey", "LMS", "lms_pubkey", confidence=0.85,
      description="embedded LMS/HSS public key structure (RFC 8554 type codes followed by 48 high-entropy bytes)")
 

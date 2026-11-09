@@ -35,7 +35,7 @@ def main(out, ml=False):
             print("skip", name)
             continue
         samples.append({"sample": name, "label": label, "group": group})
-        results[name] = scan_to_dict(path, name, ml=ml)
+        results[name] = scan_to_dict(path, name, ml=ml and root == "heldout")
     page = (ROOT / "cbomscan" / "dashboard" / "index.html").read_text()
     data = json.dumps({"samples": samples, "results": results}, separators=(",", ":"))
     page = page.replace("const EMBEDDED = null;", "const EMBEDDED = " + data + ";", 1)
